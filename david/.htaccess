@@ -1,0 +1,7 @@
+#AddLanguage en .en
+#AddLanguage es .es
+#LanguagePriority en es
+#ForceLanguagePriority Fallback
+AddType application/x-httpd-php .php
+Options +MultiViews
+

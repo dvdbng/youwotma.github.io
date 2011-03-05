@@ -1,0 +1,403 @@
+/* line 9, _reset.scss */
+html, body, div, span, applet, object, iframe,
+h1, h2, h3, h4, h5, h6, p, blockquote, pre,
+a, abbr, acronym, address, big, cite, code,
+del, dfn, em, font, img, ins, kbd, q, s, samp,
+small, strike, strong, sub, sup, tt, var,
+b, u, i, center,
+dl, dt, dd, ol, ul, li,
+fieldset, form, label, legend,
+table, caption, tbody, tfoot, thead, tr, th, td {
+  margin: 0;
+  padding: 0;
+  border: 0;
+  outline: 0;
+  font-size: 100%;
+  vertical-align: baseline;
+  background: transparent;
+}
+
+/* line 18, _reset.scss */
+body {
+  line-height: 1;
+}
+
+/* line 21, _reset.scss */
+blockquote, q {
+  quotes: none;
+}
+
+/* line 25, _reset.scss */
+blockquote:before, blockquote:after,
+q:before, q:after {
+  content: '';
+  content: none;
+}
+
+/* tables still need 'cellspacing="0"' in the markup */
+/* line 31, _reset.scss */
+table {
+  border-collapse: collapse;
+  border-spacing: 0;
+}
+
+/* line 3, global.scss */
+body {
+  font-family: 'Ubuntu', arial, sans;
+}
+
+/* line 7, global.scss */
+h1, h2 {
+  font-family: 'Droid Serif', serif;
+  font-style: italic;
+}
+
+/* line 11, global.scss */
+h1 {
+  font-size: 1.6em;
+  margin: 0.4em 0 1.2em 10px;
+}
+
+/* line 16, global.scss */
+a {
+  text-decoration: none;
+}
+
+/* line 20, global.scss */
+#header, #header-mask, .header-banner {
+  width: 960px;
+  height: 435px;
+}
+
+/* line 24, global.scss */
+#wrapper {
+  width: 940px;
+  margin: 0 auto;
+}
+
+/* line 29, global.scss */
+#twitter {
+  width: 350px;
+  float: left;
+  margin-top: -10px;
+  position: relative;
+  z-index: 10;
+}
+
+/* line 36, global.scss */
+#twitter-header {
+  background: no-repeat url(img/twitter-header.png);
+  width: 350px;
+  height: 54px;
+  padding-top: 35px;
+  margin-bottom: 5px;
+}
+
+/* line 43, global.scss */
+#twitter-header-text {
+  color: #fff;
+  margin-left: 125px;
+  font-size: 25px;
+}
+
+/* line 48, global.scss */
+#blog {
+  width: 540px;
+  float: right;
+  padding: 0 20px;
+  margin-top: -35px;
+  position: relative;
+  z-index: 10;
+}
+
+/* line 56, global.scss */
+#blog-header {
+  background: no-repeat url(img/header-blog.png);
+  width: 580px;
+  height: 64px;
+  padding-top: 50px;
+}
+
+/* line 62, global.scss */
+#blog-header-text {
+  color: #333;
+  margin-left: 135px;
+  font-size: 25px;
+}
+
+/* line 67, global.scss */
+#header {
+  position: relative;
+  margin: 0 auto;
+}
+
+/* line 72, global.scss */
+#header-mask {
+  z-index: 10;
+  position: absolute;
+  top: 0;
+  left: 0;
+  text-indent: -100000px;
+  background: url(img/mask.png);
+  margin: 0;
+  padding: 0;
+  pointer-events: none;
+}
+
+/* line 83, global.scss */
+.header-banner {
+  position: absolute;
+  top: 0;
+  left: 0;
+}
+/* line 87, global.scss */
+.header-banner > div {
+  position: absolute;
+  left: 300px;
+  top: 150px;
+  width: 600px;
+}
+/* line 92, global.scss */
+.header-banner > div > h2 {
+  font-size: 40px;
+}
+/* line 94, global.scss */
+.header-banner > div > h2 > .subpart {
+  font-size: 30px;
+}
+/* line 99, global.scss */
+.header-banner > .banner-image {
+  position: absolute;
+  top: 100px;
+  left: 20px;
+}
+
+/* line 105, global.scss */
+#header-nav {
+  z-index: 11;
+  position: absolute;
+  right: 0px;
+  top: 0px;
+  margin: 20px 15px 0 0;
+}
+/* line 111, global.scss */
+#header-nav > a {
+  color: #666;
+  font-variant: small-caps;
+  font-size: 1.2em;
+  border-left: dotted 1px #666;
+  padding-left: 6px;
+  margin-left: 2px;
+}
+/* line 118, global.scss */
+#header-nav > a.last {
+  border-left: none;
+}
+
+/* line 124, global.scss */
+#banner_2 {
+  background: url(img/pattern2-0.jpg);
+  color: #BBD14F;
+  text-shadow: 1px 1px 3px #5C115C;
+}
+/* line 127, global.scss */
+#banner_2 a {
+  color: #BBD14F;
+  border-bottom: 1px dotted #BBD14F;
+}
+/* line 131, global.scss */
+#banner_2 > .banner-image {
+  left: 60px;
+  top: 120px;
+}
+/* line 135, global.scss */
+#banner_2 > .textcontent {
+  top: 160px;
+}
+
+/* line 140, global.scss */
+#banner_3 {
+  background: url(img/pattern3-1.jpg);
+  color: #FDB907;
+  text-shadow: 1px 1px 3px #FD3A07;
+}
+
+/* line 145, global.scss */
+#banner_4 {
+  background: url(img/pattern4-1.jpg);
+  color: #45599b;
+  text-shadow: 1px 1px 3px #fff;
+}
+/* line 149, global.scss */
+#banner_4 h2 {
+  width: 500px;
+}
+/* line 151, global.scss */
+#banner_4 h2 > a {
+  color: #45599B;
+  border-bottom: 1px dotted #45599B;
+}
+/* line 156, global.scss */
+#banner_4 > .banner-image {
+  left: 10px;
+  top: 60px;
+}
+
+/* line 161, global.scss */
+#banner_5 {
+  background: url(img/pattern5-0.jpg);
+  color: #CAC69B;
+  text-shadow: 1px 1px 3px #000;
+}
+/* line 165, global.scss */
+#banner_5 a {
+  color: #866785;
+}
+/* line 168, global.scss */
+#banner_5 > .textcontent {
+  left: 10px;
+  width: 940px;
+  text-align: center;
+  top: 190px;
+}
+
+/* line 175, global.scss */
+#banner_7 {
+  background: url(img/pattern8-0.jpg);
+  color: #ccc;
+  text-shadow: 1px 1px 3px #666;
+}
+/* line 178, global.scss */
+#banner_7 p {
+  line-height: 1.4em;
+  word-spacing: 5px;
+}
+/* line 181, global.scss */
+#banner_7 p > a {
+  color: #ccc;
+  border-bottom: 1px dotted #ccc;
+}
+/* line 187, global.scss */
+#banner_7 > .banner-image {
+  left: 50px;
+  top: 130px;
+}
+
+/* line 192, global.scss */
+#banner_8 {
+  background: url(img/pattern15.jpg);
+  color: #140005;
+  text-shadow: 0px 0px 1px #fff;
+}
+/* line 196, global.scss */
+#banner_8 a {
+  color: #140005;
+  border-bottom: 1px dotted #140005;
+}
+/* line 200, global.scss */
+#banner_8 > .banner-image {
+  left: 70px;
+  top: 100px;
+}
+/* line 204, global.scss */
+#banner_8 > .textcontent {
+  top: 170px;
+}
+
+/* line 208, global.scss */
+#banner_9 {
+  background: url(img/pattern14.jpg);
+  color: #206f8b;
+  text-shadow: 0px 0px 1px #fff;
+}
+/* line 211, global.scss */
+#banner_9 a {
+  color: #206f8b;
+  border-bottom: 1px dotted #206f8b;
+}
+/* line 216, global.scss */
+#banner_9 > .textcontent {
+  left: 10px;
+  width: 940px;
+  text-align: center;
+  top: 170px;
+}
+
+/* line 223, global.scss */
+#banner_10 {
+  background-color: #520039;
+  color: #350025;
+}
+/* line 226, global.scss */
+#banner_10 > .textcontent {
+  z-index: 12;
+  color: #BF9D3E;
+}
+/* line 229, global.scss */
+#banner_10 > .textcontent h2 {
+  text-shadow: 0px 0px 1px #ccc;
+}
+/* line 233, global.scss */
+#banner_10 > img {
+  z-index: 12;
+}
+/* line 236, global.scss */
+#banner_10 > .banner-image {
+  left: 70px;
+  top: 100px;
+}
+
+/* line 241, global.scss */
+#banner_10_inner {
+  overflow: hidden;
+  line-height: 1.2em;
+  font-size: 17px;
+  padding: 10px;
+  word-wrap: break-word;
+  height: 414px;
+  letter-spacing: 1px;
+  position: absolute;
+  top: 0;
+  left: 0;
+  width: 940px;
+}
+
+/* line 255, global.scss */
+.tweet {
+  padding: 10px 10px 10px 20px;
+  font-size: 12px;
+  margin-bottom: 10px;
+  background: #DAF0FF;
+  background: -moz-linear-gradient(#dff2ff, #caeaff);
+  color: #666;
+}
+/* line 262, global.scss */
+.tweet a {
+  color: #333;
+}
+
+/* line 266, global.scss */
+.tweetbird {
+  margin-left: -40px;
+  float: left;
+}
+
+/* line 271, global.scss */
+.blogtitle {
+  text-align: center;
+  font-style: normal;
+  text-transform: uppercase;
+  font-size: 25px;
+  font-weight: normal;
+  margin: 20px 0 10px 0;
+}
+/* line 280, global.scss */
+.blogtitle a {
+  color: #eb9272;
+}
+
+/* line 284, global.scss */
+.blogtxt {
+  color: #666;
+  line-height: 1.2em;
+}

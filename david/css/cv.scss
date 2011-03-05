@@ -1,0 +1,111 @@
+.timeline,line{
+    stroke: #333;
+}
+
+.htext{
+    text-align: center;
+    font-style: italic;
+    font-size: 14px;
+    padding: 0 5px;
+    margin: 0 -5px;
+}
+
+line{
+    &.eso{
+        stroke: #aaa;
+    }
+    &.bachiller{
+        stroke: #666;
+    }
+    &.uni{
+        stroke: #222;
+    }
+    &.html{ stroke: #23819c; }
+    &.js{ stroke: #23819c; }
+    &.php{ stroke: #23819c; }
+    &.flash{ stroke: #23819c; }
+    &.vb{ stroke: #23819c; }
+    &.java{ stroke: #23819c; }
+    &.bash{ stroke: #23819c; }
+    &.python{ stroke: #23819c; }
+}
+
+text{
+    fill: #333;
+    &.eso{
+        fill: #aaa;
+    }
+    &.bachiller{
+        fill: #666;
+    }
+    &.uni{
+        fill: #222;
+    }
+    &.html{ fill: #23819c; }
+    &.js{ fill: #23819c; }
+    &.php{ fill: #23819c; }
+    &.flash{ fill: #23819c; }
+    &.vb{ fill: #23819c; }
+    &.java{ fill: #23819c; }
+    &.bash{ fill: #23819c; }
+    &.python{ fill: #23819c; }
+}
+body{
+    color: #333;
+}
+.tlinline{
+    font-size: 12px;
+}
+.metter{
+    border: 1px solid #ccc;
+    width: 50px;
+    height: 4px;
+    &>.metter-inner{
+        height: 4px;
+        background-color: #333;
+    }
+    margin: 5px 0 0 10px;
+    float: right;
+}
+.itemdata{
+    margin: 5px 0 0 10px;
+    float: right;
+}
+.itemname{
+    float:left;
+}
+.clearfix{
+    clear: both;
+    height: 1px;
+}
+.item{
+    clear: both;
+    margin: 10px;
+}
+div.item{
+    margin: 4px 10px 0px 25px;
+}
+
+#arem{
+    -moz-column-width: 350px;
+    -moz-column-gap: 10px;
+    -webkit-column-width: 350px;
+    -webkit-column-gap: 10px;
+    column-width: 350px;
+    column-gap: 10px;
+}
+#timeline{
+    position: relative;
+}
+
+#fotter{
+    color: #999;
+    border-top: 1px solid #666;
+    margin: 1em 2em 3em 2em;
+    padding: .5em 0 0 1em;
+    a{
+        color: #999;
+        border-bottom: 1px dotted #ccc;
+    }
+}
+

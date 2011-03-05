@@ -1,0 +1,138 @@
+<?php
+$deph = "";
+include_once "{$deph}global.php";
+
+function line($x1,$y1,$x2,$y2,$c){
+    echo "<line x1='$x1' y1='$y1' x2='$x2' y2='$y2' class='$c'/>\n";
+}
+function hline($x1,$x2,$y,$c){
+    line($x1,$y,$x2,$y,$c);
+}
+
+function text($x,$y,$t){
+    echo "<text x='$x' y='$y' text-anchor='middle'>$t</text>\n";
+}
+function ratext($x,$y,$t,$c){
+    $y += 5;
+    echo "<text x='$x' y='$y' text-anchor='end' class='$c'>$t</text>\n";
+}
+$htexts = array();
+function htext($x,$y,$w,$h,$t){
+    global $htexts;
+    $htexts[] = array($x,$y,$w,$h,$t);
+}
+
+function brazo($x1,$x2,$y,$txt,$c){
+    $serif_length = 5;
+    echo "<g class='$c'>";
+    line($x1,$y,$x1+$serif_length,$y-$serif_length,$c);
+    line($x1+$serif_length,$y-$serif_length, $x1+($x2-$x1)/2 - $serif_length, $y-$serif_length,   $c);
+    line($x1+($x2-$x1)/2 - $serif_length, $y-$serif_length,$x1+($x2-$x1)/2, $y-2*$serif_length,   $c);
+    line($x1+($x2-$x1)/2, $y-2*$serif_length,$x1+($x2-$x1)/2 + $serif_length, $y-$serif_length,   $c);
+    line($x1+($x2-$x1)/2 + $serif_length, $y-$serif_length, $x2-$serif_length, $y-$serif_length, $c);
+    line($x2-$serif_length, $y-$serif_length, $x2, $y, $c);
+    echo "</g>";
+    htext($x1,$y-85,$x2-$x1,85,$txt);
+}
+
+$tmy = 400;
+function arrow($x,$h,$txt){
+    global $tmy;
+    //echo "$x $h";
+    line($x,$tmy,$x,$tmy-$h,"timeline");
+    text($x,$tmy-$h-5,$txt);
+}
+
+function get_x($year,$month=1,$day=1){
+    $shorted_years = 12;
+    $sy = 1991;
+    $day += ($month-1)*30 - 1;
+    $year_width = 120;
+    $offset = 0;
+    if($year < 1992){
+        return $offset + $year_width*($day/360);
+    }
+    if($year < ($sy+$shorted_years)){
+        return $offset + $year_width*(($year-$sy+$day/360 -1)/$shorted_years +1);
+    }
+    return $offset + $year_width*($year-$sy-$shorted_years+$day/360+2);
+}
+function get_now_x(){
+    return get_x(2011,2,14);
+}
+
+function content(){
+?>
+<svg xmlns="http://www.w3.org/2000/svg" xmlns:xlink="http://www.w3.org/1999/xlink" width='2000px' height='600px'>
+<?php
+    global $tmy;
+    for($i = 1991; $i<=2012; $i++){
+        if($i>1992 && $i<2003)continue;
+        if($i!=1991)line(get_x($i),$tmy-5,get_x($i),$tmy+5,"timeline timeline-mark");
+        if($i!=1992 && $i!=2012)text((get_x($i)+get_x($i+1))/2,$tmy+20,$i);
+    }
+
+    $shry = 1995.55;
+    $ampl = 8;
+    line(0,$tmy,get_x($shry+1),$tmy,"timeline");
+    line(get_x(++$shry),$tmy,get_x($shry,6),$tmy-$ampl,"timeline");
+    line(get_x($shry,6),$tmy-$ampl,get_x(++$shry),$tmy+$ampl,"timeline");
+    line(get_x($shry),$tmy+$ampl,get_x($shry,6),$tmy-$ampl,"timeline");
+    line(get_x($shry,6),$tmy-$ampl,get_x(++$shry),$tmy+$ampl,"timeline");
+    line(get_x($shry),$tmy+$ampl,get_x($shry,6),$tmy-$ampl,"timeline");
+    line(get_x($shry,6),$tmy-$ampl,get_x(++$shry),$tmy+$ampl,"timeline");
+    line(get_x($shry),$tmy+$ampl,get_x($shry,6),$tmy,"timeline");
+    line(get_x($shry,6),$tmy,get_x(2012),$tmy,"timeline");
+
+    brazo(get_x(1992),get_x(2003),$tmy-10,"No recuerdo mucho de esta epoca. Fue hace mucho tiempo y era muy pequeño.","timeline");
+    arrow(get_x(1991,12,24),110,"Nací");
+    arrow(get_x(2006,9,15),50,"Me mudo a Málaga");
+    arrow(get_x(2009,12,24),50,"Mayor de edad");
+    arrow(get_x(2009,6,18),110,"Me paso a GNU/Linux");
+
+    hline(get_x(2003,7,0),get_now_x(),$tmy+70,"html");
+    hline(get_x(2003,9,0),get_now_x(),$tmy+80,"js");
+
+    hline(get_x(2004,9,0),get_x(2008,4),$tmy+90,"php");
+    hline(get_x(2009,10,0),get_now_x(),$tmy+90,"php");
+
+    hline(get_x(2005,9,0),get_x(2007,0,0),$tmy+100,"flash");
+    hline(get_x(2008,0,0),get_x(2008,3,0),$tmy+100,"flash");
+    hline(get_x(2010,9,0),get_x(2011),$tmy+100,"flash");
+
+    hline(get_x(2006,5,0),get_x(2008,6),$tmy+110,"vb");
+    hline(get_x(2007,8,0),get_x(2009),$tmy+120,"java");
+    hline(get_x(2011,2,0),get_now_x(),$tmy+120,"java");
+    hline(get_x(2009,6,18),get_now_x(),$tmy+130,"bash");
+    hline(get_x(2009,10,0),get_now_x(),$tmy+140,"python");
+
+    //ESO
+    ratext(get_x(2003,9,10),$tmy+40,"eso","tlinline");
+    hline(get_x(2003,9,10),get_x(2004,6,15),$tmy+40,"eso");
+    hline(get_x(2004,9,10),get_x(2005,6,15),$tmy+40,"eso");
+    hline(get_x(2005,9,10),get_x(2006,6,15),$tmy+40,"eso");
+    hline(get_x(2006,9,10),get_x(2007,6,15),$tmy+40,"eso");
+    //Bachillerato
+    hline(get_x(2007,9,10),get_x(2008,6,15),$tmy+50,"bachiller");
+    hline(get_x(2008,9,10),get_x(2009,6,15),$tmy+50,"bachiller");
+    //Uni
+    hline(get_x(2009,9,28),get_x(2010,6,25),$tmy+60,"uni");
+    hline(get_x(2010,9,28),get_now_x(),$tmy+60,"uni");
+
+
+?>
+</svg>
+<?php
+    global $htexts;
+    foreach($htexts as $k=>$v){
+        echo "<div class='htext' style='position:absolute; left: {$v[0]}px; top: {$v[1]}px; width: {$v[2]}px; height: {$v[3]}px;'>{$v[4]}</div>";
+    }
+}
+
+function css(){
+    ?><link href="<?php echo d(); ?>css/cv.css" rel="stylesheet" /><?php
+}
+
+include_once "{$deph}base.php";
+
+?>

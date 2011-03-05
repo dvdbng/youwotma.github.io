@@ -1,0 +1,187 @@
+/* line 1, cv.scss */
+.timeline, line {
+  stroke: #333;
+}
+
+/* line 5, cv.scss */
+.htext {
+  text-align: center;
+  font-style: italic;
+  font-size: 14px;
+  padding: 0 5px;
+  margin: 0 -5px;
+}
+
+/* line 14, cv.scss */
+line.eso {
+  stroke: #aaa;
+}
+/* line 17, cv.scss */
+line.bachiller {
+  stroke: #666;
+}
+/* line 20, cv.scss */
+line.uni {
+  stroke: #222;
+}
+/* line 23, cv.scss */
+line.html {
+  stroke: #23819c;
+}
+/* line 24, cv.scss */
+line.js {
+  stroke: #23819c;
+}
+/* line 25, cv.scss */
+line.php {
+  stroke: #23819c;
+}
+/* line 26, cv.scss */
+line.flash {
+  stroke: #23819c;
+}
+/* line 27, cv.scss */
+line.vb {
+  stroke: #23819c;
+}
+/* line 28, cv.scss */
+line.java {
+  stroke: #23819c;
+}
+/* line 29, cv.scss */
+line.bash {
+  stroke: #23819c;
+}
+/* line 30, cv.scss */
+line.python {
+  stroke: #23819c;
+}
+
+/* line 33, cv.scss */
+text {
+  fill: #333;
+}
+/* line 35, cv.scss */
+text.eso {
+  fill: #aaa;
+}
+/* line 38, cv.scss */
+text.bachiller {
+  fill: #666;
+}
+/* line 41, cv.scss */
+text.uni {
+  fill: #222;
+}
+/* line 44, cv.scss */
+text.html {
+  fill: #23819c;
+}
+/* line 45, cv.scss */
+text.js {
+  fill: #23819c;
+}
+/* line 46, cv.scss */
+text.php {
+  fill: #23819c;
+}
+/* line 47, cv.scss */
+text.flash {
+  fill: #23819c;
+}
+/* line 48, cv.scss */
+text.vb {
+  fill: #23819c;
+}
+/* line 49, cv.scss */
+text.java {
+  fill: #23819c;
+}
+/* line 50, cv.scss */
+text.bash {
+  fill: #23819c;
+}
+/* line 51, cv.scss */
+text.python {
+  fill: #23819c;
+}
+
+/* line 53, cv.scss */
+body {
+  color: #333;
+}
+
+/* line 56, cv.scss */
+.tlinline {
+  font-size: 12px;
+}
+
+/* line 59, cv.scss */
+.metter {
+  border: 1px solid #ccc;
+  width: 50px;
+  height: 4px;
+  margin: 5px 0 0 10px;
+  float: right;
+}
+/* line 63, cv.scss */
+.metter > .metter-inner {
+  height: 4px;
+  background-color: #333;
+}
+
+/* line 70, cv.scss */
+.itemdata {
+  margin: 5px 0 0 10px;
+  float: right;
+}
+
+/* line 74, cv.scss */
+.itemname {
+  float: left;
+}
+
+/* line 77, cv.scss */
+.clearfix {
+  clear: both;
+  height: 1px;
+}
+
+/* line 81, cv.scss */
+.item {
+  clear: both;
+  margin: 10px;
+}
+
+/* line 85, cv.scss */
+div.item {
+  margin: 4px 10px 0px 25px;
+}
+
+/* line 89, cv.scss */
+#arem {
+  -moz-column-width: 350px;
+  -moz-column-gap: 10px;
+  -webkit-column-width: 350px;
+  -webkit-column-gap: 10px;
+  column-width: 350px;
+  column-gap: 10px;
+}
+
+/* line 97, cv.scss */
+#timeline {
+  position: relative;
+}
+
+/* line 101, cv.scss */
+#fotter {
+  color: #999;
+  border-top: 1px solid #666;
+  margin: 1em 2em 3em 2em;
+  padding: .5em 0 0 1em;
+}
+/* line 106, cv.scss */
+#fotter a {
+  color: #999;
+  border-bottom: 1px dotted #ccc;
+}
