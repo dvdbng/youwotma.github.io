@@ -7,22 +7,23 @@ $deph = "";
 function content(){
     include("header.php");
     ?>
-    <div id="wrapper">
-        <div id="twitter">
-            <div id="twitter-header">
-            <h2 id="twitter-header-text"><?php t("Ultimos tweets"); ?></h2>
+        <div id="wrapper">
+            <div id="twitter">
+                <div id="twitter-header">
+                    <h2 id="twitter-header-text"><?php t("Ultimos tweets"); ?></h2>
+                </div>
             </div>
-        </div>
-        <div id="blog">
-            <div id="blog-header">
-                <h2 id="blog-header-text"><?php t("Ultimas entradas de mi blog"); ?></h2>
+            <div id="blog">
+                <div id="blog-header">
+                    <h2 id="blog-header-text"><?php t("Ultimas entradas de mi blog"); ?></h2>
+                </div>
             </div>
+            <script type="text/javascript">
+                <?php include "prefetch.php"; ?>
+
+            </script>
         </div>
-        <script type="text/javascript">
-            <?php include "prefetch.php"; ?>
-        </script>
-    </div>
-    <?php
+<?php
 }
 
 include_once "base.php";

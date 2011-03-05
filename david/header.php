@@ -14,53 +14,54 @@
                 <div class="textcontent">
                     <h2><?php t("Hago y uso software libre"); ?></h2>
                     <p>
-                        <?php
-                            function fs_icon($url,$name){
-                                echo "<a target='_blank' href='$url'>$name</a> ";
-                            }
-                            echo "<br/>";
-                            t("Proyectos/programas que uso habitualmente:");
-                            echo "<br/>";
-                            fs_icon("http://www.mozilla.org/","Mozilla");
-                            fs_icon("http://www.kernel.org/","Linux");
-                            fs_icon("http://www.ubuntu.com/","Ubuntu");
-                            fs_icon("http://www.gentoo.org/","Gentoo");
-                            fs_icon("http://www.gnu.org/","GNU");
-                            fs_icon("http://www.gnome.org/","Gnome");
-                            fs_icon("http://www.nongnu.org/ratpoison/","Ratpoison");
-                            fs_icon("http://www.mozillamessaging.com","Thunderbird");
-                            fs_icon("http://mozilla.com/firefox","Firefox");
-                            fs_icon("http://www.videolan.org/vlc/","VLC");
-                            fs_icon("http://jdownloader.org/","Jdownloader");
-                            fs_icon("http://inkscape.org/","Inkscape");
-                            fs_icon("http://www.gimp.org/","GIMP");
-                            fs_icon("http://webkit.org/","Webkit");
-                            fs_icon("http://www.android.com/","Android");
-                            fs_icon("http://git-scm.com/","Git");
-                            fs_icon("http://mercurial.selenic.com/","Mercurial");
-                            fs_icon("http://www.vim.org/","Vim");
-                            fs_icon("http://meld.sourceforge.net/","Meld");
-                            fs_icon("http://www.python.org/","Python");
-                            fs_icon("http://htop.sourceforge.net/","htop");
-                            fs_icon("http://gcc.gnu.org/","gcc");
-                            fs_icon("http://code.reddit.com/","Reddit");
-                            fs_icon("http://www.transmissionbt.com/","Transmission");
-                            fs_icon("http://www.imagemagick.org","Imagemagick");
-                            fs_icon("http://www.gnu.org/software/wget/","wget");
-                            fs_icon("http://curl.haxx.se/","curl");
-                            fs_icon("http://www.chromium.org/","Chromium");
-                            fs_icon("http://www.djangoproject.com/","Django");
-                            fs_icon("http://wordpress.com/","Wordpress");
-                            fs_icon("http://www.php.net/","PHP");
-                            fs_icon("http://sass-lang.com/","Sass");
-                            fs_icon("http://banshee.fm/","Banshee");
-                            fs_icon("http://www.virtualbox.org/","Virtualbox");
-                            fs_icon("http://www.mysql.com/","MySQL");
-                            fs_icon("http://www.pidgin.im/","Pidgin");
-                            fs_icon("http://www.gtk.org/","GTK+");
-                            fs_icon("http://www.mono-project.com/","Mono");
-                            fs_icon("http://www.phonegap.com/","Phonegap");
-                            fs_icon("http://drupal.org/","Drupal");
+<?php
+    indent(6);
+    function fs_icon($url,$name){
+        pprt("<a target='_blank' href='$url'>$name</a>");
+    }
+    pprt("<br/>");
+    pprt(tr("Proyectos/programas que uso habitualmente:"));
+    pprt("<br/>");
+    fs_icon("http://www.mozilla.org/","Mozilla");
+    fs_icon("http://www.kernel.org/","Linux");
+    fs_icon("http://www.ubuntu.com/","Ubuntu");
+    fs_icon("http://www.gentoo.org/","Gentoo");
+    fs_icon("http://www.gnu.org/","GNU");
+    fs_icon("http://www.gnome.org/","Gnome");
+    fs_icon("http://www.nongnu.org/ratpoison/","Ratpoison");
+    fs_icon("http://www.mozillamessaging.com","Thunderbird");
+    fs_icon("http://mozilla.com/firefox","Firefox");
+    fs_icon("http://www.videolan.org/vlc/","VLC");
+    fs_icon("http://jdownloader.org/","Jdownloader");
+    fs_icon("http://inkscape.org/","Inkscape");
+    fs_icon("http://www.gimp.org/","GIMP");
+    fs_icon("http://webkit.org/","Webkit");
+    fs_icon("http://www.android.com/","Android");
+    fs_icon("http://git-scm.com/","Git");
+    fs_icon("http://mercurial.selenic.com/","Mercurial");
+    fs_icon("http://www.vim.org/","Vim");
+    fs_icon("http://meld.sourceforge.net/","Meld");
+    fs_icon("http://www.python.org/","Python");
+    fs_icon("http://htop.sourceforge.net/","htop");
+    fs_icon("http://gcc.gnu.org/","gcc");
+    fs_icon("http://code.reddit.com/","Reddit");
+    fs_icon("http://www.transmissionbt.com/","Transmission");
+    fs_icon("http://www.imagemagick.org","Imagemagick");
+    fs_icon("http://www.gnu.org/software/wget/","wget");
+    fs_icon("http://curl.haxx.se/","curl");
+    fs_icon("http://www.chromium.org/","Chromium");
+    fs_icon("http://www.djangoproject.com/","Django");
+    fs_icon("http://wordpress.com/","Wordpress");
+    fs_icon("http://www.php.net/","PHP");
+    fs_icon("http://sass-lang.com/","Sass");
+    fs_icon("http://banshee.fm/","Banshee");
+    fs_icon("http://www.virtualbox.org/","Virtualbox");
+    fs_icon("http://www.mysql.com/","MySQL");
+    fs_icon("http://www.pidgin.im/","Pidgin");
+    fs_icon("http://www.gtk.org/","GTK+");
+    fs_icon("http://www.mono-project.com/","Mono");
+    fs_icon("http://www.phonegap.com/","Phonegap");
+    fs_icon("http://drupal.org/","Drupal");
                         ?>
                     </p>
                 </div>
@@ -96,6 +97,4 @@
                 <div class="textcontent"><h2><?php t("Amo la música"); ?></h2><p><?php t("Hago scrobbing en <a href='http://www.last.fm/user/YouWoTMA'>last.fm</a> de las canciones que escucho en <a href='http://banshee.fm/'>Banshee</a>");?></div>
             </div>
         </div>
-
-        <!--<script type="text/javascript" src="https://ajax.googleapis.com/ajax/libs/jquery/1.4.4/jquery.min.js"></script>-->
         <script type="text/javascript" src="<?php echo d(); ?>js/global.js"></script>

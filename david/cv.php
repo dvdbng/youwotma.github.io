@@ -1,7 +1,9 @@
 <?php
+include_once "global.php";
 $deph = "";
 define("width",1322);
 define("height",340);
+define("TLY",160);
 
 function getColorByClass($class,$default=array(0x33,0x33,0x33)){
     switch($class){
@@ -23,57 +25,24 @@ function getColorByClass($class,$default=array(0x33,0x33,0x33)){
 
 date_default_timezone_set("Europe/Madrid");
 
-$lines = array();
-function line($x1,$y1,$x2,$y2,$c){
-    global $lines;
-    $lines[] = array($x1,$y1,$x2,$y2,getColorByClass($c));
-    setColorByClass($c);
-    global $image, $actualcolor;
-    imageline($image,$x1,$y1,$x2,$y2,$actualcolor);
-    echo "<line x1='$x1' y1='$y1' x2='$x2' y2='$y2' class='$c'/>\n";
-}
 function hline($x1,$x2,$y,$c){
     line($x1,$y,$x2,$y,$c);
 }
 
-function text($x,$y,$t){
-    echo "<text x='$x' y='$y' text-anchor='middle'>$t</text>\n";
-    global $accesible_texts;
-    $accesible_texts[] = array("middle",$x,$y,$t,"");
-}
-$accesible_texts = array();
-function ratext($x,$y,$t,$c){
-    $y += 3;
-    $x -= 5;
-    echo "<text x='$x' y='$y' text-anchor='end' class='$c'>$t</text>\n";
-    global $accesible_texts;
-    $accesible_texts[] = array("end",$x,$y,$t,$c);
-}
-$htexts = array();
-function htext($x,$y,$w,$h,$t){
-    global $htexts;
-    $htexts[] = array($x,$y,$w,$h,$t);
-}
-
 function brazo($x1,$x2,$y,$txt,$c){
     $serif_length = 5;
-    echo "<g class='$c'>";
     line($x1,$y,$x1+$serif_length,$y-$serif_length,$c);
     line($x1+$serif_length,$y-$serif_length, $x1+($x2-$x1)/2 - $serif_length, $y-$serif_length,$c);
     line($x1+($x2-$x1)/2 - $serif_length, $y-$serif_length,$x1+($x2-$x1)/2, $y-2*$serif_length,$c);
     line($x1+($x2-$x1)/2, $y-2*$serif_length,$x1+($x2-$x1)/2 + $serif_length, $y-$serif_length,$c);
     line($x1+($x2-$x1)/2 + $serif_length, $y-$serif_length, $x2-$serif_length, $y-$serif_length,$c);
     line($x2-$serif_length, $y-$serif_length, $x2, $y, $c);
-    echo "</g>";
     htext($x1,$y-70,$x2-$x1,85,$txt);
 }
 
-$tmy = 160;
 function arrow($x,$h,$txt){
-    global $tmy;
-    //echo "$x $h";
-    line($x,$tmy,$x,$tmy-$h,"timeline");
-    text($x,$tmy-$h-5,$txt);
+    line($x,TLY,$x,TLY-$h,"timeline");
+    text($x,TLY-$h-5,$txt);
 }
 
 function get_x($year,$month=1,$day=1){
@@ -93,124 +62,81 @@ function get_x($year,$month=1,$day=1){
 function get_now_x(){
     return get_x(date("Y"),date("n"),date("j"));
 }
-$skills = array();
-function item($name,$pc){
-    global $skills;
-    $skills[] = array("item",$name,$pc);
-    $pc /= 2;
-    echo "<div class='item title'><div class='itemname'>$name</div>";
-    echo '<div class="metter"><div class="metter-inner" style="width: '.$pc.'px;"></div></div>';
-    echo "</div><div class='clearfix'></div>\n";
-}
-function title($name,$pc){
-    global $skills;
-    $skills[] = array("title",$name,$pc);
-    $pc /= 2;
-    echo '<div class="item">';
-    echo "<div class='itemname'><h2>$name</h2></div>";
-    if($pc != 0)echo '<div class="metter"><div class="metter-inner" style="width: '.$pc.'px;"></div></div>';
-    echo "</div><div class='clearfix'></div>\n";
-}
-function ftitle(){
-}
-
-function content(){
-    echo '<h1 id="maintitle">';
-    t("David Bengoa - Currículum vítae");
-    echo '</h1>';
-?>
-<div id="nav">
-    <a href="../<?php t("en"); ?>/cv"><?php t("English"); ?></a>
-    <a href="."><?php t("Página principal") ?></a>
-    <a href="david-bengoa-cv-<?php t("es"); ?>.pdf" class="last"><?php t("Descarga mi CV en PDF"); ?></a>
-</div>
-<div class="clearfix"></div>
-<div id="timeline">
-<svg id="svgnode" xmlns="http://www.w3.org/2000/svg" xmlns:xlink="http://www.w3.org/1999/xlink" width='<?php echo width; ?>px' height='<?php echo height; ?>px'>
-<?php
-    global $tmy;
+function do_cv(){
+    timeline_start();
     for($i = 1991; $i<=2012; $i++){
         if($i>1992 && $i<2003)continue;
-        if($i!=1991)line(get_x($i),$tmy-5,get_x($i),$tmy+5,"timeline timeline-mark");
-        if($i!=1992 && $i!=2012)text((get_x($i)+get_x($i+1))/2,$tmy+20,$i);
+        if($i!=1991)line(get_x($i),TLY-5,get_x($i),TLY+5,"timeline timeline-mark");
+        if($i!=1992 && $i!=2012)text((get_x($i)+get_x($i+1))/2,TLY+20,$i);
     }
 
     $shry = 1995.55;
     $ampl = 8;
-    line(0,$tmy,get_x($shry+1),$tmy,"timeline");
-    line(get_x(++$shry),$tmy,get_x($shry,6),$tmy-$ampl,"timeline");
-    line(get_x($shry,6),$tmy-$ampl,get_x(++$shry),$tmy+$ampl,"timeline");
-    line(get_x($shry),$tmy+$ampl,get_x($shry,6),$tmy-$ampl,"timeline");
-    line(get_x($shry,6),$tmy-$ampl,get_x(++$shry),$tmy+$ampl,"timeline");
-    line(get_x($shry),$tmy+$ampl,get_x($shry,6),$tmy-$ampl,"timeline");
-    line(get_x($shry,6),$tmy-$ampl,get_x(++$shry),$tmy+$ampl,"timeline");
-    line(get_x($shry),$tmy+$ampl,get_x($shry,6),$tmy,"timeline");
-    line(get_x($shry,6),$tmy,get_x(2012),$tmy,"timeline");
+    line(0,TLY,get_x($shry+1),TLY,"timeline");
+    line(get_x(++$shry),TLY,get_x($shry,6),TLY-$ampl,"timeline");
+    line(get_x($shry,6),TLY-$ampl,get_x(++$shry),TLY+$ampl,"timeline");
+    line(get_x($shry),TLY+$ampl,get_x($shry,6),TLY-$ampl,"timeline");
+    line(get_x($shry,6),TLY-$ampl,get_x(++$shry),TLY+$ampl,"timeline");
+    line(get_x($shry),TLY+$ampl,get_x($shry,6),TLY-$ampl,"timeline");
+    line(get_x($shry,6),TLY-$ampl,get_x(++$shry),TLY+$ampl,"timeline");
+    line(get_x($shry),TLY+$ampl,get_x($shry,6),TLY,"timeline");
+    line(get_x($shry,6),TLY,get_x(2012),TLY,"timeline");
 
-    brazo(get_x(1992),get_x(2003),$tmy-10,tr("No recuerdo mucho de esta época. Fue hace muuucho tiempo."),"timeline");
+    brazo(get_x(1992),get_x(2003),TLY-10,tr("No recuerdo mucho de esta época. Fue hace muuucho tiempo."),"timeline");
     arrow(get_x(1991,12,24),110,tr("Nací"));
     arrow(get_x(2006,9,15),50,tr("Me mudo a Málaga"));
     arrow(get_x(2009,12,24),50,tr("Mayor de edad"));
     arrow(get_x(2009,6,18),110,tr("Me paso a GNU/Linux"));
     arrow(get_now_x(),50,tr("Hoy"));
 
-    ratext(get_x(2003,7,0),$tmy+70,"HTML","tlinline html");
-    hline(get_x(2003,7,0),get_now_x(),$tmy+70,"html");
-    ratext(get_x(2003,9,0),$tmy+80,"Javascript","tlinline js");
-    hline(get_x(2003,9,0),get_now_x(),$tmy+80,"js");
+    ratext(get_x(2003,7,0),TLY+70,"HTML","tlinline html");
+    hline(get_x(2003,7,0),get_now_x(),TLY+70,"html");
+    ratext(get_x(2003,9,0),TLY+80,"Javascript","tlinline js");
+    hline(get_x(2003,9,0),get_now_x(),TLY+80,"js");
 
-    ratext(get_x(2004,9,0),$tmy+90,"PHP","tlinline php");
-    hline(get_x(2004,9,0),get_x(2008,4),$tmy+90,"php");
-    hline(get_x(2009,10,0),get_now_x(),$tmy+90,"php");
+    ratext(get_x(2004,9,0),TLY+90,"PHP","tlinline php");
+    hline(get_x(2004,9,0),get_x(2008,4),TLY+90,"php");
+    hline(get_x(2009,10,0),get_now_x(),TLY+90,"php");
 
-    ratext(get_x(2005,9,0),$tmy+100,"Flash & actionscript","tlinline flash");
-    hline(get_x(2005,9,0),get_x(2007,0,0),$tmy+100,"flash");
-    hline(get_x(2008,0,0),get_x(2008,3,0),$tmy+100,"flash");
-    hline(get_x(2010,9,0),get_x(2011),$tmy+100,"flash");
+    ratext(get_x(2005,9,0),TLY+100,"Flash & actionscript","tlinline flash");
+    hline(get_x(2005,9,0),get_x(2007,0,0),TLY+100,"flash");
+    hline(get_x(2008,0,0),get_x(2008,3,0),TLY+100,"flash");
+    hline(get_x(2010,9,0),get_x(2011),TLY+100,"flash");
 
-    ratext(get_x(2006,5,0),$tmy+110,"Visual basic, C#","tlinline vb");
-    hline(get_x(2006,5,0),get_x(2008,6),$tmy+110,"vb");
+    ratext(get_x(2006,5,0),TLY+110,"Visual basic, C#","tlinline vb");
+    hline(get_x(2006,5,0),get_x(2008,6),TLY+110,"vb");
 
-    ratext(get_x(2007,8,0),$tmy+120,"Java","tlinline java");
-    hline(get_x(2007,8,0),get_x(2009),$tmy+120,"java");
-    hline(get_x(2011,2,0),get_now_x(),$tmy+120,"java");
+    ratext(get_x(2007,8,0),TLY+120,"Java","tlinline java");
+    hline(get_x(2007,8,0),get_x(2009),TLY+120,"java");
+    hline(get_x(2011,2,0),get_now_x(),TLY+120,"java");
 
-    ratext(get_x(2009,6,18),$tmy+130,"Bash","tlinline bash");
-    hline(get_x(2009,6,18),get_now_x(),$tmy+130,"bash");
+    ratext(get_x(2009,6,18),TLY+130,"Bash","tlinline bash");
+    hline(get_x(2009,6,18),get_now_x(),TLY+130,"bash");
 
-    ratext(get_x(2009,10,0),$tmy+140,"Python","tlinline python");
-    hline(get_x(2009,10,0),get_now_x(),$tmy+140,"python");
+    ratext(get_x(2009,10,0),TLY+140,"Python","tlinline python");
+    hline(get_x(2009,10,0),get_now_x(),TLY+140,"python");
 
     //ESO
-    ratext(get_x(2003,9,10),$tmy+40,tr("ESO"),"tlinline eso");
-    hline(get_x(2003,9,10),get_x(2004,6,15),$tmy+40,"eso");
-    hline(get_x(2004,9,10),get_x(2005,6,15),$tmy+40,"eso");
-    hline(get_x(2005,9,10),get_x(2006,6,15),$tmy+40,"eso");
-    hline(get_x(2006,9,10),get_x(2007,6,15),$tmy+40,"eso");
+    ratext(get_x(2003,9,10),TLY+40,tr("ESO"),"tlinline eso");
+    hline(get_x(2003,9,10),get_x(2004,6,15),TLY+40,"eso");
+    hline(get_x(2004,9,10),get_x(2005,6,15),TLY+40,"eso");
+    hline(get_x(2005,9,10),get_x(2006,6,15),TLY+40,"eso");
+    hline(get_x(2006,9,10),get_x(2007,6,15),TLY+40,"eso");
     //Bachillerato
-    ratext(get_x(2007,9,10),$tmy+50,tr("Bachiller"),"tlinline bachiller");
-    hline(get_x(2007,9,10),get_x(2008,6,15),$tmy+50,"bachiller");
-    hline(get_x(2008,9,10),get_x(2009,6,15),$tmy+50,"bachiller");
+    ratext(get_x(2007,9,10),TLY+50,tr("Bachiller"),"tlinline bachiller");
+    hline(get_x(2007,9,10),get_x(2008,6,15),TLY+50,"bachiller");
+    hline(get_x(2008,9,10),get_x(2009,6,15),TLY+50,"bachiller");
     //Uni
-    ratext(get_x(2009,9,28),$tmy+60,tr("Universidad"),"tlinline uni");
-    hline(get_x(2009,9,28),get_x(2010,6,25),$tmy+60,"uni");
-    hline(get_x(2010,9,28),get_now_x(),$tmy+60,"uni");
+    ratext(get_x(2009,9,28),TLY+60,tr("Universidad"),"tlinline uni");
+    hline(get_x(2009,9,28),get_x(2010,6,25),TLY+60,"uni");
+    hline(get_x(2010,9,28),get_now_x(),TLY+60,"uni");
 
-?>
-</svg>
-    <script type="text/javascript">
-        var accesible_texts = <?php global $accesible_texts; echo json_encode($accesible_texts); ?>;
-    </script>
-    <script type="text/javascript" src="js/cv.js"></script>
-<?php
-    global $htexts;
-    foreach($htexts as $k=>$v){
-        echo "<div class='htext' style='position:absolute; left: {$v[0]}px; top: {$v[1]}px; width: {$v[2]}px; height: {$v[3]}px;'>{$v[4]}</div>";
-    }
-    echo '</div><h1>';
-    t("Resumen de habilidades:");
-    echo '</h1>';
-    echo '<div id="arem">';
+    timeline_end();
+    skills_start(
+        63, //Item count
+        11 //Title count
+    );
+
     title("Javascript",98);
         item("jQuery",95);
         item("Node.js",85);
@@ -299,32 +225,16 @@ function content(){
         item("Sockets",80);
         item(tr("Protocolo TCP/IP"),"30");
         item(tr("Twitter API"),"90");
-    ?>
-        <div class='item title'><div class='itemname'><?php t("Carnet de conducir"); ?></div><div class="itemdata"><?php t("Tipo B"); ?></div></div><div class='clearfix'></div>
-    <?php
-        global $skills;
-        $skills[] = array("item",tr("Carnet de conducir"),tr("Tipo B"));
+        item(tr("Carnet de conducir"),tr("Tipo B"));
     ftitle();
 
     title(tr("Idiomas"),0);
         item(tr("Español"),96);
         item(tr("Ingles"),"25");
     ftitle();
-    echo "</div>";
-    ?>
-    <div id="fotter">David Bengoa - <a href="mailto:david@bengoarocandio.com">david@bengoarocandio.com</a> - <a href="http://twitter.com/DvdBng">@DvdBng</a></div>
-    <?php
-    global $image;
-    if(!imagepng($image,"cvimage.png")){
-        echo "<h1>Error guardando la imagen</h1>";
-    }
-    generate_pdf();
+
+    skills_end();
 }
 
-function css(){
-    ?><link href="<?php echo d(); ?>css/cv.css" rel="stylesheet" /><?php
-}
-
-include_once "{$deph}base.php";
 
 ?>

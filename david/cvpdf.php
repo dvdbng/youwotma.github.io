@@ -1,8 +1,51 @@
+<?php
+include_once "cv.php";
+
 define('FPDF_FONTPATH','./font/');
+define('RATIO',0.145);
 
 require('fpdf.php');
 
-function pdfScale($pdf,$x,$y,$pc){
+class ColFPDF extends FPDF{
+    public function ColumnPos(){
+        $this->SetXY($this->ColumnGetX(),$this->ColumnGetY());
+    }
+    public function ColumnGetX(){return 20+$this->col_pos*$this->column_width;}
+    public function ColumnGetY(){return $this->pos;}
+    public function ColumnPutHeight($h){
+        $this->pos += $h;
+        if($this->pos >= $this->column_end){
+            $this->pos = $this->column_start;
+            $this->col_pos++;
+        }
+        $this->ColumnPos();
+    }
+    public function ColumnInit($height,$start_y,$column_width){
+        $this->pos = $start_y;
+        $this->column_start = $start_y;
+        $this->column_end = $start_y + $height;
+        $this->col_pos = 0;
+        $this->column_width = $column_width;
+        $this->ColumnPos();
+    }
+}
+
+$pdf=new ColFPDF("P","mm","A4");
+$pdf->AddPage();
+$pdf->SetAutoPageBreak(false);
+
+$pdf->AddFont('Ubuntu','','ubuntu.php');
+$pdf->AddFont('Ubuntu','I','ubuntui.php');
+$pdf->AddFont('Droid','BI','droidbi.php');
+
+$pdf->SetFont('Droid','BI',16);
+$pdf->SetX(10);
+$pdf->Cell(40,10,utf8_decode(tr('David Bengoa - Currículum Vítae')));
+
+function scale($pc){
+    global $pdf;
+    $x = $pdf->ColumnGetX()+55;
+    $y = $pdf->ColumnGetY()-0.5;
     if(is_numeric($pc)){
         if($pc == 0)return;
         $lw = 0.1;
@@ -17,7 +60,7 @@ function pdfScale($pdf,$x,$y,$pc){
     }
 }
 
-function setPdfColorByClass($pdf,$class){
+function setPdfColorByClass($class){
     $classes = explode(" ",$class);
     $color = false;
     foreach($classes as $k=>$v){
@@ -29,79 +72,76 @@ function setPdfColorByClass($pdf,$class){
     if(!$color){
         $color = array(0x33,0x33,0x33);
     }
+    global $pdf;
     $pdf->SetTextColor($color[0],$color[1],$color[2]);
 }
 
-function generate_pdf(){
-    global $accesible_texts, $htexts, $skills, $lines;
-    $ratio = 0.145;
-    $pdf=new FPDF("P","mm","A4");
-    $pdf->AddPage();
-    $pdf->SetAutoPageBreak(false);
+function line($x1,$y1,$x2,$y2,$c){
+    global $pdf;
+    $color = getColorByClass($c);
+    $pdf->SetDrawColor($color[0],$color[1],$color[2]);
+    $pdf->Line(10+$x1*RATIO,30+$y1*RATIO,10+$x2*RATIO,30+$y2*RATIO);
+}
 
-    $pdf->AddFont('Ubuntu','','ubuntu.php');
-    $pdf->AddFont('Ubuntu','I','ubuntui.php');
-    $pdf->AddFont('Droid','BI','droidbi.php');
+function text($x,$y,$t){
+    global $pdf;
+    setPdfColorByClass("");
+    $pdf->SetFont('Ubuntu','',7.5);
+    $pdf->SetXY(10+$x*RATIO -15 +0.5,30+$y*RATIO-1);
+    $pdf->Cell(30,0,utf8_decode($t),0,0,"C");
+}
 
-    $pdf->SetFont('Droid','BI',16);
-    $pdf->SetX(10);
-    $pdf->Cell(40,10,utf8_decode(tr('David Bengoa - Currículum Vítae')));
-    //$pdf->Image("cvimage.png",10,30,width*$ratio,height*$ratio);
-    foreach($lines as $k=>$line){
-        $color = $line[4];
-        $pdf->SetDrawColor($color[0],$color[1],$color[2]);
-        $pdf->Line(10+$line[0]*$ratio,30+$line[1]*$ratio,10+$line[2]*$ratio,30+$line[3]*$ratio);
-    }
+$accesible_texts = array();
+function ratext($x,$y,$t,$c){
+    global $pdf;
+    $y += 3;
+    $x -= 5;
+    setPdfColorByClass($c);
+    $pdf->SetFont('ubuntu','',6);
+    $pdf->SetXY(10+$x*RATIO -30 +0.5,30+$y*RATIO-0.3);
+    $pdf->Cell(30,0,utf8_decode($t),0,0,"R");
+}
 
-    $afterimg = $pdf->GetX();
+function htext($x,$y,$w,$h,$t){
+    global $pdf;
+    setPdfColorByClass("");
+    $pdf->SetFont('Ubuntu','I',6);
+    $pdf->SetXY(10+$x*RATIO,30+$y*RATIO-1.5);
+    $pdf->MultiCell($w*RATIO,2,utf8_decode($t),0,"C");
+}
 
-    foreach($accesible_texts as $k=>$v){
-        setPdfColorByClass($pdf,$v[4]);
-        if($v["0"] == "middle"){
-            $pdf->SetFont('Ubuntu','',7.5);
-            $pdf->SetXY(10+$v[1]*$ratio -15 +0.5,30+$v[2]*$ratio-1);
-            $pdf->Cell(30,0,utf8_decode($v[3]),0,0,"C");
-        }else{
-            $pdf->SetFont('ubuntu','',6);
-            $pdf->SetXY(10+$v[1]*$ratio -30 +0.5,30+$v[2]*$ratio-0.3);
-            $pdf->Cell(30,0,utf8_decode($v[3]),0,0,"R");
-        }
-    }
-    foreach($htexts as $k=>$v){
-        setPdfColorByClass($pdf,"");
-        $pdf->SetFont('Ubuntu','I',6);
-        $pdf->SetXY(10+$v[0]*$ratio,30+$v[1]*$ratio-1.5);
-        $pdf->MultiCell($v[2]*$ratio,2,utf8_decode($v[4]),0,"C");
-    }
+function item($name,$pc,$f='Ubuntu',$v='',$z=9){
+    global $pdf;
+    $pdf->SetFont($f,$v,$z);
+    $pdf->Cell(0,0,utf8_decode($name));
+    scale($pc);
+    $pdf->ColumnPutHeight(4);
+}
+function title($name,$pc){
+    item($name,$pc,'Droid','BI',11);
+}
+function ftitle(){
+    global $pdf;
+    $pdf->ColumnPutHeight(1);
+}
+function timeline_start(){
+
+}
+function timeline_end(){
+
+}
+
+function skills_start($items,$titles){
+    global $pdf;
     $pdf->SetXY(10,75);
     $pdf->SetFont('Droid','BI',16);
     $pdf->Cell(40,10,utf8_decode(tr('Resumen de habilidades')));
-    $pos = 90;
-    $total_height = 0;
-    foreach($skills as $k=>$v){
-        $total_height += $v[0]=="title"?5:4;
-    }
-    $column_height = $total_height/2;
-    $column_end = 90 + $column_height;
-    $c = 0; //ActualColumn
-    $cw = 90; //ColumnWidth
-    foreach($skills as $k=>$v){
-        if($v[0] == "title"){
-            $pos += 1;
-            $pdf->SetFont('Droid','BI',11);
-            $pdf->SetXY(20 + $c*$cw,$pos);
-        }else{
-            $pdf->SetFont('Ubuntu','',9);
-            $pdf->SetXY(25 + $c*$cw,$pos);
-        }
-        $pdf->Cell(0,0,utf8_decode($v[1]));
-        pdfScale($pdf,80 + $c*$cw,$pos,$v[2]);
-        $pos += 4;
-        if($pos >= $column_end){
-            $c++;
-            $pos = 90;
-        }
-    }
+    $pdf->ColumnInit(($items*4 + $titles*5)/2,90,90);
+}
+
+function skills_end(){
+    global $pdf;
+    $pdf->SetFont('Ubuntu','',9);
     $pdf->SetDrawColor(0x33,0x33,0x33);
     $pdf->Line(10,297-30,210-20,297-30);
     $pdf->SetXY(15,297-26);
@@ -113,6 +153,19 @@ function generate_pdf(){
             " http://david.bengoarocandio.com/".tr("es")."/cv"
         )
     );
+}
+
+function generate_pdf(){
+    foreach($skills as $k=>$v){
+        if($v[0] == "title"){
+        }else{
+        }
+    }
 
     $pdf->Output("david-bengoa-cv-".tr("es").".pdf","F");
 }
+do_cv();
+//$pdf->Output("david-bengoa-cv-".tr("es").".pdf","F");
+$pdf->Output();
+
+?>

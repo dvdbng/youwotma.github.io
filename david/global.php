@@ -75,5 +75,21 @@ function tr($x){
     return $x;
 
 }
+$indent_lvl = 0;
+function pprt($str,$ia=0,$id=0){
+    global $indent_lvl;
+    $indent_lvl += $ia;
+    echo str_repeat(" ",$indent_lvl*4);
+    echo $str;
+    echo "\n";
+    $indent_lvl += $id;
+}
+function pprti($str){pprt($str,0,1);}
+function pprtu($str){pprt($str,-1,0);}
+function indent($n){
+    global $indent_lvl;
+    $indent_lvl = $n;
+}
+
 include_once("functions.php");
 ?>
