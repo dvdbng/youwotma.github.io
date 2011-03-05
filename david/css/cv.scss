@@ -1,6 +1,26 @@
 .timeline,line{
     stroke: #333;
 }
+#maintitle{
+    float: left;
+}
+#nav{
+    float: right;
+    margin: 15px;
+    a{
+        color: #666;
+        font-variant: small-caps;
+        font-size: 18px;
+        margin-left: 20px;
+        padding-left:20px;
+        border-left: 1px dotted #333;
+        display: block;
+        float: right;
+        &.last{
+            border-left-width: 0px;
+        }
+    }
+}
 
 .htext{
     text-align: center;

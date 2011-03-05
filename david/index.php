@@ -10,12 +10,12 @@ function content(){
     <div id="wrapper">
         <div id="twitter">
             <div id="twitter-header">
-                <h2 id="twitter-header-text">Ultimos tweets</h2>
+            <h2 id="twitter-header-text"><?php t("Ultimos tweets"); ?></h2>
             </div>
         </div>
         <div id="blog">
             <div id="blog-header">
-                <h2 id="blog-header-text">Ultimas entradas de mi blog</h2>
+                <h2 id="blog-header-text"><?php t("Ultimas entradas de mi blog"); ?></h2>
             </div>
         </div>
         <script type="text/javascript">

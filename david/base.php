@@ -14,3 +14,8 @@
         <?php emerge("content"); ?>
     </body>
 </html>
+<?php
+    foreach ($strs as $k=>$v){
+        echo "\"$k\"=>\"$v\",\n";
+    }
+?>
