@@ -154,7 +154,7 @@ body {
 }
 
 /* line 85, cv.scss */
-div.item {
+.item.title {
   margin: 4px 10px 0px 25px;
 }
 
@@ -184,4 +184,63 @@ div.item {
 #fotter a {
   color: #999;
   border-bottom: 1px dotted #ccc;
+}
+
+/* line 112, cv.scss */
+.accessibletxt {
+  position: absolute;
+  width: 300px;
+  color: #333;
+}
+/* line 115, cv.scss */
+.accessibletxt.middle {
+  text-align: center;
+}
+/* line 118, cv.scss */
+.accessibletxt.end {
+  text-align: right;
+}
+/* line 122, cv.scss */
+.accessibletxt.eso {
+  color: #aaa;
+}
+/* line 125, cv.scss */
+.accessibletxt.bachiller {
+  color: #666;
+}
+/* line 128, cv.scss */
+.accessibletxt.uni {
+  color: #222;
+}
+/* line 131, cv.scss */
+.accessibletxt.html {
+  color: #23819c;
+}
+/* line 132, cv.scss */
+.accessibletxt.js {
+  color: #23819c;
+}
+/* line 133, cv.scss */
+.accessibletxt.php {
+  color: #23819c;
+}
+/* line 134, cv.scss */
+.accessibletxt.flash {
+  color: #23819c;
+}
+/* line 135, cv.scss */
+.accessibletxt.vb {
+  color: #23819c;
+}
+/* line 136, cv.scss */
+.accessibletxt.java {
+  color: #23819c;
+}
+/* line 137, cv.scss */
+.accessibletxt.bash {
+  color: #23819c;
+}
+/* line 138, cv.scss */
+.accessibletxt.python {
+  color: #23819c;
 }
