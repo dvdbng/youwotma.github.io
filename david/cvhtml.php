@@ -1,12 +1,32 @@
 <?php
 include_once "cv.php";
+define("ITEM_HEIGHT",20);
+define("TITLE_HEIGHT",27);
+
 
 function line($x1,$y1,$x2,$y2,$c){
     pprt("<line x1='$x1' y1='$y1' x2='$x2' y2='$y2' class='$c'/>");
 }
 
+$column_height = 0;
+$column_pos = 0;
+$column_n = 0;
+function column_height($h){
+    global $column_pos, $column_height, $column_n;
+    $column_pos += $h;
+    if($column_pos >= $column_height){
+        $column_pos = 0;
+        $column_n++;
+        pprtu("</div>");
+        pprti("<div class='columna columna-$column_n'>");
+    }
+}
+
+$accesible_texts = array();
 function text($x,$y,$t){
     pprt("<text x='$x' y='$y' text-anchor='middle'>$t</text>");
+    global $accesible_texts;
+    $accesible_texts[] = array("middle",$x,$y,$t,"");
 }
 
 $accesible_texts = array();
@@ -14,6 +34,7 @@ function ratext($x,$y,$t,$c){
     $y += 3;
     $x -= 5;
     pprt("<text x='$x' y='$y' text-anchor='end' class='$c'>$t</text>");
+    global $accesible_texts;
     $accesible_texts[] = array("end",$x,$y,$t,$c);
 }
 
@@ -34,6 +55,7 @@ function item($name,$pc){
     }
     pprtu("</div>");
     pprt("<div class='clearfix'></div>");
+    column_height(ITEM_HEIGHT);
 }
 function title($name,$pc){
     $pc /= 2;
@@ -42,6 +64,7 @@ function title($name,$pc){
     if($pc != 0) pprt('<div class="metter"><div class="metter-inner" style="width: '.$pc.'px;"></div></div>');
     pprtu("</div>");
     pprt("<div class='clearfix'></div>");
+    column_height(TITLE_HEIGHT);
 }
 
 function ftitle(){}
@@ -66,13 +89,20 @@ function timeline_end(){
         <script type="text/javascript" src="js/cv.js"></script>
 <?php
 }
-function skills_start(){?>
+function skills_start($itemcount,$titlecount){?>
         <h1><?php t("Resumen de habilidades:"); ?></h1>
         <div id="arem">
 <?php
+    global $column_height;
+    $column_height = ($itemcount*ITEM_HEIGHT + $titlecount*TITLE_HEIGHT)/3;
+    pprti("<div class='columna columna-0'>");
+
 }
-function skills_end(){?>
+function skills_end(){
+    pprtu("</div>");
+?>
         </div>
+        <div class="clearfix"></div>
         <div id="fotter">David Bengoa - <a href="mailto:david@bengoarocandio.com">david@bengoarocandio.com</a> - <a href="http://twitter.com/DvdBng">@DvdBng</a></div>
 <?php
 }
@@ -91,7 +121,7 @@ function content(){ ?>
 
 function css(){
     ?>
-        <link href="<?php echo d(); ?>css/cv.css" rel="stylesheet" />
+        <link href="<?php statico("css/cv.css"); ?>" rel="stylesheet" />
 <?php
 }
 

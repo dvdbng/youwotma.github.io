@@ -1,16 +1,16 @@
         <div id="header">
             <div id="header-nav">
                 <a href="http://hoyga.com" class="last"><?php t("Blog"); ?></a>
-                <a href="<?php echo d(); ?>cv"><?php t("Currículum vítae");?></a>
-                <a href="../en"><?php t("English"); ?></a>
+                <a href="cv"><?php t("Currículum vítae");?></a>
+                <a href="../<?php t("en"); ?>"><?php t("English"); ?></a>
             </div>
             <h1 id="header-mask">David Bengoa</h1>
             <div id="banner_4" class="header-banner">
-                <img src="<?php echo d(); ?>img/twitter.png" alt="twitter" class="banner-image"/>
+                <img src="<?php statico("img/twitter.png"); ?>" alt="twitter" class="banner-image"/>
                 <div class="textcontent"><h2><?php t("Tal vez quieras leer <span class='subpart'>lo que escribo</span> en <a href='http://twitter.com/DvdBng'>twitter</a>"); ?></h2></div>
             </div>
             <div id="banner_7" style="display:none" class="header-banner">
-                <img src="<?php echo d(); ?>img/gnu.png" alt="GNU" class="banner-image"/>
+                <img src="<?php statico("img/gnu.png"); ?>" alt="GNU" class="banner-image"/>
                 <div class="textcontent">
                     <h2><?php t("Hago y uso software libre"); ?></h2>
                     <p>
@@ -71,18 +71,18 @@
                 <div class="textcontent"><h2><?php t("Sé hacer muchas cosas.<br/><span class='subpart'><a href='cv'>Mira mi currículum</a></span>"); ?></h2></div>
             </div>
             <div id="banner_3" style="display:none" class="header-banner">
-                <img src="<?php echo d(); ?>img/terminal.png" alt="terminal" class="banner-image"/>
+                <img src="<?php statico("img/terminal.png"); ?>" alt="terminal" class="banner-image"/>
                 <div class="textcontent"><h2><?php t("Algunos días, <span class='subpart'>paso mas tiempo</span> en una shell de Unix <span class='subpart'>que durmiendo</span>"); ?></h2></div>
             </div>
             <div id="banner_8" style="display:none" class="header-banner">
-                <img src="<?php echo d(); ?>img/feed.png" alt="RSS" class="banner-image"/>
+                <img src="<?php statico("img/feed.png"); ?>" alt="RSS" class="banner-image"/>
                 <div class="textcontent">
                     <h2><?php t("Tenía un blog"); ?></h2>
                     <p><?php t("Espera, <a href='http://hoyga.com'>todavia lo tengo</a>, solo que no encuentro tiempo para escribir en el."); ?></p>
                 </div>
             </div>
             <div id="banner_10" style="display:none" class="header-banner">
-                <img class="banner-image" src="<?php echo d(); ?>img/pi.gif" alt="PI"/>
+                <img class="banner-image" src="<?php statico("img/pi.gif"); ?>" alt="PI"/>
                 <div class="textcontent">
                     <h2><?php t("Me encantan las matemáticas"); ?></h2>
                     <p><?php t("Solo algunos días, no soy tan raro."); ?></p>
@@ -93,8 +93,8 @@
                 <div class="textcontent"><h2><?php t("Hago listas para todo"); ?></h2></div>
             </div>
             <div id="banner_2" style="display:none" class="header-banner">
-                <img src="<?php echo d(); ?>img/clef.png" alt="Bass clef" class="banner-image"/>
+                <img src="<?php statico("img/clef.png"); ?>" alt="Bass clef" class="banner-image"/>
                 <div class="textcontent"><h2><?php t("Amo la música"); ?></h2><p><?php t("Hago scrobbing en <a href='http://www.last.fm/user/YouWoTMA'>last.fm</a> de las canciones que escucho en <a href='http://banshee.fm/'>Banshee</a>");?></div>
             </div>
         </div>
-        <script type="text/javascript" src="<?php echo d(); ?>js/global.js"></script>
+        <script type="text/javascript" src="<?php statico("js/global.js"); ?>"></script>

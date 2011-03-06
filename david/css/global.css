@@ -401,3 +401,105 @@ a {
   color: #666;
   line-height: 1.2em;
 }
+
+/* line 289, global.scss */
+#tweets {
+  margin-bottom: 10px;
+  border-bottom: 1px solid #ccc;
+  padding-bottom: 10px;
+}
+
+/* line 295, global.scss */
+#otherprofiles {
+  text-transform: uppercase;
+  padding: 0 0 0 10px;
+  font-weight: bold;
+  line-height: 1.3em;
+}
+/* line 300, global.scss */
+#otherprofiles .mail {
+  color: #FFC448;
+}
+/* line 301, global.scss */
+#otherprofiles .last {
+  color: #D71102;
+}
+/* line 302, global.scss */
+#otherprofiles .face {
+  color: #3B5998;
+}
+/* line 303, global.scss */
+#otherprofiles .tuen {
+  color: #96D4F3;
+}
+/* line 304, global.scss */
+#otherprofiles .twit {
+  color: #53D4FF;
+}
+/* line 305, global.scss */
+#otherprofiles .blog {
+  color: #ADD064;
+}
+/* line 306, global.scss */
+#otherprofiles .redd {
+  color: #FF5719;
+}
+/* line 307, global.scss */
+#otherprofiles .dias {
+  color: #2B2B2B;
+}
+/* line 308, global.scss */
+#otherprofiles:hover {
+  color: #999;
+}
+/* line 317, global.scss */
+#otherprofiles:hover .mail,
+#otherprofiles:hover .last,
+#otherprofiles:hover .face,
+#otherprofiles:hover .tuen,
+#otherprofiles:hover .twit,
+#otherprofiles:hover .blog,
+#otherprofiles:hover .redd,
+#otherprofiles:hover .dias {
+  color: #ccc;
+}
+/* line 321, global.scss */
+#otherprofiles .mail:hover {
+  color: #fff;
+  background-color: #FFC448;
+}
+/* line 322, global.scss */
+#otherprofiles .last:hover {
+  color: #fff;
+  background-color: #D71102;
+}
+/* line 323, global.scss */
+#otherprofiles .face:hover {
+  color: #fff;
+  background-color: #3B5998;
+}
+/* line 324, global.scss */
+#otherprofiles .tuen:hover {
+  color: #fff;
+  background-color: #96D4F3;
+}
+/* line 325, global.scss */
+#otherprofiles .twit:hover {
+  color: #fff;
+  background-color: #53D4FF;
+}
+/* line 326, global.scss */
+#otherprofiles .blog:hover {
+  color: #fff;
+  background-color: #ADD064;
+}
+/* line 327, global.scss */
+#otherprofiles .redd:hover {
+  color: #fff;
+  background-color: #FF5719;
+}
+/* line 328, global.scss */
+#otherprofiles .dias:hover {
+  color: #fff;
+  background-color: #2B2B2B;
+}

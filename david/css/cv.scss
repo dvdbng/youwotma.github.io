@@ -107,12 +107,7 @@ body{
 }
 
 #arem{
-    -moz-column-width: 350px;
-    -moz-column-gap: 10px;
-    -webkit-column-width: 350px;
-    -webkit-column-gap: 10px;
-    column-width: 350px;
-    column-gap: 10px;
+    margin: 0 auto;
 }
 #timeline{
     position: relative;
@@ -126,6 +121,14 @@ body{
     a{
         color: #999;
         border-bottom: 1px dotted #ccc;
+    }
+}
+
+.columna{
+    width: 330px;
+    float:left;
+    margin-left: 20px;
+    &.columna-1,&.columna-2{
     }
 }
 

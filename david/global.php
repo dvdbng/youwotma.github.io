@@ -5,7 +5,7 @@ $lang = array(
     "David Bengoa - Currículum Vítae"=>"David Bengoa - Curriculum Vitae",
     "English"=>"Español",
     "Tal vez quieras leer <span class='subpart'>lo que escribo</span> en <a href='http://twitter.com/DvdBng'>twitter</a>"=>"You might want to read <span class='subpart'>my tweets</span> on <a href='http://twitter.com/DvdBng'>twitter</a>",
-    "Hago y uso software libre"=>"I make a use free software",
+    "Hago y uso software libre"=>"I make and use free software",
     "Proyectos/programas que uso habitualmente:"=>"Projects/programs I often use:",
     "Sé hacer muchas cosas.<br/><span class='subpart'><a href='cv'>Mira mi currículum</a></span>"=>"I can do many things.<br/><span class='subpart'><a href='cv'>Take a look at my CV</a></span>",
     "Algunos días, <span class='subpart'>paso mas tiempo</span> en una shell de Unix <span class='subpart'>que durmiendo</span>"=>"Some days, <span class='subpart'>I spend more time</span> in a Unix shell <span class='subpart'>than sleeping</span>",
@@ -57,6 +57,7 @@ $lang = array(
     "Descarga mi CV en PDF"=>"Download my CV in PDF",
     "PDF genereado el"=>"PDF generated on",
     "Este currículum se actualiza frecuentemente, puedes ver la versión online actualizada en"=>"This CV is updated frequently, you may view the updated online version at",
+    "Sigue en contacto"=>"Keep in touch",
 );
 
 
@@ -89,6 +90,13 @@ function pprtu($str){pprt($str,-1,0);}
 function indent($n){
     global $indent_lvl;
     $indent_lvl = $n;
+}
+function statico($path){
+    if(isset($_GET["comp"])){
+        echo "../$path";
+    }else{
+        echo $path;
+    }
 }
 
 include_once("functions.php");

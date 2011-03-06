@@ -186,87 +186,89 @@ body {
 
 /* line 109, cv.scss */
 #arem {
-  -moz-column-width: 350px;
-  -moz-column-gap: 10px;
-  -webkit-column-width: 350px;
-  -webkit-column-gap: 10px;
-  column-width: 350px;
-  column-gap: 10px;
+  margin: 0 auto;
 }
 
-/* line 117, cv.scss */
+/* line 112, cv.scss */
 #timeline {
   position: relative;
 }
 
-/* line 121, cv.scss */
+/* line 116, cv.scss */
 #fotter {
   color: #999;
   border-top: 1px solid #666;
   margin: 1em 2em 3em 2em;
   padding: .5em 0 0 1em;
 }
-/* line 126, cv.scss */
+/* line 121, cv.scss */
 #fotter a {
   color: #999;
   border-bottom: 1px dotted #ccc;
 }
 
-/* line 132, cv.scss */
+/* line 127, cv.scss */
+.columna {
+  width: 330px;
+  float: left;
+  margin-left: 20px;
+}
+
+/* line 135, cv.scss */
 .accessibletxt {
   position: absolute;
   width: 300px;
   color: #333;
 }
-/* line 135, cv.scss */
+/* line 138, cv.scss */
 .accessibletxt.middle {
   text-align: center;
 }
-/* line 138, cv.scss */
+/* line 141, cv.scss */
 .accessibletxt.end {
   text-align: right;
 }
-/* line 142, cv.scss */
+/* line 145, cv.scss */
 .accessibletxt.eso {
   color: #aaa;
 }
-/* line 145, cv.scss */
+/* line 148, cv.scss */
 .accessibletxt.bachiller {
   color: #666;
 }
-/* line 148, cv.scss */
+/* line 151, cv.scss */
 .accessibletxt.uni {
   color: #222;
 }
-/* line 151, cv.scss */
+/* line 154, cv.scss */
 .accessibletxt.html {
   color: #23819c;
 }
-/* line 152, cv.scss */
+/* line 155, cv.scss */
 .accessibletxt.js {
   color: #23819c;
 }
-/* line 153, cv.scss */
+/* line 156, cv.scss */
 .accessibletxt.php {
   color: #23819c;
 }
-/* line 154, cv.scss */
+/* line 157, cv.scss */
 .accessibletxt.flash {
   color: #23819c;
 }
-/* line 155, cv.scss */
+/* line 158, cv.scss */
 .accessibletxt.vb {
   color: #23819c;
 }
-/* line 156, cv.scss */
+/* line 159, cv.scss */
 .accessibletxt.java {
   color: #23819c;
 }
-/* line 157, cv.scss */
+/* line 160, cv.scss */
 .accessibletxt.bash {
   color: #23819c;
 }
-/* line 158, cv.scss */
+/* line 161, cv.scss */
 .accessibletxt.python {
   color: #23819c;
 }

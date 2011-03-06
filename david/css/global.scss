@@ -285,3 +285,46 @@ $headers_pull: 10px;
     color: #666;
     line-height: 1.2em;
 }
+
+#tweets{
+    margin-bottom: 10px;
+    border-bottom: 1px solid #ccc;
+    padding-bottom:10px;
+}
+
+#otherprofiles{
+    text-transform: uppercase;
+    padding: 0 0 0 10px;
+    font-weight: bold;
+    line-height: 1.3em;
+    .mail{color:#FFC448;}
+    .last{color:#D71102;}
+    .face{color:#3B5998;}
+    .tuen{color:#96D4F3;}
+    .twit{color:#53D4FF;}
+    .blog{color:#ADD064;}
+    .redd{color:#FF5719;}
+    .dias{color:#2B2B2B;}
+    &:hover{
+        color: #999;
+        .mail,
+        .last,
+        .face,
+        .tuen,
+        .twit,
+        .blog,
+        .redd,
+        .dias{
+            color: #ccc;
+        }
+    }
+    .mail:hover{color:#fff;background-color:#FFC448;}
+    .last:hover{color:#fff;background-color:#D71102;}
+    .face:hover{color:#fff;background-color:#3B5998;}
+    .tuen:hover{color:#fff;background-color:#96D4F3;}
+    .twit:hover{color:#fff;background-color:#53D4FF;}
+    .blog:hover{color:#fff;background-color:#ADD064;}
+    .redd:hover{color:#fff;background-color:#FF5719;}
+    .dias:hover{color:#fff;background-color:#2B2B2B;}
+}
+

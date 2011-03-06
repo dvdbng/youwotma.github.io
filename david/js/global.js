@@ -93,7 +93,7 @@ var LINK_RX = /http:\/\/\S+/,
     USER_RX = /@[a-zA-Z0-9_]+/,
     HASH_RX = /#\S+/;
 function render_tweets(tweets){
-    var target = document.getElementById("twitter");
+    var target = document.getElementById("tweets");
     for(var i=0,l=tweets.length; i<l; ++i){
         var txt = tweets[i]["text"].split(/\s+/);
         var elm = document.createElement("div");

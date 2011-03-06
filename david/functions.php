@@ -28,7 +28,6 @@
     }
     $page = emerge("page");
     function d(){
-        global $deph;
-        echo $deph;
+        echo "<h1>D LLAMADO</h1>";
     }
 ?>
