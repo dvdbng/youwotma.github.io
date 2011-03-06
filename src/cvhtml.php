@@ -85,9 +85,9 @@ function timeline_end(){
         </div>
         <script type="text/javascript">
             var accesible_texts = <?php global $accesible_texts; echo json_encode($accesible_texts); ?>;
-            var svg_image = "<?php estatico("img/cvimage.png"); ?>";
+            var svg_image = "<?php statico("img/cvimage.png"); ?>";
         </script>
-        <script type="text/javascript" src="js/cv.js"></script>
+        <script type="text/javascript" src="<?php statico("js/cv.js"); ?>"></script>
 <?php
 }
 function skills_start($itemcount,$titlecount){?>

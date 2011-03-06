@@ -31,8 +31,9 @@ function content(){
                 </div>
             </div>
             <script type="text/javascript">
-                <?php include "prefetch.php"; ?>;
+                var twt_logo_img = "<?php statico("img/pajaro.png"); ?>";
             </script>
+            <script type="text/javascript" src="<?php statico("prefetch.php"); ?>"></script>
         </div>
 <?php
 }

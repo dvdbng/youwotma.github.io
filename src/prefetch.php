@@ -1,15 +1,12 @@
 <?php
 $urls = array(
-    "http://twitter.com/status/user_timeline/DvdBng.json?count=10&callback=render_tweets",
+    "http://api.twitter.com/1/statuses/user_timeline.json?include_rts=1&screen_name=dvdbng&callback=render_tweets",
     "http://www.hoyga.com/?feed=json&callback=render_posts"
 );
 
 $ttl = 60*5;
-$file = "cache.js";
-echo file_get_contents($file);
+$file = "/tmp/brweb-cache.js";
 
-
-/*
 if(!file_exists($file) || time()-filemtime($file)>$ttl){
     $data = "";
     foreach($urls as $k=>$url){

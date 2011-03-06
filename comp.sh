@@ -2,25 +2,34 @@
 set -e
 
 function static(){
-    cp "src/$1" "prod/$1"
+    cp "src/$1" "prod/david/$1"
 }
 
 function getdin(){
-    php "src/$2" "--lang=$1" > prod/$1/$3
+    echo "Ejecutando src/$2 ($1), guardandolo en prod/david/$1/$3"
+    php "$2" "--lang=$1" > ../prod/david/$1/$3
 }
 
-rm -r prod
-mkdir -p prod/david/es prod/david/en prod/david/css prod/david/img prod/david/css/img prod/david/js
+[ -d prod ] && rm -r prod
+
+for dir in prod/david/es prod/david/en prod/david/css prod/david/img prod/david/css/img prod/david/js
+do
+    mkdir -p $dir
+done
 
 # Archivos de redirección, redireccionan el navegador como sea necesario
 # teniendo en cuenta el idioma
 cp src/redirect.php prod/index.php
 cp src/redirect.php prod/david/index.php
 
+#.htaccess
+cp src/.htaccess prod
+
 #archivos estaticos
+static prefetch.php
+static tuenti.html
 static js/cv.js
 static js/global.js
-static tuenti.html
 static img/Laughing.png
 static img/clef.png
 static img/feed.png
@@ -47,7 +56,10 @@ static css/img/pattern14.jpg
 static css/img/pattern2-0.jpg
 static css/img/pattern5-0.jpg
 
-#archivos dinamicos
+# archivos dinamicos
+# hay que moverse antes al directorio src, para que funcionen algunos includes
+cd src
+
 getdin es index.php index.html
 getdin en index.php index.html
 
@@ -56,4 +68,6 @@ getdin en cvhtml.php cv.html
 getdin es cvpdf.php david-bengoa-cv-es.pdf
 getdin en cvpdf.php david-bengoa-cv-en.pdf
 
-php "src/cvimg.php" "--lang=es" > prod/img/cvimage.png
+php "cvimg.php" "--lang=es" > ../prod/david/img/cvimage.png
+
+cd ..

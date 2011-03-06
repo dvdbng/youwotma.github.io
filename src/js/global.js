@@ -99,7 +99,7 @@ function render_tweets(tweets){
         var elm = document.createElement("div");
         elm.setAttribute("class","tweet");
         var img  = document.createElement("img");
-        img.setAttribute("src","img/pajaro.png");
+        img.setAttribute("src",twt_logo_img);
         img.setAttribute("class","tweetbird");
         elm.appendChild(img);
         for(var k=0, m=txt.length; k<m; ++k){
