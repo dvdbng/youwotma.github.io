@@ -74,7 +74,7 @@ function animate(){
         scheduleAnimationFrame();
     }
 }
-window.addEventListener("MozBeforePaint", animate, false);
+("addEventListener" in window) && window.addEventListener("MozBeforePaint", animate, false);
 
 function change_banner(){
     if(banners.length === 0)return;
