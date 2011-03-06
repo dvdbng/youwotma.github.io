@@ -1,14 +1,8 @@
-function haveSVG(){
-    return document.implementation &&
-           document.implementation.hasFeature &&
-           document.implementation.hasFeature("http://www.w3.org/TR/SVG11/feature#BasicStructure", "1.1") &&
-           !window.opera; // Something goes very wrong with this svg in opera
-}
 
 
 function init(){
-    if(!haveSVG()){
-        var svg = document.getElementById("svgnode");
+    var svg = document.getElementById("svgnode");
+    if(!(SVGSVGElement && svg instanceof SVGSVGElement)){
         var container = svg.parentNode;
         container.removeChild(svg);
         var img = document.createElement("img");
