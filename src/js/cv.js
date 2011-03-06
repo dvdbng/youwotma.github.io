@@ -12,7 +12,7 @@ function init(){
         var container = svg.parentNode;
         container.removeChild(svg);
         var img = document.createElement("img");
-        img.setAttribute("src","cvimage.png");
+        img.setAttribute("src",svg_image);
         container.appendChild(img);
         for(var i = 0, l = accesible_texts.length; i<l; ++i){
             var text = accesible_texts[i];

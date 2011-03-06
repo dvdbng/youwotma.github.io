@@ -34,11 +34,8 @@ function timeline_end(){}
 function skills_start(){}
 function skills_end(){
     global $image;
-    if(imagepng($image,"cvimage.png")){
-        echo "Guardado OK";
-    }else{
-        echo "Guardado FAIL";
-    }
+    header('Content-type: image/png');
+    imagepng($image);
 }
 do_cv();
 ?>

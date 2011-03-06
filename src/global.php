@@ -61,6 +61,13 @@ $lang = array(
 );
 
 
+function is_cli(){
+    return isset($_SERVER['argc']) && $_SERVER['argc']>=1;
+}
+function has_arg($arg){
+    return is_cli() && in_array($arg,$_SERVER['argv']);
+}
+
 $strs = array();
 function t($x){
     echo tr($x);
@@ -70,8 +77,9 @@ function tr($x){
     if(!isset($lang[$x])){
         $strs[$x] = $x;
     }else{
-        if($_GET["lang"]=="en")
+        if($_GET["lang"]=="en" || has_arg("--lang=en")){
             return $lang[$x];
+        }
     }
     return $x;
 
@@ -92,7 +100,7 @@ function indent($n){
     $indent_lvl = $n;
 }
 function statico($path){
-    if(isset($_GET["comp"])){
+    if(isset($_GET["comp"]) || is_cli()){
         echo "../$path";
     }else{
         echo $path;
