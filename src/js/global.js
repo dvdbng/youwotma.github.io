@@ -1,4 +1,11 @@
-var banners = document.getElementsByClassName("header-banner"),actual_banner=0,tid=null;
+//var banners = document.getElementsByClassName("header-banner");
+//Brrr! no getElementsByClassName in IE8 :(
+var banners = [4,7,9,3,8,10,5,2];
+for(var i=0,l=banners.length; i<l; ++i){
+    banners[i] = document.getElementById("banner_" + banners[i]);
+}
+
+var actual_banner=0,tid=null;
 var animations = [];
 
 function setOpacity(elm,value){
