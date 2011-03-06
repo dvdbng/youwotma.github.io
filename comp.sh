@@ -1,11 +1,11 @@
 #!/bin/sh
 set -e
 
-function static(){
+function static{
     cp "src/$1" "prod/david/$1"
 }
 
-function getdin(){
+function getdin{
     echo "Ejecutando src/$2 ($1), guardandolo en prod/david/$1/$3"
     php "$2" "--lang=$1" > ../prod/david/$1/$3
 }
