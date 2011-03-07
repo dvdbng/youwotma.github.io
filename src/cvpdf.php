@@ -110,15 +110,18 @@ function htext($x,$y,$w,$h,$t){
     $pdf->MultiCell($w*RATIO,2,utf8_decode($t),0,"C");
 }
 
-function item($name,$pc,$f='Ubuntu',$v='',$z=9){
+function item($name,$pc,$f='Ubuntu',$v='',$z=9,$offset=true){
     global $pdf;
+    if($offset){
+        $pdf->Cell(3);
+    }
     $pdf->SetFont($f,$v,$z);
     $pdf->Cell(0,0,utf8_decode($name));
     scale($pc);
     $pdf->ColumnPutHeight(4);
 }
 function title($name,$pc){
-    item($name,$pc,'Droid','BI',11);
+    item($name,$pc,'Droid','BI',11,false);
 }
 function ftitle(){
     global $pdf;
