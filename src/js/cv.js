@@ -1,5 +1,4 @@
 
-
 function init(){
     var svg = document.getElementById("svgnode");
     if(!(SVGSVGElement && svg instanceof SVGSVGElement)){
