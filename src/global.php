@@ -12,7 +12,7 @@ $lang = array(
     "Tenía un blog"=>"I had a blog",
     "Espera, <a href='http://hoyga.com'>todavia lo tengo</a>, solo que no encuentro tiempo para escribir en el."=>"Wait, <a href='http://hoyga.com'>I still have it</a>, just can't find time to write in it.",
     "Me encantan las matemáticas"=>"I love math",
-    "Hago listas para todo"=>"I make list for everything",
+    "Hago listas para todo"=>"I make lists for everything",
     "Amo la música"=>"I love Music",
     "Hago scrobbing en <a href='http://www.last.fm/user/YouWoTMA'>last.fm</a> de las canciones que escucho en <a href='http://banshee.fm/'>Banshee</a>"=>"I scrob to <a href='http://www.last.fm/user/YouWoTMA'>last.fm</a> the songs I listen in <a href='http://banshee.fm/'>Banshee</a>",
     "David Bengoa - Currículum vítae"=>"David Bengoa - Curriculum vitae",
