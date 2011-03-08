@@ -187,88 +187,89 @@ body {
 /* line 109, cv.scss */
 #arem {
   margin: 0 auto;
+  width: 1060px;
 }
 
-/* line 112, cv.scss */
+/* line 113, cv.scss */
 #timeline {
   position: relative;
 }
 
-/* line 116, cv.scss */
+/* line 117, cv.scss */
 #fotter {
   color: #999;
   border-top: 1px solid #666;
   margin: 1em 2em 3em 2em;
   padding: .5em 0 0 1em;
 }
-/* line 121, cv.scss */
+/* line 122, cv.scss */
 #fotter a {
   color: #999;
   border-bottom: 1px dotted #ccc;
 }
 
-/* line 127, cv.scss */
+/* line 128, cv.scss */
 .columna {
   width: 330px;
   float: left;
   margin-left: 20px;
 }
 
-/* line 135, cv.scss */
+/* line 136, cv.scss */
 .accessibletxt {
   position: absolute;
   width: 300px;
   color: #333;
 }
-/* line 138, cv.scss */
+/* line 139, cv.scss */
 .accessibletxt.middle {
   text-align: center;
 }
-/* line 141, cv.scss */
+/* line 142, cv.scss */
 .accessibletxt.end {
   text-align: right;
 }
-/* line 145, cv.scss */
+/* line 146, cv.scss */
 .accessibletxt.eso {
   color: #aaa;
 }
-/* line 148, cv.scss */
+/* line 149, cv.scss */
 .accessibletxt.bachiller {
   color: #666;
 }
-/* line 151, cv.scss */
+/* line 152, cv.scss */
 .accessibletxt.uni {
   color: #222;
 }
-/* line 154, cv.scss */
+/* line 155, cv.scss */
 .accessibletxt.html {
   color: #23819c;
 }
-/* line 155, cv.scss */
+/* line 156, cv.scss */
 .accessibletxt.js {
   color: #23819c;
 }
-/* line 156, cv.scss */
+/* line 157, cv.scss */
 .accessibletxt.php {
   color: #23819c;
 }
-/* line 157, cv.scss */
+/* line 158, cv.scss */
 .accessibletxt.flash {
   color: #23819c;
 }
-/* line 158, cv.scss */
+/* line 159, cv.scss */
 .accessibletxt.vb {
   color: #23819c;
 }
-/* line 159, cv.scss */
+/* line 160, cv.scss */
 .accessibletxt.java {
   color: #23819c;
 }
-/* line 160, cv.scss */
+/* line 161, cv.scss */
 .accessibletxt.bash {
   color: #23819c;
 }
-/* line 161, cv.scss */
+/* line 162, cv.scss */
 .accessibletxt.python {
   color: #23819c;
 }

@@ -69,13 +69,37 @@ a {
   height: 435px;
 }
 
-/* line 24, global.scss */
+/* line 25, global.scss */
+#header:hover #flecha-izq, #header:hover #flecha-der {
+  display: block;
+}
+
+/* line 30, global.scss */
+#flecha-izq, #flecha-der {
+  background: no-repeat url(img/arrows.png);
+  width: 30px;
+  height: 30px;
+  position: absolute;
+  top: 200px;
+  left: 15px;
+  z-index: 100;
+  display: none;
+  cursor: pointer;
+}
+
+/* line 41, global.scss */
+#flecha-der {
+  left: 910px;
+  background-position: -30px 0;
+}
+
+/* line 46, global.scss */
 #wrapper {
   width: 940px;
   margin: 0 auto;
 }
 
-/* line 29, global.scss */
+/* line 51, global.scss */
 #twitter {
   width: 350px;
   float: left;
@@ -84,7 +108,7 @@ a {
   z-index: 10;
 }
 
-/* line 36, global.scss */
+/* line 58, global.scss */
 #twitter-header {
   background: no-repeat url(img/twitter-header.png);
   width: 350px;
@@ -93,14 +117,14 @@ a {
   margin-bottom: 5px;
 }
 
-/* line 43, global.scss */
+/* line 65, global.scss */
 #twitter-header-text {
   color: #fff;
   margin-left: 125px;
   font-size: 25px;
 }
 
-/* line 48, global.scss */
+/* line 70, global.scss */
 #blog {
   width: 540px;
   float: right;
@@ -110,7 +134,7 @@ a {
   z-index: 10;
 }
 
-/* line 56, global.scss */
+/* line 78, global.scss */
 #blog-header {
   background: no-repeat url(img/header-blog.png);
   width: 580px;
@@ -118,20 +142,20 @@ a {
   padding-top: 50px;
 }
 
-/* line 62, global.scss */
+/* line 84, global.scss */
 #blog-header-text {
   color: #333;
   margin-left: 135px;
   font-size: 25px;
 }
 
-/* line 67, global.scss */
+/* line 89, global.scss */
 #header {
   position: relative;
   margin: 0 auto;
 }
 
-/* line 72, global.scss */
+/* line 94, global.scss */
 #header-mask {
   z-index: 10;
   position: absolute;
@@ -144,35 +168,35 @@ a {
   pointer-events: none;
 }
 
-/* line 83, global.scss */
+/* line 105, global.scss */
 .header-banner {
   position: absolute;
   top: 0;
   left: 0;
 }
-/* line 87, global.scss */
+/* line 109, global.scss */
 .header-banner > div {
   position: absolute;
   left: 300px;
   top: 150px;
   width: 600px;
 }
-/* line 92, global.scss */
+/* line 114, global.scss */
 .header-banner > div > h2 {
   font-size: 40px;
 }
-/* line 94, global.scss */
+/* line 116, global.scss */
 .header-banner > div > h2 > .subpart {
   font-size: 30px;
 }
-/* line 99, global.scss */
+/* line 121, global.scss */
 .header-banner > .banner-image {
   position: absolute;
   top: 100px;
   left: 20px;
 }
 
-/* line 105, global.scss */
+/* line 127, global.scss */
 #header-nav {
   z-index: 11;
   position: absolute;
@@ -180,7 +204,7 @@ a {
   top: 0px;
   margin: 20px 15px 0 0;
 }
-/* line 111, global.scss */
+/* line 133, global.scss */
 #header-nav > a {
   color: #666;
   font-variant: small-caps;
@@ -189,71 +213,71 @@ a {
   padding-left: 6px;
   margin-left: 2px;
 }
-/* line 118, global.scss */
+/* line 140, global.scss */
 #header-nav > a.last {
   border-left: none;
 }
 
-/* line 124, global.scss */
+/* line 146, global.scss */
 #banner_2 {
   background: url(img/pattern2-0.jpg);
   color: #BBD14F;
   text-shadow: 1px 1px 3px #5C115C;
 }
-/* line 127, global.scss */
+/* line 149, global.scss */
 #banner_2 a {
   color: #BBD14F;
   border-bottom: 1px dotted #BBD14F;
 }
-/* line 131, global.scss */
+/* line 153, global.scss */
 #banner_2 > .banner-image {
   left: 60px;
   top: 120px;
 }
-/* line 135, global.scss */
+/* line 157, global.scss */
 #banner_2 > .textcontent {
   top: 160px;
 }
 
-/* line 140, global.scss */
+/* line 162, global.scss */
 #banner_3 {
   background: url(img/pattern3-1.jpg);
   color: #FDB907;
   text-shadow: 1px 1px 3px #FD3A07;
 }
 
-/* line 145, global.scss */
+/* line 167, global.scss */
 #banner_4 {
   background: url(img/pattern4-1.jpg);
   color: #45599b;
   text-shadow: 1px 1px 3px #fff;
 }
-/* line 149, global.scss */
+/* line 171, global.scss */
 #banner_4 h2 {
   width: 500px;
 }
-/* line 151, global.scss */
+/* line 173, global.scss */
 #banner_4 h2 > a {
   color: #45599B;
   border-bottom: 1px dotted #45599B;
 }
-/* line 156, global.scss */
+/* line 178, global.scss */
 #banner_4 > .banner-image {
   left: 10px;
   top: 60px;
 }
 
-/* line 161, global.scss */
+/* line 183, global.scss */
 #banner_5 {
   background: url(img/pattern5-0.jpg);
   color: #CAC69B;
   text-shadow: 1px 1px 3px #000;
 }
-/* line 165, global.scss */
+/* line 187, global.scss */
 #banner_5 a {
   color: #866785;
 }
-/* line 168, global.scss */
+/* line 190, global.scss */
 #banner_5 > .textcontent {
   left: 10px;
   width: 940px;
@@ -261,61 +285,61 @@ a {
   top: 190px;
 }
 
-/* line 175, global.scss */
+/* line 197, global.scss */
 #banner_7 {
   background: url(img/pattern8-0.jpg);
   color: #ccc;
   text-shadow: 1px 1px 3px #666;
 }
-/* line 178, global.scss */
+/* line 200, global.scss */
 #banner_7 p {
   line-height: 1.4em;
   word-spacing: 5px;
 }
-/* line 181, global.scss */
+/* line 203, global.scss */
 #banner_7 p > a {
   color: #ccc;
   border-bottom: 1px dotted #ccc;
 }
-/* line 187, global.scss */
+/* line 209, global.scss */
 #banner_7 > .banner-image {
   left: 50px;
   top: 130px;
 }
 
-/* line 192, global.scss */
+/* line 214, global.scss */
 #banner_8 {
   background: url(img/pattern15.jpg);
   color: #140005;
   text-shadow: 0px 0px 1px #fff;
 }
-/* line 196, global.scss */
+/* line 218, global.scss */
 #banner_8 a {
   color: #140005;
   border-bottom: 1px dotted #140005;
 }
-/* line 200, global.scss */
+/* line 222, global.scss */
 #banner_8 > .banner-image {
   left: 70px;
   top: 100px;
 }
-/* line 204, global.scss */
+/* line 226, global.scss */
 #banner_8 > .textcontent {
   top: 170px;
 }
 
-/* line 208, global.scss */
+/* line 230, global.scss */
 #banner_9 {
   background: url(img/pattern14.jpg);
   color: #206f8b;
   text-shadow: 0px 0px 1px #fff;
 }
-/* line 211, global.scss */
+/* line 233, global.scss */
 #banner_9 a {
   color: #206f8b;
   border-bottom: 1px dotted #206f8b;
 }
-/* line 216, global.scss */
+/* line 238, global.scss */
 #banner_9 > .textcontent {
   left: 10px;
   width: 940px;
@@ -323,31 +347,31 @@ a {
   top: 170px;
 }
 
-/* line 223, global.scss */
+/* line 245, global.scss */
 #banner_10 {
   background-color: #520039;
   color: #350025;
 }
-/* line 226, global.scss */
+/* line 248, global.scss */
 #banner_10 > .textcontent {
   z-index: 12;
   color: #BF9D3E;
 }
-/* line 229, global.scss */
+/* line 251, global.scss */
 #banner_10 > .textcontent h2 {
   text-shadow: 0px 0px 1px #ccc;
 }
-/* line 233, global.scss */
+/* line 255, global.scss */
 #banner_10 > img {
   z-index: 12;
 }
-/* line 236, global.scss */
+/* line 258, global.scss */
 #banner_10 > .banner-image {
   left: 70px;
   top: 100px;
 }
 
-/* line 241, global.scss */
+/* line 263, global.scss */
 #banner_10_inner {
   overflow: hidden;
   line-height: 1.2em;
@@ -362,7 +386,7 @@ a {
   width: 940px;
 }
 
-/* line 255, global.scss */
+/* line 277, global.scss */
 .tweet {
   padding: 10px 10px 10px 20px;
   font-size: 12px;
@@ -371,18 +395,18 @@ a {
   background: -moz-linear-gradient(#dff2ff, #caeaff);
   color: #666;
 }
-/* line 262, global.scss */
+/* line 284, global.scss */
 .tweet a {
   color: #333;
 }
 
-/* line 266, global.scss */
+/* line 288, global.scss */
 .tweetbird {
   margin-left: -40px;
   float: left;
 }
 
-/* line 271, global.scss */
+/* line 293, global.scss */
 .blogtitle {
   text-align: center;
   font-style: normal;
@@ -391,68 +415,68 @@ a {
   font-weight: normal;
   margin: 20px 0 10px 0;
 }
-/* line 280, global.scss */
+/* line 302, global.scss */
 .blogtitle a {
   color: #eb9272;
 }
 
-/* line 284, global.scss */
+/* line 306, global.scss */
 .blogtxt {
   color: #666;
   line-height: 1.2em;
 }
 
-/* line 289, global.scss */
+/* line 311, global.scss */
 #tweets {
   margin-bottom: 10px;
   border-bottom: 1px solid #ccc;
   padding-bottom: 10px;
 }
 
-/* line 295, global.scss */
+/* line 317, global.scss */
 #otherprofiles {
   text-transform: uppercase;
   padding: 0 0 0 10px;
   font-weight: bold;
   line-height: 1.3em;
 }
-/* line 300, global.scss */
+/* line 322, global.scss */
 #otherprofiles .mail {
   color: #FFC448;
 }
-/* line 301, global.scss */
+/* line 323, global.scss */
 #otherprofiles .last {
   color: #D71102;
 }
-/* line 302, global.scss */
+/* line 324, global.scss */
 #otherprofiles .face {
   color: #3B5998;
 }
-/* line 303, global.scss */
+/* line 325, global.scss */
 #otherprofiles .tuen {
   color: #96D4F3;
 }
-/* line 304, global.scss */
+/* line 326, global.scss */
 #otherprofiles .twit {
   color: #53D4FF;
 }
-/* line 305, global.scss */
+/* line 327, global.scss */
 #otherprofiles .blog {
   color: #ADD064;
 }
-/* line 306, global.scss */
+/* line 328, global.scss */
 #otherprofiles .redd {
   color: #FF5719;
 }
-/* line 307, global.scss */
+/* line 329, global.scss */
 #otherprofiles .dias {
   color: #2B2B2B;
 }
-/* line 308, global.scss */
+/* line 330, global.scss */
 #otherprofiles:hover {
   color: #999;
 }
-/* line 317, global.scss */
+/* line 339, global.scss */
 #otherprofiles:hover .mail,
 #otherprofiles:hover .last,
 #otherprofiles:hover .face,
@@ -463,42 +487,42 @@ a {
 #otherprofiles:hover .dias {
   color: #ccc;
 }
-/* line 321, global.scss */
+/* line 343, global.scss */
 #otherprofiles .mail:hover {
   color: #fff;
   background-color: #FFC448;
 }
-/* line 322, global.scss */
+/* line 344, global.scss */
 #otherprofiles .last:hover {
   color: #fff;
   background-color: #D71102;
 }
-/* line 323, global.scss */
+/* line 345, global.scss */
 #otherprofiles .face:hover {
   color: #fff;
   background-color: #3B5998;
 }
-/* line 324, global.scss */
+/* line 346, global.scss */
 #otherprofiles .tuen:hover {
   color: #fff;
   background-color: #96D4F3;
 }
-/* line 325, global.scss */
+/* line 347, global.scss */
 #otherprofiles .twit:hover {
   color: #fff;
   background-color: #53D4FF;
 }
-/* line 326, global.scss */
+/* line 348, global.scss */
 #otherprofiles .blog:hover {
   color: #fff;
   background-color: #ADD064;
 }
-/* line 327, global.scss */
+/* line 349, global.scss */
 #otherprofiles .redd:hover {
   color: #fff;
   background-color: #FF5719;
 }
-/* line 328, global.scss */
+/* line 350, global.scss */
 #otherprofiles .dias:hover {
   color: #fff;
   background-color: #2B2B2B;
