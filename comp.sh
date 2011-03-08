@@ -22,6 +22,10 @@ done
 cp src/redirect.php prod/index.php
 cp src/redirect.php prod/david/index.php
 
+#favicon
+cp src/favicon.ico prod/favicon.ico
+cp src/favicon.ico prod/david/favicon.ico
+
 #.htaccess
 cp src/.htaccess prod
 
