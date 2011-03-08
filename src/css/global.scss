@@ -21,6 +21,28 @@ a{
     width: 960px;
     height: 435px;
 }
+#header:hover{
+    #flecha-izq, #flecha-der{
+        display:block;
+    }
+}
+
+#flecha-izq, #flecha-der{
+    background: no-repeat url(img/arrows.png);
+    width: 30px;
+    height: 30px;
+    position: absolute;
+    top: 200px;
+    left: 15px;
+    z-index: 100;
+    display:none;
+    cursor:pointer;
+}
+#flecha-der{
+    left: 910px;
+    background-position: -30px 0;
+}
+
 #wrapper{
     width: 940px;
     margin: 0 auto;

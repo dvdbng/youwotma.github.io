@@ -5,6 +5,8 @@
                 <a href="../<?php t("en"); ?>"><?php t("English"); ?></a>
             </div>
             <h1 id="header-mask">David Bengoa</h1>
+            <div id="flecha-der"></div>
+            <div id="flecha-izq"></div>
             <div id="banner_4" class="header-banner">
                 <img src="<?php statico("img/twitter.png"); ?>" alt="twitter" class="banner-image"/>
                 <div class="textcontent"><h2><?php t("Tal vez quieras leer <span class='subpart'>lo que escribo</span> en <a href='http://twitter.com/DvdBng'>twitter</a>"); ?></h2></div>

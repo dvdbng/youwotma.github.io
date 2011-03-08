@@ -5,6 +5,15 @@ for(var i=0,l=banners.length; i<l; ++i){
     banners[i] = document.getElementById("banner_" + banners[i]);
 }
 
+
+function attach_event(elm,ev,fn){
+    if(elm.attachEvent){
+        elm.attachEvent(ev,fn);
+    }else{
+        elm.addEventListener(ev,fn,false);
+    }
+}
+
 var actual_banner=0,tid=null;
 var animations = [];
 
@@ -76,19 +85,27 @@ function animate(){
 }
 ("addEventListener" in window) && window.addEventListener("MozBeforePaint", animate, false);
 
-function change_banner(){
-    if(banners.length === 0)return;
+function change_banner(delta){
+    if(banners.length === 0 || animations.length >0)return;
     if(tid){
         clearTimeout(tid);
     }
 
+    delta = delta||1;
     var ant_banner = actual_banner;
-    actual_banner = (actual_banner+1)%banners.length;
+    actual_banner = (actual_banner+delta+banners.length)%banners.length;
     fadeOut(banners[ant_banner]);
     fadeIn(banners[actual_banner]);
     scheduleAnimationFrame();
     tid = setTimeout(change_banner,1000*4);
 }
+
+attach_event(document.getElementById("flecha-izq"),"click",function(){change_banner(-1);});
+attach_event(document.getElementById("flecha-der"),"click",function(){change_banner(1);});
+
+var header = document.getElementById("header");
+attach_event(header,"mouseenter",function(){clearTimeout(tid);});
+attach_event(header,"mouseleave",function(){setTimeout(change_banner,1000*3)});
 
 var pi = document.getElementById("banner_10_inner");
 var pitxt = pi.firstChild.nodeValue;
