@@ -103,9 +103,9 @@ function change_banner(delta){
 attach_event(document.getElementById("flecha-izq"),"click",function(){change_banner(-1);});
 attach_event(document.getElementById("flecha-der"),"click",function(){change_banner(1);});
 
-//var header = document.getElementById("header");
-//attach_event(header,"mouseenter",function(){clearTimeout(tid);});
-//attach_event(header,"mouseleave",function(){setTimeout(change_banner,1000*3)});
+var header = document.getElementById("header");
+attach_event(header,"mouseenter",function(){clearTimeout(tid);});
+attach_event(header,"mouseleave",function(){setTimeout(change_banner,1000*3)});
 
 var pi = document.getElementById("banner_10_inner");
 var pitxt = pi.firstChild.nodeValue;
