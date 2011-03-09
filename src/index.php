@@ -33,7 +33,7 @@ function content(){
             <script type="text/javascript">
                 var twt_logo_img = "<?php statico("img/pajaro.png"); ?>";
             </script>
-            <script type="text/javascript" src="<?php statico("prefetch.php"); ?>"></script>
+            <script type="text/javascript" src="<?php is_cli()?statico("prefetch.php"):""; ?>"></script>
         </div>
 <?php
 }

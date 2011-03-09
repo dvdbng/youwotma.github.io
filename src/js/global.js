@@ -85,7 +85,7 @@ function animate(){
 }
 ("addEventListener" in window) && window.addEventListener("MozBeforePaint", animate, false);
 
-function change_banner(delta){
+function change_banner(delta,stopped){
     if(banners.length === 0 || animations.length >0)return;
     if(tid){
         clearTimeout(tid);
@@ -97,16 +97,35 @@ function change_banner(delta){
     fadeOut(banners[ant_banner]);
     fadeIn(banners[actual_banner]);
     scheduleAnimationFrame();
-    tid = setTimeout(change_banner,1000*4);
+    if(!stopped){
+        tid = setTimeout(change_banner,1000*4);
+    }
 }
 
-attach_event(document.getElementById("flecha-izq"),"click",function(){change_banner(-1);});
-attach_event(document.getElementById("flecha-der"),"click",function(){change_banner(1);});
+attach_event(document.getElementById("flecha-izq"),"click",function(){change_banner(-1,true);});
+attach_event(document.getElementById("flecha-der"),"click",function(){change_banner(1,true);});
 
 var header = document.getElementById("header");
-attach_event(header,"mouseenter",function(){clearTimeout(tid);});
-attach_event(header,"mouseleave",function(){setTimeout(change_banner,1000*3)});
+attach_event(header,"mouseover",function(){
+    tid && clearTimeout(tid);
+    tid = null;
+});
+attach_event(header,"mouseout",function(e){
+    e = e || window.event;
+    //Si alguno de los padres es header, no continuamos
+    var target = e.relatedTarget;
+    if(target){
+        while(target.parentNode){
+            target = target.parentNode;
+            if(target === header)return;
+        }
+    }
+    tid && clearTimeout(tid);
+    tid = setTimeout(change_banner,1000*1);
+});
 
+// Insertar ZERO_WIDTH_SPACE entre todos los caracteres,
+// para que el navegador parta la cadena en cualquier lugar
 var pi = document.getElementById("banner_10_inner");
 var pitxt = pi.firstChild.nodeValue;
 pi.firstChild.nodeValue = pitxt.split("").join(String.fromCharCode(8203));
