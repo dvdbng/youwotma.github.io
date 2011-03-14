@@ -22,6 +22,7 @@ function content(){
                     <a class="twit" target="_blank" href="http://twitter.com/dvdbng">Twitter</a>
                     <a class="blog" target="_blank" href="http://hoyga.com">Blog</a>
                     <a class="redd" target="_blank" href="http://www.reddit.com/user/bengoa">Reddit</a>
+                    <a class="gith" target="_blank" href="http://github.com/YouWoTMA/">Github</a>
                     <a class="dias" target="_blank" href="https://joindiaspora.com/people/7765">Diaspora</a>
                 </div>
             </div>
@@ -33,7 +34,7 @@ function content(){
             <script type="text/javascript">
                 var twt_logo_img = "<?php statico("img/pajaro.png"); ?>";
             </script>
-            <script type="text/javascript" src="<?php is_cli()?statico("prefetch.php"):""; ?>"></script>
+            <script type="text/javascript" src="<?php is_cli()?statico("prefetch.php"):"data:text/js;urlencode,"; ?>"></script>
         </div>
 <?php
 }

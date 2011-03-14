@@ -151,7 +151,7 @@ function skills_end(){
     $pdf->MultiCell(210-30,4,
         utf8_decode(
             "David Bengoa, E-mail: david@bengoarocandio.com, Twitter: @DvdBng.\n".
-            tr("PDF genereado el").date(" d/m/y. ").
+            tr("PDF generado el").date(" d/m/y. ").
             tr("Este currículum se actualiza frecuentemente, puedes ver la versión online actualizada en").
             " http://david.bengoarocandio.com/".tr("es")."/cv"
         )

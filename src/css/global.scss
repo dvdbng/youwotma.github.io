@@ -327,6 +327,7 @@ $headers_pull: 10px;
     .blog{color:#ADD064;}
     .redd{color:#FF5719;}
     .dias{color:#2B2B2B;}
+    .gith{color:#4183C4;}
     &:hover{
         color: #999;
         .mail,
@@ -336,7 +337,8 @@ $headers_pull: 10px;
         .twit,
         .blog,
         .redd,
-        .dias{
+        .dias,
+        .gith{
             color: #ccc;
         }
     }
@@ -348,5 +350,6 @@ $headers_pull: 10px;
     .blog:hover{color:#fff;background-color:#ADD064;}
     .redd:hover{color:#fff;background-color:#FF5719;}
     .dias:hover{color:#fff;background-color:#2B2B2B;}
+    .gith:hover{color:#fff;background-color:#4183C4;}
 }
 

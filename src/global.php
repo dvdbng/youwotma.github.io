@@ -55,7 +55,7 @@ $lang = array(
     "es"=>"en",
     "Página principal"=>"Home page",
     "Descarga mi CV en PDF"=>"Download my CV in PDF",
-    "PDF genereado el"=>"PDF generated on",
+    "PDF generado el"=>"PDF generated on",
     "Este currículum se actualiza frecuentemente, puedes ver la versión online actualizada en"=>"This CV is updated frequently, you may view the updated online version at",
     "Sigue en contacto"=>"Keep in touch",
 );

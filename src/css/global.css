@@ -473,10 +473,14 @@ a {
   color: #2B2B2B;
 }
 /* line 330, global.scss */
+#otherprofiles .gith {
+  color: #4183C4;
+}
+/* line 331, global.scss */
 #otherprofiles:hover {
   color: #999;
 }
-/* line 339, global.scss */
+/* line 341, global.scss */
 #otherprofiles:hover .mail,
 #otherprofiles:hover .last,
 #otherprofiles:hover .face,
@@ -484,46 +488,52 @@ a {
 #otherprofiles:hover .twit,
 #otherprofiles:hover .blog,
 #otherprofiles:hover .redd,
-#otherprofiles:hover .dias {
+#otherprofiles:hover .dias,
+#otherprofiles:hover .gith {
   color: #ccc;
 }
-/* line 343, global.scss */
+/* line 345, global.scss */
 #otherprofiles .mail:hover {
   color: #fff;
   background-color: #FFC448;
 }
-/* line 344, global.scss */
+/* line 346, global.scss */
 #otherprofiles .last:hover {
   color: #fff;
   background-color: #D71102;
 }
-/* line 345, global.scss */
+/* line 347, global.scss */
 #otherprofiles .face:hover {
   color: #fff;
   background-color: #3B5998;
 }
-/* line 346, global.scss */
+/* line 348, global.scss */
 #otherprofiles .tuen:hover {
   color: #fff;
   background-color: #96D4F3;
 }
-/* line 347, global.scss */
+/* line 349, global.scss */
 #otherprofiles .twit:hover {
   color: #fff;
   background-color: #53D4FF;
 }
-/* line 348, global.scss */
+/* line 350, global.scss */
 #otherprofiles .blog:hover {
   color: #fff;
   background-color: #ADD064;
 }
-/* line 349, global.scss */
+/* line 351, global.scss */
 #otherprofiles .redd:hover {
   color: #fff;
   background-color: #FF5719;
 }
-/* line 350, global.scss */
+/* line 352, global.scss */
 #otherprofiles .dias:hover {
   color: #fff;
   background-color: #2B2B2B;
+}
+/* line 353, global.scss */
+#otherprofiles .gith:hover {
+  color: #fff;
+  background-color: #4183C4;
 }
