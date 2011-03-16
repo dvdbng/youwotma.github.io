@@ -77,7 +77,7 @@ function tr($x){
     if(!isset($lang[$x])){
         $strs[$x] = $x;
     }else{
-        if($_GET["lang"]=="en" || has_arg("--lang=en")){
+        if((isset($_GET["lang"]) && $_GET["lang"]=="en") || has_arg("--lang=en")){
             return $lang[$x];
         }
     }
