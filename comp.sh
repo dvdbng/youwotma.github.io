@@ -59,6 +59,7 @@ static css/img/pattern10.png
 static css/img/pattern14.jpg
 static css/img/pattern2-0.jpg
 static css/img/pattern5-0.jpg
+static css/img/arrows.png
 
 # archivos dinamicos
 # hay que moverse antes al directorio src, para que funcionen algunos includes
