@@ -25,7 +25,7 @@
 .htext{
     text-align: center;
     font-style: italic;
-    font-size: 14px;
+    font-size: 12px;
     padding: 0 5px;
     margin: 0 -5px;
 }
@@ -52,6 +52,7 @@ line{
 
 text{
     fill: #333;
+    font-size: 12px;
     &.eso{
         fill: #aaa;
     }
@@ -72,6 +73,8 @@ text{
 }
 body{
     color: #333;
+    width: 1100px;
+    margin: 0 auto;
 }
 .tlinline{
     font-size: 12px;
@@ -136,6 +139,7 @@ body{
 .accessibletxt{
     position: absolute;
     width: 300px;
+    font-size:12px;
     &.middle{
         text-align: center;
     }

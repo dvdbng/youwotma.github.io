@@ -42,6 +42,9 @@ static img/pajaro.png
 static img/pi.gif
 static img/terminal.png
 static img/twitter.png
+static img/avatar1.jpg
+static img/avatar2.jpg
+static img/avatar3.jpg
 static css/cv.css
 static css/global.css
 static css/img/header-blog.png
@@ -60,6 +63,8 @@ static css/img/pattern14.jpg
 static css/img/pattern2-0.jpg
 static css/img/pattern5-0.jpg
 static css/img/arrows.png
+static css/img/crissXcross.jpg
+static css/img/separator.png
 
 # archivos dinamicos
 # hay que moverse antes al directorio src, para que funcionen algunos includes

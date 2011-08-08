@@ -41,40 +41,40 @@ table {
   border-spacing: 0;
 }
 
-/* line 3, global.scss */
+/* line 6, global.scss */
 body {
   font-family: 'Ubuntu', arial, sans;
 }
 
-/* line 7, global.scss */
+/* line 10, global.scss */
 h1, h2 {
   font-family: 'Droid Serif', serif;
   font-style: italic;
 }
 
-/* line 11, global.scss */
+/* line 14, global.scss */
 h1 {
   font-size: 1.6em;
   margin: 0.4em 0 1.2em 10px;
 }
 
-/* line 16, global.scss */
+/* line 19, global.scss */
 a {
   text-decoration: none;
 }
 
-/* line 20, global.scss */
+/* line 23, global.scss */
 #header, #header-mask, .header-banner {
   width: 960px;
   height: 435px;
 }
 
-/* line 25, global.scss */
+/* line 28, global.scss */
 #header:hover #flecha-izq, #header:hover #flecha-der {
   display: block;
 }
 
-/* line 30, global.scss */
+/* line 33, global.scss */
 #flecha-izq, #flecha-der {
   background: no-repeat url(img/arrows.png);
   width: 30px;
@@ -87,19 +87,19 @@ a {
   cursor: pointer;
 }
 
-/* line 41, global.scss */
+/* line 44, global.scss */
 #flecha-der {
   left: 910px;
   background-position: -30px 0;
 }
 
-/* line 46, global.scss */
+/* line 49, global.scss */
 #wrapper {
   width: 940px;
   margin: 0 auto;
 }
 
-/* line 51, global.scss */
+/* line 54, global.scss */
 #twitter {
   width: 350px;
   float: left;
@@ -108,7 +108,7 @@ a {
   z-index: 10;
 }
 
-/* line 58, global.scss */
+/* line 61, global.scss */
 #twitter-header {
   background: no-repeat url(img/twitter-header.png);
   width: 350px;
@@ -117,14 +117,14 @@ a {
   margin-bottom: 5px;
 }
 
-/* line 65, global.scss */
+/* line 68, global.scss */
 #twitter-header-text {
   color: #fff;
   margin-left: 125px;
   font-size: 25px;
 }
 
-/* line 70, global.scss */
+/* line 73, global.scss */
 #blog {
   width: 540px;
   float: right;
@@ -134,7 +134,7 @@ a {
   z-index: 10;
 }
 
-/* line 78, global.scss */
+/* line 81, global.scss */
 #blog-header {
   background: no-repeat url(img/header-blog.png);
   width: 580px;
@@ -142,20 +142,20 @@ a {
   padding-top: 50px;
 }
 
-/* line 84, global.scss */
+/* line 87, global.scss */
 #blog-header-text {
   color: #333;
   margin-left: 135px;
   font-size: 25px;
 }
 
-/* line 89, global.scss */
+/* line 92, global.scss */
 #header {
   position: relative;
   margin: 0 auto;
 }
 
-/* line 94, global.scss */
+/* line 97, global.scss */
 #header-mask {
   z-index: 10;
   position: absolute;
@@ -168,35 +168,35 @@ a {
   pointer-events: none;
 }
 
-/* line 105, global.scss */
+/* line 108, global.scss */
 .header-banner {
   position: absolute;
   top: 0;
   left: 0;
 }
-/* line 109, global.scss */
+/* line 112, global.scss */
 .header-banner > div {
   position: absolute;
   left: 300px;
   top: 150px;
   width: 600px;
 }
-/* line 114, global.scss */
+/* line 117, global.scss */
 .header-banner > div > h2 {
   font-size: 40px;
 }
-/* line 116, global.scss */
+/* line 119, global.scss */
 .header-banner > div > h2 > .subpart {
   font-size: 30px;
 }
-/* line 121, global.scss */
+/* line 124, global.scss */
 .header-banner > .banner-image {
   position: absolute;
   top: 100px;
   left: 20px;
 }
 
-/* line 127, global.scss */
+/* line 130, global.scss */
 #header-nav {
   z-index: 11;
   position: absolute;
@@ -204,7 +204,7 @@ a {
   top: 0px;
   margin: 20px 15px 0 0;
 }
-/* line 133, global.scss */
+/* line 136, global.scss */
 #header-nav > a {
   color: #666;
   font-variant: small-caps;
@@ -213,71 +213,71 @@ a {
   padding-left: 6px;
   margin-left: 2px;
 }
-/* line 140, global.scss */
+/* line 143, global.scss */
 #header-nav > a.last {
   border-left: none;
 }
 
-/* line 146, global.scss */
+/* line 149, global.scss */
 #banner_2 {
   background: url(img/pattern2-0.jpg);
   color: #BBD14F;
   text-shadow: 1px 1px 3px #5C115C;
 }
-/* line 149, global.scss */
+/* line 152, global.scss */
 #banner_2 a {
   color: #BBD14F;
   border-bottom: 1px dotted #BBD14F;
 }
-/* line 153, global.scss */
+/* line 156, global.scss */
 #banner_2 > .banner-image {
   left: 60px;
   top: 120px;
 }
-/* line 157, global.scss */
+/* line 160, global.scss */
 #banner_2 > .textcontent {
   top: 160px;
 }
 
-/* line 162, global.scss */
+/* line 165, global.scss */
 #banner_3 {
   background: url(img/pattern3-1.jpg);
   color: #FDB907;
   text-shadow: 1px 1px 3px #FD3A07;
 }
 
-/* line 167, global.scss */
+/* line 170, global.scss */
 #banner_4 {
   background: url(img/pattern4-1.jpg);
   color: #45599b;
   text-shadow: 1px 1px 3px #fff;
 }
-/* line 171, global.scss */
+/* line 174, global.scss */
 #banner_4 h2 {
   width: 500px;
 }
-/* line 173, global.scss */
+/* line 176, global.scss */
 #banner_4 h2 > a {
   color: #45599B;
   border-bottom: 1px dotted #45599B;
 }
-/* line 178, global.scss */
+/* line 181, global.scss */
 #banner_4 > .banner-image {
   left: 10px;
   top: 60px;
 }
 
-/* line 183, global.scss */
+/* line 186, global.scss */
 #banner_5 {
   background: url(img/pattern5-0.jpg);
   color: #CAC69B;
   text-shadow: 1px 1px 3px #000;
 }
-/* line 187, global.scss */
+/* line 190, global.scss */
 #banner_5 a {
   color: #866785;
 }
-/* line 190, global.scss */
+/* line 193, global.scss */
 #banner_5 > .textcontent {
   left: 10px;
   width: 940px;
@@ -285,61 +285,61 @@ a {
   top: 190px;
 }
 
-/* line 197, global.scss */
+/* line 200, global.scss */
 #banner_7 {
   background: url(img/pattern8-0.jpg);
   color: #ccc;
   text-shadow: 1px 1px 3px #666;
 }
-/* line 200, global.scss */
+/* line 203, global.scss */
 #banner_7 p {
   line-height: 1.4em;
   word-spacing: 5px;
 }
-/* line 203, global.scss */
+/* line 206, global.scss */
 #banner_7 p > a {
   color: #ccc;
   border-bottom: 1px dotted #ccc;
 }
-/* line 209, global.scss */
+/* line 212, global.scss */
 #banner_7 > .banner-image {
   left: 50px;
   top: 130px;
 }
 
-/* line 214, global.scss */
+/* line 217, global.scss */
 #banner_8 {
   background: url(img/pattern15.jpg);
   color: #140005;
   text-shadow: 0px 0px 1px #fff;
 }
-/* line 218, global.scss */
+/* line 221, global.scss */
 #banner_8 a {
   color: #140005;
   border-bottom: 1px dotted #140005;
 }
-/* line 222, global.scss */
+/* line 225, global.scss */
 #banner_8 > .banner-image {
   left: 70px;
   top: 100px;
 }
-/* line 226, global.scss */
+/* line 229, global.scss */
 #banner_8 > .textcontent {
   top: 170px;
 }
 
-/* line 230, global.scss */
+/* line 233, global.scss */
 #banner_9 {
   background: url(img/pattern14.jpg);
   color: #206f8b;
   text-shadow: 0px 0px 1px #fff;
 }
-/* line 233, global.scss */
+/* line 236, global.scss */
 #banner_9 a {
   color: #206f8b;
   border-bottom: 1px dotted #206f8b;
 }
-/* line 238, global.scss */
+/* line 241, global.scss */
 #banner_9 > .textcontent {
   left: 10px;
   width: 940px;
@@ -347,31 +347,31 @@ a {
   top: 170px;
 }
 
-/* line 245, global.scss */
+/* line 248, global.scss */
 #banner_10 {
   background-color: #520039;
   color: #350025;
 }
-/* line 248, global.scss */
+/* line 251, global.scss */
 #banner_10 > .textcontent {
   z-index: 12;
   color: #BF9D3E;
 }
-/* line 251, global.scss */
+/* line 254, global.scss */
 #banner_10 > .textcontent h2 {
   text-shadow: 0px 0px 1px #ccc;
 }
-/* line 255, global.scss */
+/* line 258, global.scss */
 #banner_10 > img {
   z-index: 12;
 }
-/* line 258, global.scss */
+/* line 261, global.scss */
 #banner_10 > .banner-image {
   left: 70px;
   top: 100px;
 }
 
-/* line 263, global.scss */
+/* line 266, global.scss */
 #banner_10_inner {
   overflow: hidden;
   line-height: 1.2em;
@@ -386,7 +386,35 @@ a {
   width: 940px;
 }
 
-/* line 277, global.scss */
+/* line 280, global.scss */
+#banner_11 {
+  background: url(img/crissXcross.jpg);
+  color: #ccc;
+  text-shadow: 1px 1px 1px #fff;
+}
+/* line 284, global.scss */
+#banner_11 h2 {
+  font-size: 35px;
+  line-height: 1.3em;
+}
+/* line 288, global.scss */
+#banner_11 > .textcontent {
+  left: 10px;
+  width: 940px;
+  text-align: center;
+  top: 190px;
+}
+/* line 293, global.scss */
+#banner_11 > .textcontent p {
+  text-shadow: none;
+}
+/* line 296, global.scss */
+#banner_11 > .textcontent a {
+  color: #ccc;
+  border-bottom: 1px dotted #ccc;
+}
+
+/* line 303, global.scss */
 .tweet {
   padding: 10px 10px 10px 20px;
   font-size: 12px;
@@ -395,18 +423,18 @@ a {
   background: -moz-linear-gradient(#dff2ff, #caeaff);
   color: #666;
 }
-/* line 284, global.scss */
+/* line 310, global.scss */
 .tweet a {
   color: #333;
 }
 
-/* line 288, global.scss */
+/* line 314, global.scss */
 .tweetbird {
   margin-left: -40px;
   float: left;
 }
 
-/* line 293, global.scss */
+/* line 319, global.scss */
 .blogtitle {
   text-align: center;
   font-style: normal;
@@ -415,72 +443,74 @@ a {
   font-weight: normal;
   margin: 20px 0 10px 0;
 }
-/* line 302, global.scss */
+/* line 328, global.scss */
 .blogtitle a {
   color: #eb9272;
 }
 
-/* line 306, global.scss */
+/* line 332, global.scss */
 .blogtxt {
   color: #666;
   line-height: 1.2em;
 }
 
-/* line 311, global.scss */
-#tweets {
-  margin-bottom: 10px;
-  border-bottom: 1px solid #ccc;
-  padding-bottom: 10px;
-}
-
-/* line 317, global.scss */
+/* line 337, global.scss */
 #otherprofiles {
-  text-transform: uppercase;
-  padding: 0 0 0 10px;
-  font-weight: bold;
   line-height: 1.3em;
 }
-/* line 322, global.scss */
+/* line 339, global.scss */
 #otherprofiles .mail {
   color: #FFC448;
 }
-/* line 323, global.scss */
+/* line 340, global.scss */
 #otherprofiles .last {
   color: #D71102;
 }
-/* line 324, global.scss */
+/* line 341, global.scss */
 #otherprofiles .face {
   color: #3B5998;
 }
-/* line 325, global.scss */
+/* line 342, global.scss */
 #otherprofiles .tuen {
   color: #96D4F3;
 }
-/* line 326, global.scss */
+/* line 343, global.scss */
 #otherprofiles .twit {
   color: #53D4FF;
 }
-/* line 327, global.scss */
+/* line 344, global.scss */
 #otherprofiles .blog {
   color: #ADD064;
 }
-/* line 328, global.scss */
+/* line 345, global.scss */
 #otherprofiles .redd {
   color: #FF5719;
 }
-/* line 329, global.scss */
+/* line 346, global.scss */
 #otherprofiles .dias {
   color: #2B2B2B;
 }
-/* line 330, global.scss */
+/* line 347, global.scss */
 #otherprofiles .gith {
   color: #4183C4;
 }
-/* line 331, global.scss */
+/* line 348, global.scss */
+#otherprofiles .plus {
+  color: #DD4B39;
+}
+/* line 349, global.scss */
+#otherprofiles .pcpl {
+  color: #f58220;
+}
+/* line 350, global.scss */
+#otherprofiles .four {
+  color: #bed679;
+}
+/* line 351, global.scss */
 #otherprofiles:hover {
   color: #999;
 }
-/* line 341, global.scss */
+/* line 364, global.scss */
 #otherprofiles:hover .mail,
 #otherprofiles:hover .last,
 #otherprofiles:hover .face,
@@ -489,51 +519,197 @@ a {
 #otherprofiles:hover .blog,
 #otherprofiles:hover .redd,
 #otherprofiles:hover .dias,
-#otherprofiles:hover .gith {
+#otherprofiles:hover .gith,
+#otherprofiles:hover .plus,
+#otherprofiles:hover .four,
+#otherprofiles:hover .pcpl {
   color: #ccc;
 }
-/* line 345, global.scss */
+/* line 368, global.scss */
 #otherprofiles .mail:hover {
   color: #fff;
   background-color: #FFC448;
 }
-/* line 346, global.scss */
+/* line 369, global.scss */
 #otherprofiles .last:hover {
   color: #fff;
   background-color: #D71102;
 }
-/* line 347, global.scss */
+/* line 370, global.scss */
 #otherprofiles .face:hover {
   color: #fff;
   background-color: #3B5998;
 }
-/* line 348, global.scss */
+/* line 371, global.scss */
 #otherprofiles .tuen:hover {
   color: #fff;
   background-color: #96D4F3;
 }
-/* line 349, global.scss */
+/* line 372, global.scss */
 #otherprofiles .twit:hover {
   color: #fff;
   background-color: #53D4FF;
 }
-/* line 350, global.scss */
+/* line 373, global.scss */
 #otherprofiles .blog:hover {
   color: #fff;
   background-color: #ADD064;
 }
-/* line 351, global.scss */
+/* line 374, global.scss */
 #otherprofiles .redd:hover {
   color: #fff;
   background-color: #FF5719;
 }
-/* line 352, global.scss */
+/* line 375, global.scss */
 #otherprofiles .dias:hover {
   color: #fff;
   background-color: #2B2B2B;
 }
-/* line 353, global.scss */
+/* line 376, global.scss */
 #otherprofiles .gith:hover {
   color: #fff;
   background-color: #4183C4;
+}
+/* line 377, global.scss */
+#otherprofiles .plus:hover {
+  color: #fff;
+  background-color: #DD4B39;
+}
+/* line 378, global.scss */
+#otherprofiles .pcpl:hover {
+  color: #fff;
+  background-color: #f58220;
+}
+/* line 379, global.scss */
+#otherprofiles .four:hover {
+  color: #fff;
+  background-color: #bed679;
+}
+
+/* line 382, global.scss */
+.photos {
+  position: relative;
+  top: 20px;
+  float: left;
+  height: 240px;
+}
+/* line 386, global.scss */
+.photos .photo {
+  margin-left: 20px;
+  padding: 10px;
+  background-color: #fff;
+  border: 1px solid #ccc;
+  z-index: 15;
+  position: absolute;
+  -moz-transition-property: all;
+  -webkit-transition-property: all;
+  -o-transition-property: all;
+  transition-property: all;
+  -moz-transition-duration: 600ms;
+  -webkit-transition-duration: 600ms;
+  -o-transition-duration: 600ms;
+  transition-duration: 600ms;
+  left: 0px;
+  top: 0px;
+}
+/* line 391, global.scss */
+.photos .photo img {
+  width: 200px;
+  height: 200px;
+}
+/* line 404, global.scss */
+.photos.over .photo-2 {
+  left: 400px;
+  -moz-transform: rotate(5deg);
+  -webkit-transform: rotate(5deg);
+  -o-transform: rotate(5deg);
+  transform: rotate(5deg);
+  top: 15px;
+}
+/* line 409, global.scss */
+.photos.over .photo-3 {
+  left: 200px;
+  -moz-transform: rotate(0deg);
+  -webkit-transform: rotate(0deg);
+  -o-transform: rotate(0deg);
+  transform: rotate(0deg);
+}
+
+/* line 416, global.scss */
+.photo-1 {
+  -moz-transform: rotate(-5deg);
+  -webkit-transform: rotate(-5deg);
+  -o-transform: rotate(-5deg);
+  transform: rotate(-5deg);
+}
+
+/* line 419, global.scss */
+.photo-2 {
+  -moz-transform: rotate(5deg);
+  -webkit-transform: rotate(5deg);
+  -o-transform: rotate(5deg);
+  transform: rotate(5deg);
+}
+
+/* line 422, global.scss */
+.photo-3 {
+  -moz-transform: rotate(10deg);
+  -webkit-transform: rotate(10deg);
+  -o-transform: rotate(10deg);
+  transform: rotate(10deg);
+}
+
+/* line 426, global.scss */
+.separator {
+  background: no-repeat url(img/separator.png);
+  height: 39px;
+  z-index: 12;
+  margin-top: -30px;
+  margin-bottom: 20px;
+  position: relative;
+  clear: both;
+}
+
+/* line 436, global.scss */
+#about-me-right {
+  width: 650px;
+  float: right;
+  color: #333;
+}
+/* line 440, global.scss */
+#about-me-right h2 {
+  text-align: center;
+  font-size: 30px;
+  margin: -20px 0 20px 0;
+}
+
+/* line 446, global.scss */
+#about-me-text {
+  -moz-column-count: 2;
+  -webkit-column-count: 2;
+  -o-column-count: 2;
+  column-count: 2;
+  text-align: justify;
+  line-height: 1.5em;
+}
+
+/* line 452, global.scss */
+p {
+  margin-bottom: 1em;
+}
+
+/* line 456, global.scss */
+#footer {
+  background-color: #222;
+  clear: both;
+  border-top: 40px solid white;
+  padding: 10px 0 20px 0;
+  text-align: center;
+  color: #ccc;
+  line-height: 1.5em;
+}
+/* line 464, global.scss */
+#footer a {
+  color: #ccc;
+  border-bottom: 1px dotted #ccc;
 }

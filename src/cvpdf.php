@@ -2,7 +2,9 @@
 include_once "cv.php";
 
 define('FPDF_FONTPATH','./font/');
-define('RATIO',0.145);
+define('RATIO',0.177);
+define('OFFSETX',10);
+define('OFFSETY',17);
 
 require('fpdf.php');
 
@@ -80,14 +82,14 @@ function line($x1,$y1,$x2,$y2,$c){
     global $pdf;
     $color = getColorByClass($c);
     $pdf->SetDrawColor($color[0],$color[1],$color[2]);
-    $pdf->Line(10+$x1*RATIO,30+$y1*RATIO,10+$x2*RATIO,30+$y2*RATIO);
+    $pdf->Line(OFFSETX+$x1*RATIO,OFFSETY+$y1*RATIO,OFFSETX+$x2*RATIO,OFFSETY+$y2*RATIO);
 }
 
 function text($x,$y,$t){
     global $pdf;
     setPdfColorByClass("");
     $pdf->SetFont('Ubuntu','',7.5);
-    $pdf->SetXY(10+$x*RATIO -15 +0.5,30+$y*RATIO-1);
+    $pdf->SetXY(OFFSETX+$x*RATIO -15 +0.5,OFFSETY+$y*RATIO-1);
     $pdf->Cell(30,0,utf8_decode($t),0,0,"C");
 }
 
@@ -98,7 +100,7 @@ function ratext($x,$y,$t,$c){
     $x -= 5;
     setPdfColorByClass($c);
     $pdf->SetFont('ubuntu','',6);
-    $pdf->SetXY(10+$x*RATIO -30 +0.5,30+$y*RATIO-0.3);
+    $pdf->SetXY(OFFSETX+$x*RATIO -30 +0.5,OFFSETY+$y*RATIO-0.3);
     $pdf->Cell(30,0,utf8_decode($t),0,0,"R");
 }
 
@@ -106,7 +108,7 @@ function htext($x,$y,$w,$h,$t){
     global $pdf;
     setPdfColorByClass("");
     $pdf->SetFont('Ubuntu','I',6);
-    $pdf->SetXY(10+$x*RATIO,30+$y*RATIO-1.5);
+    $pdf->SetXY(OFFSETX+$x*RATIO,OFFSETY+$y*RATIO-1.5);
     $pdf->MultiCell($w*RATIO,2,utf8_decode($t),0,"C");
 }
 

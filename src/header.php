@@ -11,6 +11,14 @@
                 <img src="<?php statico("img/twitter.png"); ?>" alt="twitter" class="banner-image"/>
                 <div class="textcontent"><h2><?php t("Tal vez quieras leer <span class='subpart'>lo que escribo</span> en <a href='http://twitter.com/DvdBng'>twitter</a>"); ?></h2></div>
             </div>
+            <div id="banner_11" style="display:none" class="header-banner">
+                <div class="textcontent">
+                    <h2><?php t("A veces hago cosas inservibles."); ?></h2>
+                    <p>
+                        <?php t('Como una <a href="http://bengoarocandio.com/html5tweets/">visualización de tweets en HTML5</a>, un <a href="http://bengoarocandio.com/clock/">relog RGB</a> o un <a href="http://hoyga.com/circulos/">pasatiempo tonto</a>'); ?>
+                    </p>
+                </div>
+            </div>
             <div id="banner_7" style="display:none" class="header-banner">
                 <img src="<?php statico("img/gnu.png"); ?>" alt="GNU" class="banner-image"/>
                 <div class="textcontent">
@@ -64,6 +72,7 @@
     fs_icon("http://www.mono-project.com/","Mono");
     fs_icon("http://www.phonegap.com/","Phonegap");
     fs_icon("http://drupal.org/","Drupal");
+    fs_icon("http://www.vimperator.org/vimperator","Vimperator");
                         ?>
                     </p>
                 </div>
@@ -99,4 +108,3 @@
                 <div class="textcontent"><h2><?php t("Amo la música"); ?></h2><p><?php t("Hago scrobbing en <a href='http://www.last.fm/user/YouWoTMA'>last.fm</a> de las canciones que escucho en <a href='http://banshee.fm/'>Banshee</a>");?></div>
             </div>
         </div>
-        <script type="text/javascript" src="<?php statico("js/global.js"); ?>"></script>

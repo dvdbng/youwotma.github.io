@@ -1,4 +1,7 @@
 @import "reset";
+@import "compass/css3/transform";
+@import "compass/css3/transition";
+@import "compass/css3/columns";
 
 body{
     font-family: 'Ubuntu', arial, sans;
@@ -274,6 +277,29 @@ $headers_pull: 10px;
         width: 940px;
     }
 
+#banner_11{
+    background:  url(img/crissXcross.jpg);
+    color: #ccc;
+    text-shadow: 1px 1px 1px #fff;
+    h2{
+        font-size: 35px;
+        line-height: 1.3em;
+    }
+    &>.textcontent{
+        left: 10px;
+        width: 940px;
+        text-align: center;
+        top: 190px;
+        p{
+            text-shadow: none;
+        }
+        a{
+            color: #ccc;
+            border-bottom: 1px dotted #ccc;
+        }
+    }
+}
+
 .tweet{
     padding: 10px 10px 10px 20px;
     font-size: 12px;
@@ -308,16 +334,7 @@ $headers_pull: 10px;
     line-height: 1.2em;
 }
 
-#tweets{
-    margin-bottom: 10px;
-    border-bottom: 1px solid #ccc;
-    padding-bottom:10px;
-}
-
 #otherprofiles{
-    text-transform: uppercase;
-    padding: 0 0 0 10px;
-    font-weight: bold;
     line-height: 1.3em;
     .mail{color:#FFC448;}
     .last{color:#D71102;}
@@ -328,6 +345,9 @@ $headers_pull: 10px;
     .redd{color:#FF5719;}
     .dias{color:#2B2B2B;}
     .gith{color:#4183C4;}
+    .plus{color:#DD4B39;}
+    .pcpl{color:#f58220;}
+    .four{color:#bed679;}
     &:hover{
         color: #999;
         .mail,
@@ -338,7 +358,10 @@ $headers_pull: 10px;
         .blog,
         .redd,
         .dias,
-        .gith{
+        .gith,
+        .plus,
+        .four,
+        .pcpl{
             color: #ccc;
         }
     }
@@ -351,5 +374,95 @@ $headers_pull: 10px;
     .redd:hover{color:#fff;background-color:#FF5719;}
     .dias:hover{color:#fff;background-color:#2B2B2B;}
     .gith:hover{color:#fff;background-color:#4183C4;}
+    .plus:hover{color:#fff;background-color:#DD4B39;}
+    .pcpl:hover{color:#fff;background-color:#f58220;}
+    .four:hover{color:#fff;background-color:#bed679;}
 }
 
+.photos{
+    position: relative;
+    top: 20px;
+    float:left;
+    .photo{
+        margin-left: 20px;
+        padding: 10px;
+        background-color: #fff;
+        border: 1px solid #ccc;
+        img{
+            width: 200px;
+            height: 200px;
+        }
+        z-index: 15;
+        position: absolute;
+        @include transition-property(all);
+        @include transition-duration(600ms);
+        left: 0px;
+        top: 0px;
+    }
+    height: 240px;
+    &.over{
+        .photo-2{
+            left: 400px;
+            @include rotate(5deg);
+            top: 15px;
+        }
+        .photo-3{
+            left: 200px;
+            @include rotate(0deg);
+        }
+    }
+}
+
+.photo-1{
+    @include rotate(-5deg);
+}
+.photo-2{
+    @include rotate(5deg);
+}
+.photo-3{
+    @include rotate(10deg);
+}
+
+.separator{
+    background: no-repeat url(img/separator.png);
+    height:39px;
+    z-index: 12;
+    margin-top: -30px;
+    margin-bottom: 20px;
+    position: relative;
+    clear:both;
+}
+
+#about-me-right{
+    width: 650px;
+    float:right;
+    color: #333;
+    h2{
+        text-align: center;
+        font-size: 30px;
+        margin: -20px 0 20px 0
+    }
+}
+#about-me-text{
+    @include column-count(2);
+    text-align: justify;
+    line-height: 1.5em;
+}
+
+p{
+    margin-bottom: 1em;
+}
+
+#footer{
+    background-color: #222;
+    clear:both;
+    border-top: 40px solid white;
+    padding: 10px 0 20px 0;
+    text-align: center;
+    color: #ccc;
+    line-height: 1.5em;
+    a{
+        color: #ccc;
+        border-bottom: 1px dotted #ccc;
+    }
+}

@@ -1,10 +1,21 @@
-//var banners = document.getElementsByClassName("header-banner");
-//Brrr! no getElementsByClassName in IE8 :(
-var banners = [4,7,9,3,8,10,5,2];
-for(var i=0,l=banners.length; i<l; ++i){
-    banners[i] = document.getElementById("banner_" + banners[i]);
-}
+"use strict";
+/*
+    Copyright (C) 2011 David Bengoa Rocandio
 
+    This program is free software: you can redistribute it and/or modify
+    it under the terms of the GNU General Public License as published by
+    the Free Software Foundation, either version 3 of the License, or
+    (at your option) any later version.
+
+    This program is distributed in the hope that it will be useful,
+    but WITHOUT ANY WARRANTY; without even the implied warranty of
+    MERCHANTABILITY or FITNESS FOR A PARTICULAR PURPOSE.  See the
+    GNU General Public License for more details.
+
+    You should have received a copy of the GNU General Public License
+    along with this program.  If not, see <http://www.gnu.org/licenses/>.
+*/
+var banners = $(".header-banner");
 
 function attach_event(elm,ev,fn){
     if(elm.attachEvent){
@@ -18,9 +29,9 @@ var actual_banner=0,tid=null;
 var animations = [];
 
 function setOpacity(elm,value){
-    elm.style.display = value===0?"none":"block";
     elm.style.opacity = value;
     elm.style.filter = 'alpha(opacity=' + value*100 + ')';
+    elm.style.display = value===0?"none":"block";
 }
 function fadeOut(elm){
     animations.push([setOpacity,1,0,elm,+new Date(),1000]);
@@ -85,10 +96,15 @@ function animate(){
 }
 ("addEventListener" in window) && window.addEventListener("MozBeforePaint", animate, false);
 
+function next_banner(){
+    change_banner(1,false);
+}
+
 function change_banner(delta,stopped){
     if(banners.length === 0 || animations.length >0)return;
     if(tid){
         clearTimeout(tid);
+        tid=null;
     }
 
     delta = delta||1;
@@ -98,7 +114,7 @@ function change_banner(delta,stopped){
     fadeIn(banners[actual_banner]);
     scheduleAnimationFrame();
     if(!stopped){
-        tid = setTimeout(change_banner,1000*4);
+        tid = setTimeout(next_banner,1000*4);
     }
 }
 
@@ -130,53 +146,43 @@ var pi = document.getElementById("banner_10_inner");
 var pitxt = pi.firstChild.nodeValue;
 pi.firstChild.nodeValue = pitxt.split("").join(String.fromCharCode(8203));
 
-var tid = setTimeout(change_banner,1000*2);
+var tid = setTimeout(next_banner,1000*2);
 
 var LINK_RX = /http:\/\/\S+/,
     USER_RX = /@[a-zA-Z0-9_]+/,
     HASH_RX = /#\S+/;
 function render_tweets(tweets){
-    var target = document.getElementById("tweets");
+    var $target = $("#tweets");
     for(var i=0,l=tweets.length; i<l; ++i){
         var txt = tweets[i]["text"].split(/\s+/);
-        var elm = document.createElement("div");
-        elm.setAttribute("class","tweet");
-        var img  = document.createElement("img");
-        img.setAttribute("src",twt_logo_img);
-        img.setAttribute("class","tweetbird");
-        elm.appendChild(img);
+        var $elm = $("<div/>").attr("class","tweet");
+        var $img  = $("<img/>").attr("src",twt_logo_img).attr("class","tweetbird").appendTo($elm);
+
         for(var k=0, m=txt.length; k<m; ++k){
             var token = txt[k];
             if(LINK_RX.test(token)){
-                var a  = document.createElement("a");
-                a.setAttribute("href",token);
-                a.setAttribute("target","_blank");
-                a.appendChild(document.createTextNode(token));
-                elm.appendChild(a);
-                elm.appendChild(document.createTextNode(" "));
+                $("<a/>").attr("href",token)
+                         .attr("target","_blank")
+                         .text(token)
+                         .appendTo($elm);
             }else if(HASH_RX.test(token)){
-                var a  = document.createElement("a");
-                a.setAttribute("href","http://twitter.com/#!/search?q=" + encodeURIComponent(token));
-                a.setAttribute("target","_blank");
-                a.appendChild(document.createTextNode(token));
-                elm.appendChild(a);
-                elm.appendChild(document.createTextNode(" "));
+                $("<a/>").attr("href","http://twitter.com/#!/search?q=" + encodeURIComponent(token))
+                         .attr("target","_blank")
+                         .text(token)
+                         .appendTo($elm);
             }else if(USER_RX.test(token)){
-                elm.appendChild(document.createTextNode("@"));
+                $elm.append("@");
                 token = token.substring(1); //remove the @
-                var a  = document.createElement("a");
-                a.setAttribute("href","http://twitter.com/" + token);
-                a.setAttribute("target","_blank");
-                a.appendChild(document.createTextNode(token));
-                elm.appendChild(a);
-                elm.appendChild(document.createTextNode(" "));
-            }else{
-                if(token){
-                    elm.appendChild(document.createTextNode(token+" "));
-                }
+                $("<a/>").attr("href","http://twitter.com/" + token)
+                      .attr("target","_blank")
+                      .text(token)
+                      .appendTo($elm);
+            }else if(token){
+                $elm.append(document.createTextNode(token));
             }
+            $elm.append(" ");
         }
-        target.appendChild(elm);
+        $target.append($elm);
     }
 }
 
@@ -193,3 +199,26 @@ function render_posts(data){
         blog.appendChild(p);
     }
 }
+
+
+var $date = $("#date");
+function update_date(){
+    var date_born = new Date(1991,12,24),
+        now=new Date(),
+        diff=now-date_born,
+        years=diff/(365*24*60*60*1000),
+        years_str=(Math.round(years*100000000)/100000000)+"";
+
+    while(years_str.length < 11){
+        years_str += "0";
+    }
+
+    $date.text(years_str);
+}
+setInterval(update_date,50);
+
+$("#photo-1").hover(function(){
+    $("#photos").addClass("over");
+},function(){
+    $("#photos").removeClass("over");
+});

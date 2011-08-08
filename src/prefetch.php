@@ -4,7 +4,8 @@ include_once "global.php";
 
 $urls = array(
     "http://api.twitter.com/1/statuses/user_timeline.json?include_rts=1&screen_name=dvdbng&callback=render_tweets",
-    "http://www.hoyga.com/?feed=json&callback=render_posts"
+    "http://www.hoyga.com/?feed=json&callback=render_posts",
+    "http://api.picplz.com/api/v2/user.json?username=dvdbng&include_pics=1&callback=render_photos"
 );
 
 $ttl = 60*5;

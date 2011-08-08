@@ -1,7 +1,7 @@
 <?php
 include_once "global.php";
 $deph = "";
-define("width",1322);
+define("width",1056);
 define("height",340);
 define("TLY",160);
 
@@ -49,7 +49,7 @@ function get_x($year,$month=1,$day=1){
     $shorted_years = 12;
     $sy = 1991;
     $day += ($month-1)*30 - 1;
-    $year_width = 120;
+    $year_width = 95;
     $offset = 0;
     if($year < 1992){
         return $offset + $year_width*($day/360);
@@ -67,7 +67,7 @@ function do_cv(){
     for($i = 1991; $i<=2012; $i++){
         if($i>1992 && $i<2003)continue;
         if($i!=1991)line(get_x($i),TLY-5,get_x($i),TLY+5,"timeline timeline-mark");
-        if($i!=1992 && $i!=2012)text((get_x($i)+get_x($i+1))/2,TLY+20,$i);
+        if($i!=1992 && $i!=2012)text((get_x($i)+get_x($i+1))/2,TLY+15,$i);
     }
 
     $shry = 1995.55;
@@ -181,7 +181,7 @@ function do_cv(){
 
     title("PHP",90);
         item("Wordpress",90);
-        item("Drupal",20);
+        item("Drupal",40);
     ftitle();
 
     title("Flash & actionscript",50);
@@ -230,7 +230,7 @@ function do_cv(){
 
     title(tr("Idiomas"),0);
         item(tr("Español"),96);
-        item(tr("Ingles"),"25");
+        item(tr("Ingles"),"50");
     ftitle();
 
     skills_end();
