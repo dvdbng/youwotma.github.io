@@ -110,7 +110,7 @@ function change_banner(delta,stopped){
     actual_banner = (actual_banner+delta+banners.length)%banners.length;
     fadeOut(banners[ant_banner]);
     fadeIn(banners[actual_banner]);
-    scheduleAnimationFrame();
+    scheduleAnimationFrame(animate);
     if(!stopped){
         tid = setTimeout(next_banner,1000*4);
     }
@@ -197,6 +197,8 @@ function render_posts(data){
         blog.appendChild(p);
     }
 }
+
+function render_photos(){}
 
 
 var $date = $("#date");
