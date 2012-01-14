@@ -90,7 +90,7 @@ function animate(){
         }
     }
     if(animations.length > 0){
-        scheduleAnimationFrame(aminate);
+        scheduleAnimationFrame(animate);
     }
 }
 
