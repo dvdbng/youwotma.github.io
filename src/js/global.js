@@ -50,14 +50,13 @@ function easeInOut(minValue,maxValue,totalSteps,actualStep) {
 }
 
 var scheduleAnimationFrame =
-//      TODO: investigate witch event you need to listen to use these
-//      window.requestAnimationFrame       ||
-//      window.webkitRequestAnimationFrame ||
-//      window.oRequestAnimationFrame      ||
-//      window.msRequestAnimationFrame     ||
+      window.requestAnimationFrame       ||
+      window.webkitRequestAnimationFrame ||
+      window.oRequestAnimationFrame      ||
+      window.msRequestAnimationFrame     ||
       window.mozRequestAnimationFrame    ||
       function(callback, element){
-            setTimeout(animate, 16);
+            setTimeout(callback, 16);
       };
 
 function mkElement(tag,attrs,childs){
@@ -91,10 +90,9 @@ function animate(){
         }
     }
     if(animations.length > 0){
-        scheduleAnimationFrame();
+        scheduleAnimationFrame(aminate);
     }
 }
-("addEventListener" in window) && window.addEventListener("MozBeforePaint", animate, false);
 
 function next_banner(){
     change_banner(1,false);
