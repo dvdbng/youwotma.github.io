@@ -66,7 +66,7 @@ $lang = array(
     "Soy un fan del software libre y los estándares abiertos. He colaborado con varios proyectos de software libre, con los que he aprendido mas de lo imaginable."=>"I'm a free software and open standards enthusiast. I have collaborated with several free software projects, with whom I have learned more than you can imagine.",
     "En cuanto a hobbys, a parte de lo típico (leer, viajar, música y películas) me gusta hacer snowboard."=>"About hobbys, apart from the typical (reading, traveling, music and films) I do snowboard.",
     "A veces hago cosas inservibles."=>"Sometime I build useless stuff.",
-    'Como una <a href="http://bengoarocandio.com/html5tweets/">visualización de tweets en HTML5</a>, un <a href="http://bengoarocandio.com/clock/">relog RGB</a> o un <a href="http://hoyga.com/circulos/">pasatiempo tonto</a>'=>'Like a <a href="http://bengoarocandio.com/html5tweets/">HTML5 tweet visualization</a>, a <a href="http://bengoarocandio.com/clock/">RGB clock</a> and a <a href="http://hoyga.com/circulos/">stupid game</a>',
+    'Como una <a href="http://bengoarocandio.com/html5tweets/">visualización de tweets en HTML5</a>, un <a href="http://bengoarocandio.com/clock/">reloj RGB</a> o un <a href="http://hoyga.com/circulos/">pasatiempo tonto</a>'=>'Like a <a href="http://bengoarocandio.com/html5tweets/">HTML5 tweet visualization</a>, a <a href="http://bengoarocandio.com/clock/">RGB clock</a> and a <a href="http://hoyga.com/circulos/">stupid game</a>',
     "Código fuente de la pagina (GPL)"=>"Page source code (GPL)",
 
 );

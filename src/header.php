@@ -15,7 +15,7 @@
                 <div class="textcontent">
                     <h2><?php t("A veces hago cosas inservibles."); ?></h2>
                     <p>
-                        <?php t('Como una <a href="http://bengoarocandio.com/html5tweets/">visualización de tweets en HTML5</a>, un <a href="http://bengoarocandio.com/clock/">relog RGB</a> o un <a href="http://hoyga.com/circulos/">pasatiempo tonto</a>'); ?>
+                        <?php t('Como una <a href="http://bengoarocandio.com/html5tweets/">visualización de tweets en HTML5</a>, un <a href="http://bengoarocandio.com/clock/">reloj RGB</a> o un <a href="http://hoyga.com/circulos/">pasatiempo tonto</a>'); ?>
                     </p>
                 </div>
             </div>
