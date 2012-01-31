@@ -49,7 +49,7 @@ function get_x($year,$month=1,$day=1){
     $shorted_years = 12;
     $sy = 1991;
     $day += ($month-1)*30 - 1;
-    $year_width = 855/(date(Y)-2002);
+    $year_width = 855/(date('Y')-2002);
     $offset = 0;
     if($year < 1992){
         return $offset + $year_width*($day/360);
