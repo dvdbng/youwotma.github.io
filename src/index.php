@@ -24,7 +24,7 @@ function content(){
                 <div id="about-me-right">
                     <h2><?php t("Sobre mí"); ?></h2>
                     <div id="about-me-text">
-                        <p><?php t("Soy un emprendedor y programador, ademas de estudiante de Ingeniería del Software."); ?> <?php t("Tengo"); ?> <span id="date">19.00000000</span> <?php t("años. Vivo en Málaga."); ?></p>
+                        <p><?php t("Soy un emprendedor y programador, ademas de estudiante de Ingeniería del Software."); ?> <?php t("Desde que nací, la tierra ha completado"); ?> <span id="date">20.00000000</span> <?php t("revoluciones alrrededor del Sol. Vivo en Málaga."); ?></p>
                         <p><?php t("Me gusta crear cosas."); ?></p>
                         <p><?php t("Soy un fan del software libre y los estándares abiertos. He colaborado con varios proyectos de software libre, con los que he aprendido mas de lo imaginable."); ?></p>
                         <p><?php t("En cuanto a hobbys, a parte de lo típico (leer, viajar, música y películas) me gusta hacer snowboard."); ?></p>

@@ -49,7 +49,7 @@ function get_x($year,$month=1,$day=1){
     $shorted_years = 12;
     $sy = 1991;
     $day += ($month-1)*30 - 1;
-    $year_width = 95;
+    $year_width = 855/(date(Y)-2002);
     $offset = 0;
     if($year < 1992){
         return $offset + $year_width*($day/360);
@@ -64,10 +64,12 @@ function get_now_x(){
 }
 function do_cv(){
     timeline_start();
-    for($i = 1991; $i<=2012; $i++){
+    $current_year = date("Y");
+
+    for($i = 1991; $i<=$current_year+1; $i++){
         if($i>1992 && $i<2003)continue;
         if($i!=1991)line(get_x($i),TLY-5,get_x($i),TLY+5,"timeline timeline-mark");
-        if($i!=1992 && $i!=2012)text((get_x($i)+get_x($i+1))/2,TLY+15,$i);
+        if($i!=1992 && $i<=$current_year)text((get_x($i)+get_x($i+1))/2,TLY+15,$i);
     }
 
     $shry = 1995.55;
@@ -80,7 +82,7 @@ function do_cv(){
     line(get_x($shry),TLY+$ampl,get_x($shry,6),TLY-$ampl,"timeline");
     line(get_x($shry,6),TLY-$ampl,get_x(++$shry),TLY+$ampl,"timeline");
     line(get_x($shry),TLY+$ampl,get_x($shry,6),TLY,"timeline");
-    line(get_x($shry,6),TLY,get_x(2012),TLY,"timeline");
+    line(get_x($shry,6),TLY,get_x($current_year+1),TLY,"timeline");
 
     brazo(get_x(1992),get_x(2003),TLY-10,tr("No recuerdo mucho de esta época. Fue hace muuucho tiempo."),"timeline");
     arrow(get_x(1991,12,24),110,tr("Nací"));
@@ -150,7 +152,7 @@ function do_cv(){
         item("HTML",99);
         item("CSS",99);
         item("SVG",80);
-        item("Canvas",95);
+        item("Canvas",97);
         item("XMLHttpRequest & COMET",95);
         item(tr("APIs del navegador"),95);
     ftitle();
@@ -175,7 +177,7 @@ function do_cv(){
         item("Cairo",62);
     ftitle();
 
-    title("Java",50);
+    title("Java",60);
         item("Swing",70);
     ftitle();
 
@@ -220,6 +222,7 @@ function do_cv(){
         item("Tex",20);
         item("MySQL",80);
         item("SQLite",80);
+        item("Oracle/PLSQL/JDBC",50);
         item("MongoDB",30);
         item("Scheme",25);
         item("Sockets",80);
@@ -230,7 +233,7 @@ function do_cv(){
 
     title(tr("Idiomas"),0);
         item(tr("Español"),96);
-        item(tr("Ingles"),"50");
+        item(tr("Ingles"),"60");
     ftitle();
 
     skills_end();

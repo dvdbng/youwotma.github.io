@@ -17,14 +17,6 @@
 */
 var banners = $(".header-banner");
 
-function attach_event(elm,ev,fn){
-    if(elm.attachEvent){
-        elm.attachEvent(ev,fn);
-    }else{
-        elm.addEventListener(ev,fn,false);
-    }
-}
-
 var actual_banner=0,tid=null;
 var animations = [];
 
@@ -116,24 +108,13 @@ function change_banner(delta,stopped){
     }
 }
 
-attach_event(document.getElementById("flecha-izq"),"click",function(){change_banner(-1,true);});
-attach_event(document.getElementById("flecha-der"),"click",function(){change_banner(1,true);});
+$("#flecha-ize").click(function(){change_banner(-1,true);});
+$("#flecha-der").click(function(){change_banner(1,true);});
 
-var header = document.getElementById("header");
-attach_event(header,"mouseover",function(){
+$("#header").hover(function(){
     tid && clearTimeout(tid);
     tid = null;
-});
-attach_event(header,"mouseout",function(e){
-    e = e || window.event;
-    //Si alguno de los padres es header, no continuamos
-    var target = e.relatedTarget;
-    if(target){
-        while(target.parentNode){
-            target = target.parentNode;
-            if(target === header)return;
-        }
-    }
+},function(){
     tid && clearTimeout(tid);
     tid = setTimeout(change_banner,1000*1);
 });
@@ -203,10 +184,10 @@ function render_photos(){}
 
 var $date = $("#date");
 function update_date(){
-    var date_born = new Date(1991,12,24),
+    var date_born = new Date(1991,11,24,20,0,0,0),
         now=new Date(),
         diff=now-date_born,
-        years=diff/(365*24*60*60*1000),
+        years=diff/(365.256363004*24*60*60*1000),
         years_str=(Math.round(years*100000000)/100000000)+"";
 
     while(years_str.length < 11){
