@@ -12,13 +12,13 @@ function content(){
                 <div class="separator"></div>
                 <div class="photos" id="photos">
                     <div class="photo photo-2" id="photo-2">
-                        <img class="proto-img" src="<?php statico("img/avatar2.jpg"); ?>" alt="David Bengoa" />
-                    </div>
-                    <div class="photo photo-3" id="photo-3">
                         <img class="proto-img" src="<?php statico("img/avatar3.jpg"); ?>" alt="David Bengoa" />
                     </div>
-                    <div class="photo photo-1" id="photo-1">
+                    <div class="photo photo-3" id="photo-3">
                         <img class="proto-img" src="<?php statico("img/avatar1.jpg"); ?>" alt="David Bengoa" />
+                    </div>
+                    <div class="photo photo-1" id="photo-1">
+                        <img class="proto-img" src="<?php statico("img/avatar4.jpg"); ?>" alt="David Bengoa" />
                     </div>
                 </div>
                 <div id="about-me-right">
