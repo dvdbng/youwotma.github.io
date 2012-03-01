@@ -45,6 +45,7 @@ static img/twitter.png
 static img/avatar1.jpg
 static img/avatar2.jpg
 static img/avatar3.jpg
+static img/avatar4.jpg
 static css/cv.css
 static css/global.css
 static css/img/header-blog.png
