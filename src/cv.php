@@ -1,6 +1,6 @@
 <?php
 include_once "global.php";
-$deph = "";
+$depth = "../";
 define("width",1056);
 define("height",340);
 define("TLY",160);
@@ -18,6 +18,7 @@ function getColorByClass($class,$default=array(0x33,0x33,0x33)){
         case "java": return array(0x23,0x81,0x9c);
         case "bash": return array(0x23,0x81,0x9c);
         case "python": return array(0x23,0x81,0x9c);
+        case "muted": return array(0xCC,0xCC, 0xCC);
         default: return $default;
     }
 }
@@ -38,6 +39,38 @@ function brazo($x1,$x2,$y,$txt,$c){
     line($x1+($x2-$x1)/2 + $serif_length, $y-$serif_length, $x2-$serif_length, $y-$serif_length,$c);
     line($x2-$serif_length, $y-$serif_length, $x2, $y, $c);
     htext($x1,$y-70,$x2-$x1,85,$txt);
+}
+
+function drawLines($points, $c){
+    $prev = array_shift($points);
+    foreach($points as $i=>$point){
+        line($prev[0], $prev[1], $point[0], $point[1], $c);
+        $prev = $point;
+    }
+}
+
+function vert_brace($x, $y1, $y2, $yarrow, $yarrow_bend_x, $dir=1, $c){
+    $yBraceArrow = min($y2 - 15, max($y1 + 15, $yarrow));
+
+    $serif_length = 3;
+
+    drawLines(array(
+        array($x + $dir*$serif_length, $y1),
+        array($x, $y1 + $serif_length),
+        array($x, $yBraceArrow - $serif_length),
+        array($x - $dir*$serif_length, $yBraceArrow),
+        array($x, $yBraceArrow + $serif_length),
+        array($x, $y2 - $serif_length),
+        array($x + $dir*$serif_length, $y2)
+    ), $c);
+
+    drawLines(array(
+        array($x - $dir*$serif_length, $yBraceArrow),
+        array($x - $dir*$serif_length*$yarrow_bend_x*2, $yBraceArrow),
+        array($x - $dir*$serif_length*$yarrow_bend_x*2, $yarrow),
+        array($x - $dir*$serif_length*100, $yarrow),
+    ), $c);
+
 }
 
 function arrow($x,$h,$txt){
@@ -62,181 +95,137 @@ function get_x($year,$month=1,$day=1){
 function get_now_x(){
     return get_x(date("Y"),date("n"),date("j"));
 }
-function do_cv(){
-    timeline_start();
-    $current_year = date("Y");
 
-    for($i = 1991; $i<=$current_year+1; $i++){
-        if($i>1992 && $i<2003)continue;
-        if($i!=1991)line(get_x($i),TLY-5,get_x($i),TLY+5,"timeline timeline-mark");
-        if($i!=1992 && $i<=$current_year)text((get_x($i)+get_x($i+1))/2,TLY+15,$i);
+function get_y($year,$month=1,$day=1){
+    $shorted_years = 17;
+    $sy = 1991;
+    $day += ($month-1)*30 - 1;
+    $year_width = 500/(date('Y')-2005);
+    $offset = 0;
+    if($year < 1992){
+        return $offset + $year_width*($day/360);
     }
+    if($year < ($sy+$shorted_years)){
+        return $offset + $year_width*(($year-$sy+$day/360 -1)/$shorted_years +1);
+    }
+    return $offset + $year_width*($year-$sy-$shorted_years+$day/360+2);
+}
 
-    $shry = 1995.55;
-    $ampl = 8;
-    line(0,TLY,get_x($shry+1),TLY,"timeline");
-    line(get_x(++$shry),TLY,get_x($shry,6),TLY-$ampl,"timeline");
-    line(get_x($shry,6),TLY-$ampl,get_x(++$shry),TLY+$ampl,"timeline");
-    line(get_x($shry),TLY+$ampl,get_x($shry,6),TLY-$ampl,"timeline");
-    line(get_x($shry,6),TLY-$ampl,get_x(++$shry),TLY+$ampl,"timeline");
-    line(get_x($shry),TLY+$ampl,get_x($shry,6),TLY-$ampl,"timeline");
-    line(get_x($shry,6),TLY-$ampl,get_x(++$shry),TLY+$ampl,"timeline");
-    line(get_x($shry),TLY+$ampl,get_x($shry,6),TLY,"timeline");
-    line(get_x($shry,6),TLY,get_x($current_year+1),TLY,"timeline");
+function get_now_y(){
+    return get_y(date("Y"),date("n"),date("j"));
+}
 
-    brazo(get_x(1992),get_x(2003),TLY-10,tr("No recuerdo mucho de esta época. Fue hace muuucho tiempo."),"timeline");
-    arrow(get_x(1991,12,24),110,tr("Nací"));
-    arrow(get_x(2006,9,15),50,tr("Me mudo a Málaga"));
-    arrow(get_x(2009,12,24),50,tr("Mayor de edad"));
-    arrow(get_x(2009,6,18),110,tr("Me paso a GNU/Linux"));
-    arrow(get_now_x(),50,tr("Hoy"));
+/*
+ *
+Graduated with honors (best of class) in the following courses:
+* Programación Orientada a Objetos (Object oriented Programming)
+* Estructura de Datos (Data structures)
+* Análisis y Diseño de Algoritmos (Analysis and Design of Algorithms)
+* Teoría de Autómatas y Lenguajes Formales (Formal Languages and Automata Theory)
+* Programacion de Sistemas y Concurrencia (System Programming and Concurrency)
+* Systemas Operativos (Operating Systems)
+ *
+ *
+ *
+ *
+The Mozilla project is a global community of people who believe that openness, innovation, and opportunity are key to the continued health of the Internet, best known for creating the Mozilla Firefox web browser.
 
-    ratext(get_x(2003,7,0),TLY+70,"HTML","tlinline html");
-    hline(get_x(2003,7,0),get_now_x(),TLY+70,"html");
-    ratext(get_x(2003,9,0),TLY+80,"Javascript","tlinline js");
-    hline(get_x(2003,9,0),get_now_x(),TLY+80,"js");
+As a Mozilla Hispano Labs member (and eventually coordinator) I developed and assisted developing innovating tools to make the web a better place for everyone. I'm a huge fan of open source, and technological freedom.
 
-    ratext(get_x(2004,9,0),TLY+90,"PHP","tlinline php");
-    hline(get_x(2004,9,0),get_x(2008,4),TLY+90,"php");
-    hline(get_x(2009,10,0),get_now_x(),TLY+90,"php");
+Working in open source projects allowed me to gain a lot of experience long before finishing high school, and to work with —and learn from— highly talented persons.
+ * */
 
-    ratext(get_x(2005,9,0),TLY+100,"Flash & actionscript","tlinline flash");
-    hline(get_x(2005,9,0),get_x(2007,0,0),TLY+100,"flash");
-    hline(get_x(2008,0,0),get_x(2008,3,0),TLY+100,"flash");
-    hline(get_x(2010,9,0),get_x(2011),TLY+100,"flash");
 
-    ratext(get_x(2006,5,0),TLY+110,"Visual basic, C#","tlinline vb");
-    hline(get_x(2006,5,0),get_x(2008,6),TLY+110,"vb");
-
-    ratext(get_x(2007,8,0),TLY+120,"Java","tlinline java");
-    hline(get_x(2007,8,0),get_x(2009),TLY+120,"java");
-    hline(get_x(2011,2,0),get_now_x(),TLY+120,"java");
-
-    ratext(get_x(2009,6,18),TLY+130,"Bash","tlinline bash");
-    hline(get_x(2009,6,18),get_now_x(),TLY+130,"bash");
-
-    ratext(get_x(2009,10,0),TLY+140,"Python","tlinline python");
-    hline(get_x(2009,10,0),get_now_x(),TLY+140,"python");
-
-    //ESO
-    ratext(get_x(2003,9,10),TLY+40,tr("ESO"),"tlinline eso");
-    hline(get_x(2003,9,10),get_x(2004,6,15),TLY+40,"eso");
-    hline(get_x(2004,9,10),get_x(2005,6,15),TLY+40,"eso");
-    hline(get_x(2005,9,10),get_x(2006,6,15),TLY+40,"eso");
-    hline(get_x(2006,9,10),get_x(2007,6,15),TLY+40,"eso");
-    //Bachillerato
-    ratext(get_x(2007,9,10),TLY+50,tr("Bachiller"),"tlinline bachiller");
-    hline(get_x(2007,9,10),get_x(2008,6,15),TLY+50,"bachiller");
-    hline(get_x(2008,9,10),get_x(2009,6,15),TLY+50,"bachiller");
-    //Uni
-    ratext(get_x(2009,9,28),TLY+60,tr("Universidad"),"tlinline uni");
-    hline(get_x(2009,9,28),get_x(2010,6,25),TLY+60,"uni");
-    hline(get_x(2010,9,28),get_now_x(),TLY+60,"uni");
-
-    timeline_end();
-    skills_start(
-        63, //Item count
-        11 //Title count
-    );
-
-    title("Javascript",98);
-        item("jQuery",95);
-        item("Node.js",85);
-        item("ECMA 5",90);
-        item("Jetpack",60);
-        item(tr("Compiladores"),94);
+function do_skills(){
+    title("Javascript",99);
+        item("Node.js / io.js", 99);
     ftitle();
 
-    title(tr("Tecnologias web"),98);
-        item(tr("Protocolo HTTP"),99);
-        item("HTML",99);
+    title(tr("Frontend"),99);
+        item("jQuery",99);
         item("CSS",99);
-        item("SVG",80);
-        item("Canvas",97);
-        item("XMLHttpRequest & COMET",95);
-        item(tr("APIs del navegador"),95);
+        item("Angular.js",85);
     ftitle();
 
     title("Python",97);
-        item("Django",95);
-        item("South",70);
-        item("WSGI",60);
-        item("PyCairo",70);
-        item("PyCurl",75);
-        item("PyGTK",60);
-        item("PyQt",50);
-        item("Gnome API",55);
-        item("Gimp API",40);
-        item("Vim API",40);
-    ftitle();
-
-    title("C & C++",70);
-        item("Xlib",50);
-        item("GTK+",55);
-        item("Gcc",60);
-        item("Cairo",62);
-    ftitle();
-
-    title("Java",60);
-        item("Swing",70);
+        item("Django",85);
     ftitle();
 
     title("PHP",90);
         item("Wordpress",90);
-        item("Drupal",40);
     ftitle();
 
-    title("Flash & actionscript",50);
-        item("as2",70);
-        item("as3",95);
-        item("papervision3D",70);
-        item("away3D",75);
+    title("Other languages", 0);
+        item("C",60);
+        item("C++", 30);
+        item("Actionscript", 85);
+        item("Bash",85);
+        item("Scheme",25);
     ftitle();
 
-    title("Unix - GNU/linux",70);
-        item("Unix API",50);
-        item(tr("Config. y compilación del kernel"),40);
-        item(tr("Binarios standard Unix"),90);
-        item("Gentoo",85);
-        item("Ubuntu/Debian",80);
+    title("Databases", 0);
+        item("MongoDB", 85);
+        item("MySQL", 85);
+        item("SQLite",80);
+        item("Oracle/PLSQL/JDBC", 45);
     ftitle();
 
-    title(tr("Tecnologias Mozilla"),80);
-        item("XUL",85);
-        item("XBL",95);
-        item(tr("Extensiones CSS de mozilla"),90);
-        item(tr("Extensiones js de Spidermonkey"),90);
-        item("XPCOM",90);
-        item(tr("Compilación apps xulrunner "),90);
-        item("Mercurial",75);
+    title("Operating Systems", 85);
+        item("GNU/Linux", 95);
+        item("Other UNIX", 50);
+        item("Windows", 25);
+    ftitle();
+
+    title(tr("Sistemas de control de versiones"), 0);
+        item("Git", 95);
+        item("Mercurial",50);
+        item("SVN",50);
     ftitle();
 
     title(tr("Otros"),0);
+        item("Vim","95");
         item(tr("Expresiones regulares"),98);
-        item("Makefile",10);
-        item("Bash",85);
-        item("Git",75);
-        item(tr("Vim (editing)"),"95");
-        item(tr("Vim (scripting)"),"65");
-        item("Latex",15);
-        item("Tex",20);
-        item("MySQL",80);
-        item("SQLite",80);
-        item("Oracle/PLSQL/JDBC",50);
-        item("MongoDB",30);
-        item("Scheme",25);
-        item("Sockets",80);
-        item(tr("Protocolo TCP/IP"),"30");
-        item(tr("Twitter API"),"90");
+        item(tr("Protocolo TCP/IP"),80);
         item(tr("Carnet de conducir"),tr("Tipo B"));
     ftitle();
 
     title(tr("Idiomas"),0);
         item(tr("Español"),96);
-        item(tr("Ingles"),"60");
+        item(tr("Ingles"),87);
     ftitle();
+}
 
+function do_cv(){
+    timeline_start();
+
+    //timeline_period(get_y(2009, 9), get_y(2012, 7), 'Universidad de Málaga', 'Estudiante de Ingeniería del software.');
+    //timeline_period(get_y(2012, 9), get_y(2013, 4), 'Southampton Solent University', 'Estudiante de Ingeniería del software.');
+    //timeline_period(get_y(2013, 5), get_y(2013, 11), 'Centro Europeo para el Desarrollo Nuclear (CERN)', 'INSPIRE Developer');
+    //timeline_period(get_now_y(), get_now_x()+50, 'Your company', 'Ingeniero del software');
+
+    timeline_period(2008, 2012, 5, 'Mozilla Hispano', 'Coordinador Labs', "Como miembro del area de Mozilla Hispano Labs (y eventualmente coordinador) desarrolle y asisti en el desarrollo de herramientas innovadoras para hacer de la web un lugar mejor para todos. Trabajando en projectos de codigo abierto me permitio obtener mucha experiencia antes de acabar la educación segundaria, y trabajar con —y aprender de— personas con mucho talento.", 'mozilla_logo.png');
+    timeline_period(2012, 2013, 50, 'Southampton Solent University', 'Estudiante de Ingeniería del Software', 'Estudiar un año en el extranjero me hizo apreciar profundamente los ambientes internacionales.', 'solent_logo.png');
+    timeline_period(2013, 2014, 5, 'MyA.me', "Co-fundador y CTO", "MyA.me una plataforma de computación contextual para el Internet de las Cosas. Los usuarios pueden crear asistentes (A's) que se disparan dependiendo de su localización, de lo que estan haciendo o simplemente hablandole a su telefono. Estos asistentes pueden responder mostrando información relevante o realizando una acción.", 'mya_logo.png');
+    timeline_period(2014, 2015, 5, 'Immunity Zone / Amune.org', "Co-fundador y CTO", 'Con immunity zone, yo y mi equipo extendimos los limites de la web como plataforma creando un navegador que funciona en la nuve. El backend descarga la pagina y ejecuta javascript, enviando el resultado al cliente. El resultado es un navegador seguro, privado y rápido que funciona dentro de cualquier navegador moderno.', 'immunityzone_icon.png');
+
+    timeline_right();
+
+    timeline_period(2008, 2013, 60, 'Autonomo', 'Desarrollador freelance', 'Trabajar como freelance me hizo entender como diferentes industrias usas la tecnologia para consegir sus objetivos, ademas de experiencia practiva en diferentes tecnologías.', 'bengoa_logo.png');
+    timeline_period(2009, 2012, 15, 'Universidad de Málaga', 'Estudiante de Ingeniería del Software', 'Matricula de Honor (mejor de la clase) en: Programación Orientada a Objetos, Estructura de Datos, Análisis y Diseño de Algoritmos, Teoría de Autómatas y Lenguajes Formales, Programacion de Sistemas/Concurrencia y Sistemas Operativos', 'uma_logo.jpg');
+    timeline_period(2013, '',   85, 'CERN', "Desarrollador en Python para Invenio", "Invenio es un projecto Open Source que se usa en el CERN Document Server y INSPIRE, la base de datos que contiene datos bibliograficos de mas de un millon de publicaciones, evolición de SPIRES el primer sitio web fuera de Europa y la primera base de datos servida a traves de la web.\nTrabajando en el CERN aprendi a trabajar confortablemente en grandes equipos cross-funcionales y multi-culturales.", 'cern_logo.jpg');
+    timeline_period(date('Y'), tr('…'), 60, 'Tu compañia', 'Ingeniero del Software', "Imagina todo lo que podriamos escribir aquí!");
+
+    timeline_end();
+
+    skills_title();
+    skills_start(
+        26, //Item count
+        10, //Title count
+        3  // Number of columns
+    );
+    do_skills();
     skills_end();
+    cv_end();
 }
 
 

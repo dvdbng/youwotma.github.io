@@ -12,9 +12,9 @@ getdin (){
 
 [ -d prod ] && rm -r prod
 
-for dir in prod/david/es prod/david/en prod/david/css prod/david/img prod/david/css/img prod/david/js
+for dir in /es /en /css /img /css/img /js /es/cv /en/cv
 do
-    mkdir -p $dir
+    mkdir -p prod/david/$dir
 done
 
 # Archivos de redirección, redireccionan el navegador como sea necesario
@@ -46,6 +46,14 @@ static img/avatar1.jpg
 static img/avatar2.jpg
 static img/avatar3.jpg
 static img/avatar4.jpg
+static img/mya_icon.png
+static img/mya_logo.png
+static img/immunityzone_icon.png
+static img/bengoa_logo.png
+static img/uma_logo.jpg
+static img/cern_logo.jpg
+static img/mozilla_logo.png
+static img/solent_logo.png
 static css/cv.css
 static css/global.css
 static css/img/header-blog.png
@@ -74,11 +82,14 @@ cd src
 getdin es index.php index.html
 getdin en index.php index.html
 
-getdin es cvhtml.php cv.html
-getdin en cvhtml.php cv.html
-getdin es cvpdf.php david-bengoa-cv-es.pdf
-getdin en cvpdf.php david-bengoa-cv-en.pdf
+getdin es cvhtml.php cv/index.html
+getdin en cvhtml.php cv/index.html
+# getdin es cvpdf.php david-bengoa-cv-es.pdf
+# getdin en cvpdf.php david-bengoa-cv-en.pdf
 
-php "cvimg.php" "--lang=es" > ../prod/david/img/cvimage.png
+#php "cvimg.php" "--lang=es" > ../prod/david/img/cvimage.png
+
+cp ~/david-bengoa-cv-es.pdf ../prod/david/
+cp ~/david-bengoa-cv-en.pdf ../prod/david/
 
 cd ..

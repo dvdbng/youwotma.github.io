@@ -51,7 +51,7 @@ function scale($pc){
     if(is_numeric($pc)){
         if($pc == 0)return;
         $lw = 0.1;
-        $pdf->SetDrawColor(0xcc,0xcc,0xcc);
+        $pdf->SetDrawColor(0xCC,0xCC,0xCC);
         $pdf->SetFillColor(0x33,0x33,0x33);
         $pdf->Rect($x,$y,10,1);
         $pdf->Rect($x+$lw,$y+$lw,(10-$lw*2)*($pc/100),1-$lw*2,"F");

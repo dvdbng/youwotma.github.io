@@ -1,4 +1,7 @@
 <?php
+error_reporting(E_ALL);
+ini_set('display_errors', '1');
+
 $lang = array(
     "Blog"=>"Blog",
     "Currículum vítae"=>"Curriculum vitae",
@@ -69,6 +72,36 @@ $lang = array(
     'Como una <a href="http://bengoarocandio.com/html5tweets/">visualización de tweets en HTML5</a>, un <a href="http://bengoarocandio.com/clock/">reloj RGB</a> o un <a href="http://hoyga.com/circulos/">pasatiempo tonto</a>'=>'Like a <a href="http://bengoarocandio.com/html5tweets/">HTML5 tweet visualization</a>, a <a href="http://bengoarocandio.com/clock/">RGB clock</a> and a <a href="http://hoyga.com/circulos/">stupid game</a>',
     "Código fuente de la pagina (GPL)"=>"Page source code (GPL)",
 
+"Mozilla Hispano"=>"Mozilla Hispano",
+"Coordinador Labs"=>"Labs coordinator",
+"Como miembro del area de Mozilla Hispano Labs (y eventualmente coordinador) desarrolle y asisti en el desarrollo de herramientas innovadoras para hacer de la web un lugar mejor para todos. Trabajando en projectos de codigo abierto me permitio obtener mucha experiencia antes de acabar la educación segundaria, y trabajar con —y aprender de— personas con mucho talento."=>"As a Mozilla Hispano Labs member (and eventually coordinator) I developed and assisted developing innovating tools to make the web a better place for everyone. Working in open source projects allowed me to gain a lot of experience before finishing high school, and to work with —and learn from— highly talented persons.",
+"Southampton Solent University"=>"Southampton Solent University",
+"Estudiar un año en el extranjero me hizo apreciar profundamente los ambientes internacionales."=>"Doing a year abroad gave me a profound appreciation of international enviroments.",
+"MyA.me"=>"MyA.me",
+"Co-fundador y CTO"=>"Co-founder and CTO",
+"MyA.me una plataforma de computación contextual para el Internet de las Cosas. Los usuarios pueden crear asistentes (A's) que se disparan dependiendo de su localización, de lo que estan haciendo o simplemente hablandole a su telefono. Estos asistentes pueden responder mostrando información relevante o realizando una acción."=>"MyA.me is a contextual computing platform for the Internet of Things. The users can create automations (A's) that trigger based on their location, what are they doing, or just by speaking to their phone. This assistants can then respond by showing relevant information or performing some action.",
+"Immunity Zone / Amune.org"=>"Immunity Zone / Amune.org",
+"Con immunity zone, yo y mi equipo extendimos los limites de la web como plataforma creando un navegador que funciona en la nuve. El backend descarga la pagina y ejecuta javascript, enviando el resultado al cliente. El resultado es un navegador seguro, privado y rápido que funciona dentro de cualquier navegador moderno."=>"With immunity zone, me and my team pushed the boundaries of the web as a platform by implementing a browser that runs in the cloud. The backend loads the page and executes the JavaScript on it, sending the result to the client. The result is a secure, private and faster browser that can run inside any modern browser.",
+"Autonomo"=>"Self-employed",
+"Desarrollador freelance"=>"Freelance developer",
+"Trabajar como freelance me hizo entender como diferentes industrias usas la tecnologia para consegir sus objetivos, ademas de experiencia practiva en diferentes tecnologías."=>"Working as a freelance gave me insight on how different industries use technology to assist business goals, as well as practical experience on different technologies.",
+"Universidad de Málaga"=>"University of Málaga",
+"Estudiante de Ingeniería del Software"=>"Software Engineering Student",
+"Software Engineer"=>"Ingeniero del Software",
+"Matricula de Honor (mejor de la clase) en: Programación Orientada a Objetos, Estructura de Datos, Análisis y Diseño de Algoritmos, Teoría de Autómatas y Lenguajes Formales, Programacion de Sistemas/Concurrencia y Sistemas Operativos"=>"Graduated with honors (best of class) in Object oriented Programming, Data structures, Analysis and Design of Algorithms, Formal Languages and Automata Theory, System Programming/Concurrency and Operating Systems",
+"CERN"=>"CERN",
+"Desarrollador en Python para Invenio"=>"Python developer for Invenio",
+"Invenio es un projecto Open Source que se usa en el CERN Document Server y INSPIRE, la base de datos que contiene datos bibliograficos de mas de un millon de publicaciones, evolición de SPIRES el primer sitio web fuera de Europa y la primera base de datos servida a traves de la web.
+Trabajando en el CERN aprendi a trabajar confortablemente en grandes equipos cross-funcionales y multi-culturales."=>"Invenio is an Open Source project that powers the CERN Document Server and INSPIRE, the HEP Database that contains bibliographic records of more than one million publications and that replaced SPIRES, the first website outside of Europe and the first database to be served over the web.
+Working in CERN I learned to work comfortably in a large, cross functional and multicultural team.",
+"Tu compañia"=>"Your company",
+"Imagina todo lo que podriamos escribir aquí!"=>"Imagine all the things we could write here!",
+"Habilidades notables:"=>"Notable Skills:",
+"Frontend"=>"Frontend",
+"…"=>"And on...",
+"Ingeniero del Software"=>"Software Engineer",
+"Sistemas de control de versiones"=>"Version control systems",
+
 );
 
 
@@ -111,8 +144,9 @@ function indent($n){
     $indent_lvl = $n;
 }
 function statico($path){
+    global $depth;
     if(isset($_GET["comp"]) || is_cli()){
-        echo "../$path";
+        echo "$depth../$path";
     }else{
         echo $path;
     }

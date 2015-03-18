@@ -3,17 +3,177 @@
   stroke: #333;
 }
 
-/* line 4, cv.scss */
+@media print {
+  /* line 10, cv.scss */
+  html {
+    width: 800px;
+    overflow: hidden;
+  }
+
+  /* line 14, cv.scss */
+  body {
+    overflow: hidden;
+    width: 800px !important;
+  }
+  /* line 18, cv.scss */
+  body h1 {
+    margin: 15px 0 10px;
+  }
+  /* line 21, cv.scss */
+  body #nav {
+    display: none;
+  }
+  /* line 24, cv.scss */
+  body .timeline > .column {
+    width: 365px;
+  }
+  /* line 28, cv.scss */
+  body .timeline .timeline-dates .timeline-line {
+    height: 630px;
+  }
+  /* line 34, cv.scss */
+  body .columna {
+    width: 260px;
+    margin-left: 0px;
+  }
+}
+/* line 44, cv.scss */
+.timeline > .column.left > .period {
+  margin-right: 0px;
+}
+/* line 48, cv.scss */
+.timeline > .column.left .period-date {
+  right: -60.5px;
+  border-left-color: #fff;
+  box-shadow: 2px 2px 2px #999;
+  text-align: right;
+}
+/* line 53, cv.scss */
+.timeline > .column.left .period-date div {
+  margin-right: 10px;
+}
+/* line 55, cv.scss */
+.timeline > .column.left .logo {
+  float: left;
+  margin-right: 10px;
+}
+/* line 58, cv.scss */
+.timeline > .column.right > .period {
+  margin-left: 0px;
+}
+/* line 61, cv.scss */
+.timeline > .column.right .period-date {
+  left: -60.5px;
+  border-right-color: #fff;
+  box-shadow: -2px 2px 2px #999;
+  text-align: left;
+}
+/* line 66, cv.scss */
+.timeline > .column.right .period-date div {
+  margin-left: 3px;
+}
+/* line 68, cv.scss */
+.timeline > .column.right .logo {
+  float: right;
+}
+/* line 70, cv.scss */
+.timeline > .column {
+  width: 493px;
+  float: left;
+  padding-top: 40px;
+}
+/* line 75, cv.scss */
+.timeline .timeline-dates {
+  width: 70px;
+  float: left;
+}
+/* line 78, cv.scss */
+.timeline .timeline-dates .timeline-line {
+  height: 570px;
+  margin-left: 36px;
+  width: 0px;
+  border: 2.5px solid #666;
+  border-radius: 5px;
+}
+/* line 87, cv.scss */
+.timeline .period {
+  position: relative;
+}
+/* line 89, cv.scss */
+.timeline .period .logo {
+  max-width: 70px;
+  max-height: 70px;
+}
+/* line 93, cv.scss */
+.timeline .period .period-text {
+  overflow: hidden;
+  border: 1px solid #333;
+  margin: 10px;
+  padding: 10px 10px 0 10px;
+  min-height: 100px;
+}
+/* line 100, cv.scss */
+.timeline .period .position {
+  color: #666;
+  font-size: 15px;
+  font-style: italic;
+  margin: 5px 0;
+}
+/* line 106, cv.scss */
+.timeline .period p, .timeline .period li {
+  text-align: left;
+  font-size: 13px;
+  color: #999;
+}
+/* line 111, cv.scss */
+.timeline .period li {
+  margin-left: 10px;
+}
+/* line 115, cv.scss */
+.timeline .period-date {
+  position: absolute;
+  border: 1px solid #333;
+  width: 70px;
+  text-align: center;
+  background-color: white;
+  padding: 3px 0;
+}
+/* line 123, cv.scss */
+.timeline .born_marker {
+  border: 1px solid #999;
+  background-color: white;
+  box-shadow: 0px 2px 2px #999;
+  text-align: center;
+  position: absolute;
+  width: 70px;
+  padding: 3px 0;
+}
+
+/*
+.job {
+    margin-left: 20px;
+    width: 500px;
+    margin-bottom: 10px;
+    border-bottom: 1px solid #ccc;
+    padding-bottom: 10px;
+    h3 {
+        margin: 4px 0;
+    }
+    p{
+    }
+}
+*/
+/* line 151, cv.scss */
 #maintitle {
   float: left;
 }
 
-/* line 7, cv.scss */
+/* line 154, cv.scss */
 #nav {
   float: right;
   margin: 15px;
 }
-/* line 10, cv.scss */
+/* line 157, cv.scss */
 #nav a {
   color: #666;
   font-variant: small-caps;
@@ -24,12 +184,12 @@
   display: block;
   float: right;
 }
-/* line 19, cv.scss */
+/* line 166, cv.scss */
 #nav a.last {
   border-left-width: 0px;
 }
 
-/* line 25, cv.scss */
+/* line 172, cv.scss */
 .htext {
   text-align: center;
   font-style: italic;
@@ -38,242 +198,245 @@
   margin: 0 -5px;
 }
 
-/* line 34, cv.scss */
+/* line 181, cv.scss */
 line.eso {
   stroke: #aaa;
 }
-/* line 37, cv.scss */
+/* line 184, cv.scss */
 line.bachiller {
   stroke: #666;
 }
-/* line 40, cv.scss */
+/* line 187, cv.scss */
 line.uni {
   stroke: #222;
 }
-/* line 43, cv.scss */
+/* line 190, cv.scss */
 line.html {
   stroke: #23819c;
 }
-/* line 44, cv.scss */
+/* line 191, cv.scss */
 line.js {
   stroke: #23819c;
 }
-/* line 45, cv.scss */
+/* line 192, cv.scss */
 line.php {
   stroke: #23819c;
 }
-/* line 46, cv.scss */
+/* line 193, cv.scss */
 line.flash {
   stroke: #23819c;
 }
-/* line 47, cv.scss */
+/* line 194, cv.scss */
 line.vb {
   stroke: #23819c;
 }
-/* line 48, cv.scss */
+/* line 195, cv.scss */
 line.java {
   stroke: #23819c;
 }
-/* line 49, cv.scss */
+/* line 196, cv.scss */
 line.bash {
   stroke: #23819c;
 }
-/* line 50, cv.scss */
+/* line 197, cv.scss */
 line.python {
   stroke: #23819c;
 }
 
-/* line 53, cv.scss */
+/* line 200, cv.scss */
 text {
   fill: #333;
   font-size: 12px;
 }
-/* line 56, cv.scss */
+/* line 203, cv.scss */
 text.eso {
   fill: #aaa;
 }
-/* line 59, cv.scss */
+/* line 206, cv.scss */
 text.bachiller {
   fill: #666;
 }
-/* line 62, cv.scss */
+/* line 209, cv.scss */
 text.uni {
   fill: #222;
 }
-/* line 65, cv.scss */
+/* line 212, cv.scss */
 text.html {
   fill: #23819c;
 }
-/* line 66, cv.scss */
+/* line 213, cv.scss */
 text.js {
   fill: #23819c;
 }
-/* line 67, cv.scss */
+/* line 214, cv.scss */
 text.php {
   fill: #23819c;
 }
-/* line 68, cv.scss */
+/* line 215, cv.scss */
 text.flash {
   fill: #23819c;
 }
-/* line 69, cv.scss */
+/* line 216, cv.scss */
 text.vb {
   fill: #23819c;
 }
-/* line 70, cv.scss */
+/* line 217, cv.scss */
 text.java {
   fill: #23819c;
 }
-/* line 71, cv.scss */
+/* line 218, cv.scss */
 text.bash {
   fill: #23819c;
 }
-/* line 72, cv.scss */
+/* line 219, cv.scss */
 text.python {
   fill: #23819c;
 }
 
-/* line 74, cv.scss */
+/* line 221, cv.scss */
 body {
   color: #333;
   width: 1100px;
   margin: 0 auto;
 }
 
-/* line 79, cv.scss */
+/* line 226, cv.scss */
 .tlinline {
   font-size: 12px;
 }
 
-/* line 82, cv.scss */
+/* line 229, cv.scss */
 .metter {
   border: 1px solid #ccc;
   width: 50px;
   height: 4px;
   margin: 5px 0 0 10px;
+  overflow: hidden;
   float: right;
 }
-/* line 86, cv.scss */
+/* line 233, cv.scss */
 .metter > .metter-inner {
-  height: 4px;
-  background-color: #333;
+  height: 0px;
+  border: 3px solid #333;
+  border-left-width: 0;
+  border-right-width: 0;
 }
 
-/* line 93, cv.scss */
+/* line 243, cv.scss */
 .itemdata {
   margin: 5px 0 0 10px;
   float: right;
 }
 
-/* line 97, cv.scss */
+/* line 247, cv.scss */
 .itemname {
   float: left;
 }
 
-/* line 100, cv.scss */
+/* line 250, cv.scss */
 .clearfix {
   clear: both;
   height: 1px;
 }
 
-/* line 104, cv.scss */
+/* line 254, cv.scss */
 .item {
   clear: both;
   margin: 10px;
 }
 
-/* line 108, cv.scss */
+/* line 258, cv.scss */
 .item.title {
   margin: 4px 10px 0px 25px;
 }
 
-/* line 112, cv.scss */
+/* line 262, cv.scss */
 #arem {
   margin: 0 auto;
   width: 1060px;
 }
 
-/* line 116, cv.scss */
+/* line 266, cv.scss */
 #timeline {
   position: relative;
 }
 
-/* line 120, cv.scss */
+/* line 270, cv.scss */
 #fotter {
   color: #999;
   border-top: 1px solid #666;
   margin: 1em 2em 3em 2em;
   padding: .5em 0 0 1em;
 }
-/* line 125, cv.scss */
+/* line 275, cv.scss */
 #fotter a {
   color: #999;
   border-bottom: 1px dotted #ccc;
 }
 
-/* line 131, cv.scss */
+/* line 281, cv.scss */
 .columna {
   width: 330px;
   float: left;
   margin-left: 20px;
 }
 
-/* line 139, cv.scss */
+/* line 289, cv.scss */
 .accessibletxt {
   position: absolute;
   width: 300px;
   font-size: 12px;
   color: #333;
 }
-/* line 143, cv.scss */
+/* line 293, cv.scss */
 .accessibletxt.middle {
   text-align: center;
 }
-/* line 146, cv.scss */
+/* line 296, cv.scss */
 .accessibletxt.end {
   text-align: right;
 }
-/* line 150, cv.scss */
+/* line 300, cv.scss */
 .accessibletxt.eso {
   color: #aaa;
 }
-/* line 153, cv.scss */
+/* line 303, cv.scss */
 .accessibletxt.bachiller {
   color: #666;
 }
-/* line 156, cv.scss */
+/* line 306, cv.scss */
 .accessibletxt.uni {
   color: #222;
 }
-/* line 159, cv.scss */
+/* line 309, cv.scss */
 .accessibletxt.html {
   color: #23819c;
 }
-/* line 160, cv.scss */
+/* line 310, cv.scss */
 .accessibletxt.js {
   color: #23819c;
 }
-/* line 161, cv.scss */
+/* line 311, cv.scss */
 .accessibletxt.php {
   color: #23819c;
 }
-/* line 162, cv.scss */
+/* line 312, cv.scss */
 .accessibletxt.flash {
   color: #23819c;
 }
-/* line 163, cv.scss */
+/* line 313, cv.scss */
 .accessibletxt.vb {
   color: #23819c;
 }
-/* line 164, cv.scss */
+/* line 314, cv.scss */
 .accessibletxt.java {
   color: #23819c;
 }
-/* line 165, cv.scss */
+/* line 315, cv.scss */
 .accessibletxt.bash {
   color: #23819c;
 }
-/* line 166, cv.scss */
+/* line 316, cv.scss */
 .accessibletxt.python {
   color: #23819c;
 }

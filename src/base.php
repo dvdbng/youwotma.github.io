@@ -19,16 +19,16 @@
     <head>
         <meta http-equiv="content-type" content="text/html; charset=utf-8">
         <title>David Bengoa Rocandio</title>
-        <link href='http://fonts.googleapis.com/css?family=Droid+Serif:bolditalic|Ubuntu:normal,italic' rel='stylesheet' type='text/css'>
+        <!-- TODO<link href='http://fonts.googleapis.com/css?family=Droid+Serif:bolditalic|Ubuntu:normal,italic' rel='stylesheet' type='text/css'>-->
         <link href="<?php statico("css/global.css"); ?>" rel="stylesheet" />
 <?php emerge("css"); ?>
     </head>
-    <body>
+    <body class="print">
 <?php emerge("content");?>
     </body>
-</html>
+</html><!--
 <?php
     foreach ($strs as $k=>$v){
         echo "\"$k\"=>\"$v\",\n";
     }
-?>
+?>-->

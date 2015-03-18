@@ -44,6 +44,69 @@ function htext($x,$y,$w,$h,$t){
     $htexts[] = array($x,$y,$w,$h,$t);
 }
 
+function timeline_start(){?>
+    <div class="timeline">
+        <div class="column left">
+<?php
+}
+function timeline_end(){
+    global $htexts;
+    foreach($htexts as $k=>$v){
+        pprt("<div class='htext' style='position:absolute; left: {$v[0]}px; top: {$v[1]}px; width: {$v[2]}px; height: {$v[3]}px;'>{$v[4]}</div>");
+    }
+    ?>
+    </div>
+<?php
+}
+
+$isLeft = true;
+function timeline_right(){
+    global $isLeft;
+    $isLeft = false;
+?>
+        </div>
+        <div class="timeline-dates">
+            <div class="born_marker">
+                <div>1991</div>
+                <div>Born</div>
+            </div>
+            <div class="timeline-line"></div>
+        </div>
+        <div class="column right">
+<?php }
+
+
+function timeline_period($start, $end, $top, $title, $position, $description, $logo='') {
+?>
+    <div class="period">
+        <div class="period-text">
+            <?php if($logo){ echo "<img src='"; statico("img/$logo"); echo "' class='logo' alt='$title'/>"; } ?>
+            <h4><?php t($title) ?></h4>
+            <p class="position"><?php t($position) ?></p>
+            <p><?php echo str_replace("\n", '</p><p>', tr($description)) ?></p>
+        </div>
+        <div class="period-date" style="top: <?php echo $top; ?>px">
+            <div class="date-start"><?php echo $start; ?></div>
+            <div class="date-end"><?php echo $end; ?></div>
+        </div>
+    </div>
+<?php }
+
+function skills_title(){ ?>
+    <div class="clearfix"></div>
+
+    <h1><?php t("Habilidades notables:"); ?></h1>
+    <div id="arem">
+<?php }
+
+function skills_start($itemcount,$titlecount, $colcnt){
+    global $column_pos, $column_height, $column_n;
+    $column_pos = 0;
+    $column_n = 0;
+    $column_height = ($itemcount*ITEM_HEIGHT + $titlecount*TITLE_HEIGHT)/$colcnt;
+    pprti("<div class='columna columna-0'>");
+}
+
 function item($name,$pc){
     pprti("<div class='item title'>");
     pprt("<div class='itemname'>$name</div>");
@@ -68,52 +131,24 @@ function title($name,$pc){
 }
 
 function ftitle(){}
-
-function timeline_start(){?>
-        <div id="timeline">
-            <svg id="svgnode" xmlns="http://www.w3.org/2000/svg" xmlns:xlink="http://www.w3.org/1999/xlink" width='<?php echo width; ?>px' height='<?php echo height; ?>px'>
-<?php
-    indent(4);
-}
-function timeline_end(){
-    pprtu("</svg>");
-    global $htexts;
-    foreach($htexts as $k=>$v){
-        pprt("<div class='htext' style='position:absolute; left: {$v[0]}px; top: {$v[1]}px; width: {$v[2]}px; height: {$v[3]}px;'>{$v[4]}</div>");
-    }
-    ?>
-        </div>
-        <script type="text/javascript">
-            var accesible_texts = <?php global $accesible_texts; echo json_encode($accesible_texts); ?>;
-            var svg_image = "<?php statico("img/cvimage.png"); ?>";
-        </script>
-        <script type="text/javascript" src="<?php statico("js/cv.js"); ?>"></script>
-<?php
-}
-function skills_start($itemcount,$titlecount){?>
-        <h1><?php t("Resumen de habilidades:"); ?></h1>
-        <div id="arem">
-<?php
-    global $column_height;
-    $column_height = ($itemcount*ITEM_HEIGHT + $titlecount*TITLE_HEIGHT)/3;
-    pprti("<div class='columna columna-0'>");
-
-}
 function skills_end(){
     pprtu("</div>");
 ?>
         </div>
-        <div class="clearfix"></div>
-        <div id="fotter">David Bengoa - <a href="mailto:david@bengoarocandio.com">david@bengoarocandio.com</a> - <a href="http://twitter.com/DvdBng">@DvdBng</a></div>
 <?php
 }
+
+function cv_end(){ ?>
+    <div class="clearfix"></div>
+    <div id="fotter">David Bengoa - <a href="mailto:david@bengoa.me">david@bengoa.me</a> - <a href="http://twitter.com/DvdBng">@DvdBng</a> - Github: <a href="https://github.com/YouWoTMA">youwotma</a></div>
+<?php }
 
 function content(){ ?>
         <h1 id="maintitle"><?php t("David Bengoa - Currículum vítae"); ?></h1>
         <div id="nav">
             <a href="../<?php t("en"); ?>/cv"><?php t("English"); ?></a>
             <a href="."><?php t("Página principal") ?></a>
-            <a href="david-bengoa-cv-<?php t("es"); ?>.pdf" class="last"><?php t("Descarga mi CV en PDF"); ?></a>
+            <a href="/david-bengoa-cv-<?php t("es"); ?>.pdf" class="last"><?php t("Descarga mi CV en PDF"); ?></a>
         </div>
         <div class="clearfix"></div>
 <?php

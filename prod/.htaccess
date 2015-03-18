@@ -3,6 +3,8 @@
 #LanguagePriority en es
 #ForceLanguagePriority Fallback
 
+RewriteEngine On
+RewriteBase /
 RewriteRule ^en/cv$ /en/cv.html
 RewriteRule ^es/cv$ /es/cv.html
 RewriteRule ^tuenti$ /tuenti.html
