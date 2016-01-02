@@ -146,8 +146,8 @@ function cv_end(){ ?>
 function content(){ ?>
         <h1 id="maintitle"><?php t("David Bengoa - Currículum vítae"); ?></h1>
         <div id="nav">
-            <a href="../<?php t("en"); ?>/cv"><?php t("English"); ?></a>
-            <a href="."><?php t("Página principal") ?></a>
+            <a href="../../<?php t("en"); ?>/cv/"><?php t("English"); ?></a>
+            <a href=".."><?php t("Página principal") ?></a>
             <a href="/david-bengoa-cv-<?php t("es"); ?>.pdf" class="last"><?php t("Descarga mi CV en PDF"); ?></a>
         </div>
         <div class="clearfix"></div>
