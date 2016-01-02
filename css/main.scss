@@ -679,32 +679,3 @@ body.cv{
     }
 }
 
-.accessibletxt{
-    position: absolute;
-    width: 300px;
-    font-size:12px;
-    &.middle{
-        text-align: center;
-    }
-    &.end{
-        text-align: right;
-    }
-    color: #333;
-    &.eso{
-        color: #aaa;
-    }
-    &.bachiller{
-        color: #666;
-    }
-    &.uni{
-        color: #222;
-    }
-    &.html{ color: #23819c; }
-    &.js{ color: #23819c; }
-    &.php{ color: #23819c; }
-    &.flash{ color: #23819c; }
-    &.vb{ color: #23819c; }
-    &.java{ color: #23819c; }
-    &.bash{ color: #23819c; }
-    &.python{ color: #23819c; }
-}
