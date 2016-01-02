@@ -1,0 +1,14 @@
+# Site settings
+title: David Bengoa
+email: david@bengoa.me
+description: >
+  David Bengoa is a Software Enginner
+baseurl: ""
+url: "https://david.bengoarocandio.com" # the base hostname & protocol for your site
+twitter_username: dvdbng
+github_username:  youwotma
+
+# Build settings
+markdown: kramdown
+gems:
+- jekyll-compass

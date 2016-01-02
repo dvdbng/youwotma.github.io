@@ -1,0 +1,984 @@
+/* line 7, main.scss */
+body {
+  font-family: 'Ubuntu', arial, sans;
+  margin: 5px 0 0 0;
+  padding: 0;
+  color: #333;
+}
+
+/* line 14, main.scss */
+h1, h2, h3 {
+  font-family: 'Droid Serif', serif;
+  font-style: italic;
+}
+
+/* line 18, main.scss */
+h1 {
+  font-size: 1.6em;
+  margin: 0.4em 0 1.2em 10px;
+}
+
+/* line 24, main.scss */
+#wrapper h2, #header h2 {
+  font-size: 40px;
+}
+
+/* line 28, main.scss */
+.page-heading {
+  text-align: center;
+}
+
+/* line 32, main.scss */
+a {
+  text-decoration: none;
+}
+
+/* line 36, main.scss */
+#header, #header-mask, .header-banner {
+  width: 960px;
+  height: 435px;
+}
+
+/* line 41, main.scss */
+#header:hover #flecha-izq, #header:hover #flecha-der {
+  display: block;
+}
+
+/* line 46, main.scss */
+#flecha-izq, #flecha-der {
+  background: no-repeat url(/img/arrows.png);
+  width: 30px;
+  height: 30px;
+  position: absolute;
+  top: 200px;
+  left: 15px;
+  z-index: 100;
+  display: none;
+  cursor: pointer;
+}
+
+/* line 57, main.scss */
+#flecha-der {
+  left: 910px;
+  background-position: -30px 0;
+}
+
+/* line 62, main.scss */
+#wrapper {
+  width: 940px;
+  margin: 0 auto;
+}
+
+/* line 66, main.scss */
+.project {
+  width: 350px;
+  float: left;
+  text-align: center;
+  padding: 0 60px;
+  color: #333;
+}
+/* line 72, main.scss */
+.project .metadata {
+  font-style: italic;
+  font-size: 1.1em;
+}
+/* line 76, main.scss */
+.project h3 {
+  font-size: 26px;
+  margin-top: 40px;
+  margin-bottom: 10px;
+  color: #b47131;
+}
+/* line 82, main.scss */
+.project a {
+  color: #d39f6e;
+  border-bottom: 1px dotted #d39f6e;
+  margin-bottom: 15px;
+}
+/* line 87, main.scss */
+.project p {
+  text-align: justify;
+  color: #666;
+  margin-bottom: 10px;
+}
+
+/* line 94, main.scss */
+#header {
+  position: relative;
+  margin: 0 auto;
+}
+
+/* line 99, main.scss */
+#header-mask {
+  z-index: 10;
+  position: absolute;
+  top: 0;
+  left: 0;
+  text-indent: -100000px;
+  background: url(/img/mask.png);
+  margin: 0;
+  padding: 0;
+  pointer-events: none;
+}
+
+/* line 110, main.scss */
+.header-banner {
+  position: absolute;
+  top: 0;
+  left: 0;
+}
+/* line 114, main.scss */
+.header-banner > div {
+  position: absolute;
+  left: 300px;
+  top: 150px;
+  width: 600px;
+}
+/* line 119, main.scss */
+.header-banner > div > h2 > .subpart {
+  font-size: 30px;
+}
+/* line 123, main.scss */
+.header-banner > .banner-image {
+  position: absolute;
+  top: 100px;
+  left: 20px;
+}
+
+/* line 129, main.scss */
+#header-nav {
+  z-index: 11;
+  position: absolute;
+  right: 0px;
+  top: 0px;
+  margin: 20px 15px 0 0;
+}
+/* line 135, main.scss */
+#header-nav > a {
+  color: #666;
+  font-variant: small-caps;
+  font-size: 1.2em;
+  border-left: dotted 1px #666;
+  padding-left: 6px;
+  margin-left: 2px;
+}
+/* line 142, main.scss */
+#header-nav > a.last {
+  border-left: none;
+}
+
+/* line 148, main.scss */
+#banner_twitter {
+  background: url(/img/pattern4-1.jpg);
+  color: #45599b;
+  text-shadow: 1px 1px 3px #fff;
+}
+/* line 152, main.scss */
+#banner_twitter h2 {
+  width: 500px;
+}
+/* line 154, main.scss */
+#banner_twitter h2 > a {
+  color: #45599B;
+  border-bottom: 1px dotted #45599B;
+}
+/* line 159, main.scss */
+#banner_twitter > .banner-image {
+  left: 110px;
+  top: 60px;
+}
+/* line 163, main.scss */
+#banner_twitter > .textcontent {
+  left: 400px;
+}
+
+/* line 167, main.scss */
+#banner_fs {
+  background: url(/img/pattern8-0.jpg);
+  color: #ccc;
+  text-shadow: 1px 1px 3px #666;
+}
+/* line 170, main.scss */
+#banner_fs p {
+  line-height: 1.4em;
+  word-spacing: 5px;
+}
+/* line 173, main.scss */
+#banner_fs p > a {
+  color: #ccc;
+  border-bottom: 1px dotted #ccc;
+}
+/* line 178, main.scss */
+#banner_fs h2 {
+  margin: 0;
+}
+/* line 182, main.scss */
+#banner_fs > .banner-image {
+  left: 50px;
+  top: 130px;
+}
+
+/* line 187, main.scss */
+#banner_cv {
+  background: url(/img/pattern14.jpg);
+  color: #206f8b;
+  text-shadow: 0px 0px 1px #fff;
+}
+/* line 190, main.scss */
+#banner_cv a {
+  color: #206f8b;
+  border-bottom: 1px dotted #206f8b;
+}
+/* line 195, main.scss */
+#banner_cv > .textcontent {
+  left: 10px;
+  width: 940px;
+  text-align: center;
+  top: 170px;
+}
+
+/* line 203, main.scss */
+#banner_travel {
+  text-shadow: 0px 0px 1px #fff;
+  background: url(/img/pattern_map.jpg);
+  color: #333;
+}
+/* line 208, main.scss */
+#banner_travel a {
+  color: #333;
+  border-bottom: 1px dotted #333;
+}
+/* line 212, main.scss */
+#banner_travel h2 {
+  margin-bottom: 0px;
+}
+/* line 215, main.scss */
+#banner_travel > .textcontent {
+  left: 10px;
+  width: 940px;
+  text-align: center;
+  font-weight: normal;
+  top: 150px;
+}
+
+/* line 224, main.scss */
+.tweet {
+  padding: 10px 10px 10px 20px;
+  font-size: 12px;
+  margin-bottom: 10px;
+  background: #DAF0FF;
+  background: -moz-linear-gradient(#DFF2FF, #CAEAFF);
+  color: #666;
+}
+/* line 231, main.scss */
+.tweet a {
+  color: #333;
+}
+
+/* line 235, main.scss */
+.tweetbird {
+  margin-left: -40px;
+  float: left;
+}
+
+/* line 240, main.scss */
+.blogtitle {
+  text-align: center;
+  font-style: normal;
+  text-transform: uppercase;
+  font-size: 25px;
+  font-weight: normal;
+  margin: 20px 0 10px 0;
+}
+/* line 249, main.scss */
+.blogtitle a {
+  color: #eb9272;
+}
+
+/* line 253, main.scss */
+.blogtxt {
+  color: #666;
+  line-height: 1.2em;
+}
+
+/* line 258, main.scss */
+#otherprofiles {
+  line-height: 1.3em;
+}
+/* line 260, main.scss */
+#otherprofiles .mail {
+  color: #FFC448;
+}
+/* line 261, main.scss */
+#otherprofiles .face {
+  color: #3B5998;
+}
+/* line 262, main.scss */
+#otherprofiles .twit {
+  color: #53D4FF;
+}
+/* line 263, main.scss */
+#otherprofiles .redd {
+  color: #FF5719;
+}
+/* line 264, main.scss */
+#otherprofiles .gith {
+  color: #4183C4;
+}
+/* line 265, main.scss */
+#otherprofiles .inst {
+  color: #3f729b;
+}
+/* line 266, main.scss */
+#otherprofiles .four {
+  color: #bed679;
+}
+/* line 267, main.scss */
+#otherprofiles:hover {
+  color: #999;
+}
+/* line 269, main.scss */
+#otherprofiles:hover .mail,
+#otherprofiles:hover .face,
+#otherprofiles:hover .inst,
+#otherprofiles:hover .twit,
+#otherprofiles:hover .redd,
+#otherprofiles:hover .gith {
+  color: #ccc;
+}
+/* line 279, main.scss */
+#otherprofiles .mail:hover {
+  color: #fff;
+  background-color: #FFC448;
+}
+/* line 280, main.scss */
+#otherprofiles .face:hover {
+  color: #fff;
+  background-color: #3B5998;
+}
+/* line 281, main.scss */
+#otherprofiles .twit:hover {
+  color: #fff;
+  background-color: #53D4FF;
+}
+/* line 282, main.scss */
+#otherprofiles .redd:hover {
+  color: #fff;
+  background-color: #FF5719;
+}
+/* line 283, main.scss */
+#otherprofiles .gith:hover {
+  color: #fff;
+  background-color: #4183C4;
+}
+/* line 284, main.scss */
+#otherprofiles .inst:hover {
+  color: #fff;
+  background-color: #3f729b;
+}
+/* line 285, main.scss */
+#otherprofiles .four:hover {
+  color: #fff;
+  background-color: #bed679;
+}
+
+/* line 288, main.scss */
+.photos {
+  position: relative;
+  top: 20px;
+  float: left;
+  height: 240px;
+}
+/* line 292, main.scss */
+.photos .photo {
+  margin-left: 20px;
+  padding: 10px;
+  background-color: #fff;
+  border: 1px solid #ccc;
+  z-index: 15;
+  position: absolute;
+  -webkit-transition-property: all;
+  -moz-transition-property: all;
+  -ms-transition-property: all;
+  -o-transition-property: all;
+  transition-property: all;
+  -webkit-transition-duration: 600ms;
+  -moz-transition-duration: 600ms;
+  -ms-transition-duration: 600ms;
+  -o-transition-duration: 600ms;
+  transition-duration: 600ms;
+  left: 0px;
+  top: 0px;
+}
+/* line 297, main.scss */
+.photos .photo img {
+  width: 200px;
+  height: 200px;
+}
+/* line 310, main.scss */
+.photos:hover .photo-2 {
+  left: 400px;
+  -webkit-transform: rotate(5deg);
+  -moz-transform: rotate(5deg);
+  -ms-transform: rotate(5deg);
+  -o-transform: rotate(5deg);
+  transform: rotate(5deg);
+  top: 15px;
+}
+/* line 315, main.scss */
+.photos:hover .photo-3 {
+  left: 200px;
+  -webkit-transform: rotate(0deg);
+  -moz-transform: rotate(0deg);
+  -ms-transform: rotate(0deg);
+  -o-transform: rotate(0deg);
+  transform: rotate(0deg);
+}
+
+/* line 322, main.scss */
+.photo-1 {
+  -webkit-transform: rotate(-5deg);
+  -moz-transform: rotate(-5deg);
+  -ms-transform: rotate(-5deg);
+  -o-transform: rotate(-5deg);
+  transform: rotate(-5deg);
+}
+
+/* line 325, main.scss */
+.photo-2 {
+  -webkit-transform: rotate(5deg);
+  -moz-transform: rotate(5deg);
+  -ms-transform: rotate(5deg);
+  -o-transform: rotate(5deg);
+  transform: rotate(5deg);
+}
+
+/* line 328, main.scss */
+.photo-3 {
+  -webkit-transform: rotate(10deg);
+  -moz-transform: rotate(10deg);
+  -ms-transform: rotate(10deg);
+  -o-transform: rotate(10deg);
+  transform: rotate(10deg);
+}
+
+/* line 332, main.scss */
+.separator {
+  background: no-repeat url(/img/separator.png);
+  height: 39px;
+  z-index: 12;
+  margin-top: -30px;
+  margin-bottom: 20px;
+  position: relative;
+  clear: both;
+}
+
+/* line 343, main.scss */
+#about-me-right {
+  width: 650px;
+  float: right;
+}
+/* line 346, main.scss */
+#about-me-right h2 {
+  text-align: center;
+  font-size: 30px;
+  margin: -20px 0 20px 0;
+}
+
+/* line 352, main.scss */
+#about-me-text {
+  -webkit-column-count: 2;
+  -moz-column-count: 2;
+  -ms-column-count: 2;
+  -o-column-count: 2;
+  column-count: 2;
+  text-align: justify;
+  line-height: 1.5em;
+}
+/* line 356, main.scss */
+#about-me-text p:first-child {
+  margin-top: 0;
+}
+
+/* line 361, main.scss */
+p {
+  margin-bottom: 1em;
+}
+
+/* line 365, main.scss */
+#footer {
+  background-color: #222;
+  clear: both;
+  border-top: 40px solid white;
+  padding: 10px 0 20px 0;
+  text-align: center;
+  color: #ccc;
+  line-height: 1.5em;
+}
+/* line 373, main.scss */
+#footer a {
+  color: #ccc;
+  border-bottom: 1px dotted #ccc;
+}
+
+/* line 379, main.scss */
+.clearfix:after {
+  content: "";
+  display: table;
+  clear: both;
+}
+
+/* line 385, main.scss */
+.timeline, line {
+  stroke: #333;
+}
+
+@media print {
+  /* line 394, main.scss */
+  html {
+    width: 800px;
+    overflow: hidden;
+  }
+
+  /* line 398, main.scss */
+  body.cv {
+    overflow: hidden;
+    width: 800px !important;
+  }
+  /* line 402, main.scss */
+  body.cv h1 {
+    margin: 15px 0 10px;
+  }
+  /* line 405, main.scss */
+  body.cv #nav {
+    display: none;
+  }
+  /* line 408, main.scss */
+  body.cv .timeline > .column {
+    width: 365px;
+  }
+  /* line 412, main.scss */
+  body.cv .timeline .timeline-dates .timeline-line {
+    height: 630px;
+  }
+  /* line 418, main.scss */
+  body.cv .columna {
+    width: 260px;
+    margin-left: 0px;
+  }
+}
+/* line 428, main.scss */
+.timeline > .column.left > .period {
+  margin-right: 0px;
+}
+/* line 432, main.scss */
+.timeline > .column.left .period-date {
+  right: -60.5px;
+  border-left-color: #fff;
+  box-shadow: 2px 2px 2px #999;
+  text-align: right;
+}
+/* line 437, main.scss */
+.timeline > .column.left .period-date div {
+  margin-right: 10px;
+}
+/* line 439, main.scss */
+.timeline > .column.left .logo {
+  float: left;
+  margin-right: 10px;
+}
+/* line 442, main.scss */
+.timeline > .column.right > .period {
+  margin-left: 0px;
+}
+/* line 445, main.scss */
+.timeline > .column.right .period-date {
+  left: -60.5px;
+  border-right-color: #fff;
+  box-shadow: -2px 2px 2px #999;
+  text-align: left;
+}
+/* line 450, main.scss */
+.timeline > .column.right .period-date div {
+  margin-left: 3px;
+}
+/* line 452, main.scss */
+.timeline > .column.right .logo {
+  float: right;
+}
+/* line 454, main.scss */
+.timeline > .column {
+  width: 493px;
+  float: left;
+  padding-top: 40px;
+}
+/* line 459, main.scss */
+.timeline .timeline-dates {
+  width: 70px;
+  float: left;
+}
+/* line 462, main.scss */
+.timeline .timeline-dates .timeline-line {
+  height: 570px;
+  margin-left: 36px;
+  width: 0px;
+  border: 2.5px solid #666;
+  border-radius: 5px;
+}
+/* line 471, main.scss */
+.timeline .period {
+  position: relative;
+}
+/* line 472, main.scss */
+.timeline .period h4 {
+  margin: 0;
+}
+/* line 476, main.scss */
+.timeline .period .logo {
+  max-width: 70px;
+  max-height: 70px;
+}
+/* line 480, main.scss */
+.timeline .period .period-text {
+  overflow: hidden;
+  border: 1px solid #333;
+  margin: 10px;
+  padding: 10px 10px 0 10px;
+  min-height: 100px;
+}
+/* line 487, main.scss */
+.timeline .period .position {
+  color: #666;
+  font-size: 15px;
+  font-style: italic;
+  margin: 5px 0;
+}
+/* line 493, main.scss */
+.timeline .period p, .timeline .period li {
+  text-align: left;
+  font-size: 13px;
+  color: #999;
+}
+/* line 498, main.scss */
+.timeline .period li {
+  margin-left: 10px;
+}
+/* line 502, main.scss */
+.timeline .period-date {
+  position: absolute;
+  border: 1px solid #333;
+  width: 70px;
+  text-align: center;
+  background-color: white;
+  padding: 3px 0;
+}
+/* line 510, main.scss */
+.timeline .born_marker {
+  border: 1px solid #999;
+  background-color: white;
+  box-shadow: 0px 2px 2px #999;
+  text-align: center;
+  position: absolute;
+  width: 70px;
+  padding: 3px 0;
+}
+
+/*
+.job {
+    margin-left: 20px;
+    width: 500px;
+    margin-bottom: 10px;
+    border-bottom: 1px solid #ccc;
+    padding-bottom: 10px;
+    h3 {
+        margin: 4px 0;
+    }
+    p{
+    }
+}
+*/
+/* line 538, main.scss */
+#maintitle {
+  float: left;
+}
+
+/* line 541, main.scss */
+#nav {
+  float: right;
+  margin: 15px;
+}
+/* line 544, main.scss */
+#nav a {
+  color: #666;
+  font-variant: small-caps;
+  font-size: 18px;
+  margin-left: 20px;
+  padding-left: 20px;
+  border-left: 1px dotted #333;
+  display: block;
+  float: right;
+}
+/* line 553, main.scss */
+#nav a.last {
+  border-left-width: 0px;
+}
+
+/* line 559, main.scss */
+.htext {
+  text-align: center;
+  font-style: italic;
+  font-size: 12px;
+  padding: 0 5px;
+  margin: 0 -5px;
+}
+
+/* line 568, main.scss */
+line.eso {
+  stroke: #aaa;
+}
+/* line 571, main.scss */
+line.bachiller {
+  stroke: #666;
+}
+/* line 574, main.scss */
+line.uni {
+  stroke: #222;
+}
+/* line 577, main.scss */
+line.html {
+  stroke: #23819c;
+}
+/* line 578, main.scss */
+line.js {
+  stroke: #23819c;
+}
+/* line 579, main.scss */
+line.php {
+  stroke: #23819c;
+}
+/* line 580, main.scss */
+line.flash {
+  stroke: #23819c;
+}
+/* line 581, main.scss */
+line.vb {
+  stroke: #23819c;
+}
+/* line 582, main.scss */
+line.java {
+  stroke: #23819c;
+}
+/* line 583, main.scss */
+line.bash {
+  stroke: #23819c;
+}
+/* line 584, main.scss */
+line.python {
+  stroke: #23819c;
+}
+
+/* line 587, main.scss */
+text {
+  fill: #333;
+  font-size: 12px;
+}
+/* line 590, main.scss */
+text.eso {
+  fill: #aaa;
+}
+/* line 593, main.scss */
+text.bachiller {
+  fill: #666;
+}
+/* line 596, main.scss */
+text.uni {
+  fill: #222;
+}
+/* line 599, main.scss */
+text.html {
+  fill: #23819c;
+}
+/* line 600, main.scss */
+text.js {
+  fill: #23819c;
+}
+/* line 601, main.scss */
+text.php {
+  fill: #23819c;
+}
+/* line 602, main.scss */
+text.flash {
+  fill: #23819c;
+}
+/* line 603, main.scss */
+text.vb {
+  fill: #23819c;
+}
+/* line 604, main.scss */
+text.java {
+  fill: #23819c;
+}
+/* line 605, main.scss */
+text.bash {
+  fill: #23819c;
+}
+/* line 606, main.scss */
+text.python {
+  fill: #23819c;
+}
+
+/* line 608, main.scss */
+body.cv {
+  color: #333;
+  width: 1100px;
+  margin: 0 auto;
+}
+
+/* line 613, main.scss */
+.tlinline {
+  font-size: 12px;
+}
+
+/* line 616, main.scss */
+.metter {
+  border: 1px solid #ccc;
+  width: 50px;
+  height: 4px;
+  margin: 5px 0 0 10px;
+  overflow: hidden;
+  float: right;
+}
+/* line 620, main.scss */
+.metter > .metter-inner {
+  height: 0px;
+  border: 3px solid #333;
+  border-left-width: 0;
+  border-right-width: 0;
+}
+
+/* line 630, main.scss */
+.itemdata {
+  margin: 5px 0 0 10px;
+  float: right;
+}
+
+/* line 634, main.scss */
+.itemname {
+  float: left;
+}
+
+/* line 637, main.scss */
+.clearfix {
+  clear: both;
+  height: 1px;
+}
+
+/* line 641, main.scss */
+.item {
+  clear: both;
+  margin: 10px;
+}
+
+/* line 645, main.scss */
+.item.title {
+  margin: 4px 10px 0px 25px;
+}
+
+/* line 649, main.scss */
+#arem {
+  margin: 0 auto;
+  width: 1060px;
+}
+/* line 652, main.scss */
+#arem h2 {
+  margin: 0;
+}
+/* line 655, main.scss */
+#arem * {
+  font-size: 100%;
+}
+
+/* line 659, main.scss */
+#timeline {
+  position: relative;
+}
+
+/* line 663, main.scss */
+#fotter {
+  color: #999;
+  border-top: 1px solid #666;
+  margin: 1em 2em 3em 2em;
+  padding: .5em 0 0 1em;
+}
+/* line 668, main.scss */
+#fotter a {
+  color: #999;
+  border-bottom: 1px dotted #ccc;
+}
+
+/* line 674, main.scss */
+.columna {
+  width: 330px;
+  float: left;
+  margin-left: 20px;
+}
+
+/* line 682, main.scss */
+.accessibletxt {
+  position: absolute;
+  width: 300px;
+  font-size: 12px;
+  color: #333;
+}
+/* line 686, main.scss */
+.accessibletxt.middle {
+  text-align: center;
+}
+/* line 689, main.scss */
+.accessibletxt.end {
+  text-align: right;
+}
+/* line 693, main.scss */
+.accessibletxt.eso {
+  color: #aaa;
+}
+/* line 696, main.scss */
+.accessibletxt.bachiller {
+  color: #666;
+}
+/* line 699, main.scss */
+.accessibletxt.uni {
+  color: #222;
+}
+/* line 702, main.scss */
+.accessibletxt.html {
+  color: #23819c;
+}
+/* line 703, main.scss */
+.accessibletxt.js {
+  color: #23819c;
+}
+/* line 704, main.scss */
+.accessibletxt.php {
+  color: #23819c;
+}
+/* line 705, main.scss */
+.accessibletxt.flash {
+  color: #23819c;
+}
+/* line 706, main.scss */
+.accessibletxt.vb {
+  color: #23819c;
+}
+/* line 707, main.scss */
+.accessibletxt.java {
+  color: #23819c;
+}
+/* line 708, main.scss */
+.accessibletxt.bash {
+  color: #23819c;
+}
+/* line 709, main.scss */
+.accessibletxt.python {
+  color: #23819c;
+}

@@ -1,0 +1,126 @@
+- name: Portia
+  start: 2015-05-28
+  role: Core contributor
+  end: 2099-01-01 # Ongoing
+  url: https://github.com/scrapinghub/portia/commits?author=Youwotma
+  url_label: My commits in Portia
+  description: Portia is a free software tool that lets you scrape web sites without any programming knowledge required.
+  tags: [JS, Ember JS, ]
+
+- name: Splash
+  start: 2015-05-28
+  end: 2099-01-01 # Ongoing
+  role: Contributor
+  url: https://github.com/scrapinghub/splash/commits?author=Youwotma
+  description: Splash is a free software scriptable headless browser with an HTTP API.
+  url_label: My commits in Splash
+
+- name: Invenio
+  start: 2013-06-15
+  end: 2013-09-01
+  role: BibCheck developer
+  url: https://github.com/inveniosoftware/invenio/commit/218d7fa71d7a3738944a7c262ba2f02e52c87210
+  description: Invenio is an Open Source project that powers the CERN Document Server and INSPIRE, the HEP Database that contains bibliographic records of more than one million publications and that replaced SPIRES, the first website outside of Europe and the first database to be served over the web.
+  url_label: BibCheck squashed commit
+
+- name: gitco
+  start: 2015-08-15
+  end: 2015-08-15
+  role: Creator
+  url: https://github.com/youwotma/gitco
+  description: A curses command line application to see the state of the git working directory and add files to a commit. Useful if you normally commit if a git status -> diff -> add loop.
+  url_label: Gitco repository
+
+- name: Asyncwait
+  start: 2015-07-21
+  end: 2015-07-21
+  role: Creator
+  url: https://github.com/youwotma/async-wait
+  description: Wait for asynchronous behaviour of code you don't control by monkey-patching setTimeout, XMLHttpRequest and friends.
+  url_label: Asyncwait repository
+
+- name: "Reddit RSS feed"
+  start: 2012-01-04
+  end: 2012-01-04
+  role: Creator
+  url: https://github.com/youwotma/redditfeed
+  description: A RSS Feed for Reddit with inline images, main content extraction, inlined comments and configurable subreddit weights.
+  url_label: Github repository
+
+- name: "Hacker News RSS feed"
+  start: 2015-05-21
+  end: 2015-05-21
+  role: Creator
+  url: https://github.com/youwotma/hnfeed
+  description: A RSS Feed for Hacker News with inline images, main content extraction and inlined comments.
+  url_label: Github repository
+
+- name: "Product Hunt RSS feed"
+  start: 2015-05-20
+  end: 2015-05-20
+  role: Creator
+  url: https://github.com/youwotma/phfeed
+  description: A RSS Feed for Product Hunt with inline images, main content extraction and inlined comments.
+  url_label: Github repository
+
+- name: spritzreader
+  start: 2014-07-06
+  end: 2014-07-09
+  role: Creator
+  url: https://github.com/youwotma/spritzreader
+  description: A minimalist Feedly client that uses hotkeys and rapid serial visual presentation (RSVP) to skim over unread articles.
+  url_label: Github repository
+
+- name: "CERN points of interest"
+  start: 2013-07-19
+  end: 2013-07-19
+  role: Creator
+  url: https://github.com/youwotma/cernpoi
+  description: A collaborative map of CERN for interns and students.
+  url_label: Github repository
+
+- name: "HTML5 IRC"
+  start: 2013-03-28
+  end: 2013-03-28
+  role: Creator
+  url: https://github.com/youwotma/html5irc
+  description: An IRC client with node.js backend and HTML5 frontend I did in one hour because no web IRC client satisfied me.
+  url_label: Github repository
+
+- name: "Incremental ftp"
+  start: 2012-02-17
+  end: 2012-02-17
+  role: Creator
+  url: https://github.com/youwotma/incrementalftp
+  description: A FTP client that keeps track of what the files and only uploads the ones that have changed.
+  url_label: Github repository
+
+- name: "Mya.me"
+  start: 2013-04-15
+  end: 2014-04-30
+  role: Lead Developer
+  url: https://mya.me
+  description: >
+      MyA.me is a contextual computing platform for the Internet of Things.
+      The users can create automations (A's) that trigger based on their location, what are they doing, or just by speaking to their phone.
+      This assistants can then respond by showing relevant information or performing some action.
+  url_label: Homepage
+
+- name: BrowserBlade
+  start: 2014-04-30
+  end: 2015-01-01
+  role: Co-founder
+  url: https://www.browserblade.com/
+  description: >
+    With BrowserBlade, me and my team pushed the boundaries of the web as a platform by implementing a browser that runs in the cloud.
+    The backend loads the page and executes the JavaScript on it, streaming the result to the client.
+    The result is a fully featured, secure, private and faster browser that can run inside any modern browser.
+  url_label: Homepage
+
+- name: Umamimo
+  start: 2011-01-05
+  end: 2011-01-05
+  role: Founder
+  description: >
+      Umamimo is an online food ordering service and one of the 3 winners of Startup Weekend Malaga 2010.
+

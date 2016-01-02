@@ -1,0 +1,77 @@
+---
+layout: bare
+---
+    <h1 id="maintitle">David Bengoa - Curriculum vitae</h1>
+    <div id="nav">
+        <a href="..">Home page</a>
+        <a href="david-bengoa-cv.pdf" class="last">Download my CV in PDF</a>
+    </div>
+<div class="clearfix"></div>
+<div class="timeline">
+    <div class="column left">
+        {% for side in site.data.cv.periods  %}
+            {% for period in side[1] %}
+                <div class="period">
+                    <div class="period-text">
+                        <img src='../../img/{{period.logo}}' class='logo' alt='{{period.company}}'/>
+                        <h4>{{period.company}}</h4>
+                        <p class="position">{{period.position}}</p>
+                        <p>{{period.description}}</p>
+                    </div>
+                    <div class="period-date" style="top: {{period.margin}}px">
+                        <div class="date-start">{{period.start}}</div>
+                        <div class="date-end">{{period.end}}</div>
+                    </div>
+                </div>
+            {% endfor %}
+            {% if side[0] == 'left' %}
+                </div>
+                <div class="timeline-dates">
+                    <div class="born_marker">
+                        <div>1991</div>
+                        <div>Born</div>
+                    </div>
+                    <div class="timeline-line"></div>
+                </div>
+                <div class="column right">
+            {% endif %}
+        {% endfor %}
+    </div>
+</div>
+
+<div class="clearfix"></div>
+<h1>Notable Skills:</h1>
+<div id="arem">
+    <div class='columna columna-0'>
+        {%assign column = 0%}
+        {% for skill in site.data.cv.skills %}
+            {% if skill[0] == 'title' %}
+                <div class="item">
+                    <div class='itemname'><h2>{{skill[1]}}</h2></div>
+                    {% if skill[2] > 0 %}
+                    <div class="metter"><div class="metter-inner" style="width: {{skill[2]|divided_by:2}}px;"></div></div>
+                    {% endif %}
+                </div>
+                <div class='clearfix'></div>
+            {% elsif skill[0] == 'skill' %}
+                <div class='item title'>
+                    <div class='itemname'>{{skill[1]}}</div>
+                    <div class="metter"><div class="metter-inner" style="width: {{skill[2]|divided_by:2}}px;"></div></div>
+                </div>
+                <div class='clearfix'></div>
+            {% elsif skill[0] == 'data' %}
+                <div class='item title'>
+                    <div class='itemname'>{{skill[1]}}</div>
+                    <div class="itemdata">{{skill[2]}}</div>
+                </div>
+                <div class='clearfix'></div>
+            {% elsif skill[0] == 'column' %}
+                {%assign column = column|plus:1%}
+                </div>
+                <div class='columna columna-{{column}}'>
+            {% endif %}
+        {% endfor %}
+    </div>
+</div>
+<div class='clearfix'></div>
+<div id="fotter">David Bengoa - <a href="mailto:david@bengoa.me">david@bengoa.me</a> - <a href="http://twitter.com/DvdBng">@DvdBng</a> - Github: <a href="https://github.com/YouWoTMA">youwotma</a></div>

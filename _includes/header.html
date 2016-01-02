@@ -1,0 +1,71 @@
+<div id="header">
+    <div id="header-nav">
+        <a href="cv" class="last">Curriculum vitae</a>
+    </div>
+    <h1 id="header-mask">David Bengoa</h1>
+    <div id="flecha-der"></div>
+    <div id="flecha-izq"></div>
+
+    <div id="banner_travel" class="header-banner">
+        <div class="textcontent">
+            <!-- Original image cc-by https://www.flickr.com/photos/80497449@N04/8280699806 -->
+            <h2>I travel a lot</h2>
+            <p><a href="http://wolpy.com/bengoa/map">Where have I been</a> and <a href="https://www.instagram.com/dvdbng/">the photos I have taken</a></p>
+        </div>
+    </div>
+
+    <div id="banner_twitter"  style="display:none"class="header-banner">
+        <img src="{{ "/img/twitter.png" | prepend: site.baseurl }}" alt="twitter" class="banner-image"/>
+        <div class="textcontent"><h2>I'm on <a href='http://twitter.com/DvdBng'>twitter</a></h2></div>
+    </div>
+    <div id="banner_fs" style="display:none" class="header-banner">
+        <img src="{{ "/img/gnu.png" | prepend: site.baseurl }}" alt="GNU" class="banner-image"/>
+        <div class="textcontent">
+            <h2>I make and use free software</h2>
+            Projects I use frequently include:
+            <p>
+                {% for item in site.data.free_software.projects %}
+                    <a target='_blank' href="{{item[1]}}">{{item[0]}}</a>
+                {% endfor %}
+            </p>
+        </div>
+    </div>
+    <div id="banner_cv" style="display:none" class="header-banner">
+        <!-- Original bg image: http://jsonsw-7.deviantart.com/art/We-Own-The-Sky-v-2-85852754 -->
+        <div class="textcontent"><h2>Here is <a href='/cv'>my CV</a></h2></div>
+    </div>
+</div>
+<div id="wrapper">
+    <div id="aboutme">
+        <div class="separator"></div>
+        <div class="photos" id="photos">
+            <div class="photo photo-2" id="photo-2">
+                <img class="proto-img" src="{{ "/img/avatar3.jpg" | prepend: site.baseurl }}" alt="David Bengoa" />
+            </div>
+            <div class="photo photo-3" id="photo-3">
+                <img class="proto-img" src="{{ "/img/avatar2.jpg" | prepend: site.baseurl }}" alt="David Bengoa" />
+            </div>
+            <div class="photo photo-1" id="photo-1">
+                <img class="proto-img" src="{{ "/img/avatar1.jpg" | prepend: site.baseurl }}" alt="David Bengoa" />
+            </div>
+        </div>
+        <div id="about-me-right">
+            <h2>About me</h2>
+            <div id="about-me-text">
+                <p>I'm a software engineer and entrepreneur. Since I was born, the earth has completed <span id="date">24.00000000</span> revolutions around the sun.</p>
+                <p>I like to create things.</p>
+                <p>I'm a free software and open standards enthusiast. I have collaborated with several free software projects, with whom I have learned more than you can imagine.</p>
+                <p>As offline hobbies, I travel, cycle, climb and do snowboard.</p>
+                <p id="otherprofiles">
+                    Keep in touch!
+                    <a class="mail" target="_blank" href="mailto:david@bengoarocandio.com">E-mail</a>
+                    <a class="face" target="_blank" href="http://facebook.com/bengoa">Facebook</a>
+                    <a class="inst" target="_blank" href="https://www.instagram.com/dvdbng/">Instagram</a>
+                    <a class="redd" target="_blank" href="http://www.reddit.com/user/bengoa">Reddit</a>
+                    <a class="gith" target="_blank" href="http://github.com/dvdbng/">Github</a>
+                    <a class="twit" target="_blank" href="http://twitter.com/dvdbng">Twitter</a>
+                </p>
+            </div>
+        </div>
+        <div class="separator"></div>
+    </div>

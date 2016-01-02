@@ -1,0 +1,121 @@
+periods:
+  left:
+    - start: 2008
+      end: 2012
+      margin: 5
+      company: Mozilla Hispano
+      position: Labs coordinator
+      logo: mozilla_logo.png
+      description: >
+        As a Mozilla Hispano Labs member (and eventually coordinator) I developed and assisted developing
+        innovating tools to make the web a better place for everyone. Working in open source projects allowed
+        me to gain a lot of experience before finishing high school, and to work with —and learn from— highly
+        talented persons.
+    - start: 2012
+      end: 2013
+      margin: 50
+      company: Southampton Solent University
+      position: Software Engineering Student
+      logo: solent_logo.png
+      description: >
+        Doing a year abroad gave me a profound appreciation of international environments.
+    - start: 2013
+      end: 2014
+      margin: 5
+      company: MyA.me
+      position: Lead developer
+      logo: mya_logo.png
+      description: >
+        MyA.me is a contextual computing platform for the Internet of Things. The users can create
+        automations (A's) that trigger based on their location, what are they doing, or just by
+        speaking to their phone. This assistants can then respond by showing relevant information
+        or performing some action.
+    - start: 2014
+      end: 2015
+      margin: 5
+      company: Immunity Zone / Amune.org
+      position: Co-founder and CTO
+      logo: immunityzone_icon.png
+      description: >
+          With immunity zone, me and my team pushed the boundaries of the web as a platform by implementing
+          a fully-featured browser that runs in the cloud. The backend loads the page and executes the
+          JavaScript on it, sending the result to the client. The result is a secure, private and faster
+          browser that can run inside any modern browser.
+  right:
+    - start: 2008
+      end: 2013
+      margin: 60
+      company: Autonomo
+      position: Freelance developer
+      logo: bengoa_logo.png
+      description: >
+        Working as a freelance gave me insight on how different industries use technology to assist business
+        goals, as well as practical experience on different technologies.
+    - start: 2009
+      end: 2012
+      margin: 15
+      company: University of Málaga
+      position: Software Engineering Student
+      logo: uma_logo.jpg
+      description: >
+        Graduated with honors (best of class) in Object oriented Programming, Data structures, Analysis and
+        Design of Algorithms, Formal Languages and Automata Theory, System Programming/Concurrency and
+        Operating Systems
+    - start: 2013
+      end: 2013
+      margin: 85
+      company: CERN
+      position: Python developer for Invenio
+      logo: cern_logo.jpg
+      description: >
+        Invenio is an Open Source project that powers the CERN Document Server and INSPIRE, the HEP Database
+        that contains bibliographic records of more than one million publications and that replaced SPIRES,
+        the first website outside of Europe and the first database to be served over the web.
+        Working in CERN I learned to work comfortably in a large, cross functional and multicultural team.
+    - start: 2015
+      end: …
+      margin: 60
+      company: Scrapinghub
+      position: Software Engineer
+      logo: scrapinghub_logo.png
+      description: Scrapinghub provides a cloud-based web crawling platform, off-the-shelf datasets, and turn-key web scraping services.
+skills:
+  - [title, 'Javascript', 99]
+  - [skill, 'Node.js / io.js', 99]
+  - [title, 'Frontend', 99]
+  - [skill, 'jQuery', 99]
+  - [skill, 'CSS', 99]
+  - [skill, 'Angular.js', 85]
+  - [title, 'Python', 97]
+  - [skill, 'Django', 85]
+  - [title, 'PHP', 90]
+  - [skill, 'Wordpress', 90]
+  - [title, 'Other languages', 0]
+  - [skill, 'C', 60]
+  - [column]
+  - [skill, 'C++', 30]
+  - [skill, 'Actionscript', 85]
+  - [skill, 'Bash', 85]
+  - [skill, 'Scheme', 25]
+  - [title, 'Databases', 0]
+  - [skill, 'MongoDB', 85]
+  - [skill, 'MySQL', 85]
+  - [skill, 'SQLite', 80]
+  - [skill, 'Oracle/PLSQL/JDBC', 45]
+  - [title, 'Operating Systems', 85]
+  - [skill, 'GNU/Linux', 95]
+  - [skill, 'Other UNIX', 50]
+  - [skill, 'Windows', 25]
+  - [column]
+  - [title, 'Version control systems', 0]
+  - [skill, 'Git', 95]
+  - [skill, 'Mercurial', 50]
+  - [skill, 'SVN', 50]
+  - [title, 'Other', 0]
+  - [skill, 'Vim', 95]
+  - [skill, 'Regular expressions', 98]
+  - [skill, 'TCP/IP protocol', 80]
+  - [data, 'Driving license', 'Type B']
+  - [title, 'Languages', 0]
+  - [skill, 'Spanish', 96]
+  - [skill, 'Español', 87]

@@ -1,0 +1,41 @@
+---
+layout: default
+---
+
+<div class="home">
+
+  <h2 class="page-heading">Projects</h2>
+
+  {% assign projects = site.data.projects | sort: 'end' | reverse%}
+  {% for item in projects %}
+    <div class="project">
+      <h3>{{item.name}}</h3>
+      <div class="metadata">
+          <span>{{item.role}}</span>,
+          <span class="time">
+              {% assign fmt = '%b %Y' %}
+              {% assign end_year = item.end|date:'%Y' %}
+              {% if end_year == '2099' %}
+                ongoing since {{item.start | date:fmt}}
+              {% else %}
+                {% assign start = item.start | date:fmt %}
+                {% assign end = item.end | date:fmt %}
+                {% if start == end %}
+                    {{start}}
+                {% else %}
+                    {{start}} to {{end}}
+                {% endif %}
+              {% endif %}
+          </span>
+      </div>
+      <p>{{item.description}}</p>
+      {% if item.url %}
+        <a href="{{item.url}}">{{item.url_label}}</a>
+      {% endif %}
+    </div>
+    {% assign pair = forloop.index|modulo:2 %}
+    {% if pair == 0 %}
+      <div class="clearfix"></div>
+    {% endif %}
+  {% endfor %}
+</div>
