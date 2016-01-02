@@ -10,5 +10,3 @@ github_username:  youwotma
 
 # Build settings
 markdown: kramdown
-gems:
-- jekyll-compass
