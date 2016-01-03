@@ -518,23 +518,6 @@ body.cv {
     }
 }
 
-
-
-/*
-.job {
-    margin-left: 20px;
-    width: 500px;
-    margin-bottom: 10px;
-    border-bottom: 1px solid #ccc;
-    padding-bottom: 10px;
-    h3 {
-        margin: 4px 0;
-    }
-    p{
-    }
-}
-*/
-
 #maintitle{
     float: left;
 }
@@ -556,55 +539,6 @@ body.cv {
     }
 }
 
-.htext{
-    text-align: center;
-    font-style: italic;
-    font-size: 12px;
-    padding: 0 5px;
-    margin: 0 -5px;
-}
-
-line{
-    &.eso{
-        stroke: #aaa;
-    }
-    &.bachiller{
-        stroke: #666;
-    }
-    &.uni{
-        stroke: #222;
-    }
-    &.html{ stroke: #23819c; }
-    &.js{ stroke: #23819c; }
-    &.php{ stroke: #23819c; }
-    &.flash{ stroke: #23819c; }
-    &.vb{ stroke: #23819c; }
-    &.java{ stroke: #23819c; }
-    &.bash{ stroke: #23819c; }
-    &.python{ stroke: #23819c; }
-}
-
-text{
-    fill: #333;
-    font-size: 12px;
-    &.eso{
-        fill: #aaa;
-    }
-    &.bachiller{
-        fill: #666;
-    }
-    &.uni{
-        fill: #222;
-    }
-    &.html{ fill: #23819c; }
-    &.js{ fill: #23819c; }
-    &.php{ fill: #23819c; }
-    &.flash{ fill: #23819c; }
-    &.vb{ fill: #23819c; }
-    &.java{ fill: #23819c; }
-    &.bash{ fill: #23819c; }
-    &.python{ fill: #23819c; }
-}
 body.cv{
     color: #333;
     width: 1100px;
