@@ -86,6 +86,30 @@
   description: An IRC client with node.js backend and HTML5 frontend I did in one hour because no web IRC client satisfied me.
   url_label: Github repository
 
+- name: "RGB Clock"
+  start: 2011-02-25
+  end: 2011-02-25
+  role: Creator
+  url: /clock
+  description: One hour project
+  url_label: Open
+
+- name: "HTML5 Tweets"
+  start: 2011-04-10
+  end: 2011-04-10
+  role: Creator
+  url: /html5tweets
+  description: A tweet visualization using HTML5, I made it for showing tweets live to the assistants of a conference.
+  url_label: Demo
+
+- name: "HTML5 Canvas game"
+  start: 2011-02-07
+  end: 2011-02-07
+  role: Creator
+  url: /circulos
+  description: An HTML5 Canvas Game, made in ~12h that I should have spent studying.
+  url_label: Demo
+
 - name: "Incremental ftp"
   start: 2012-02-17
   end: 2012-02-17

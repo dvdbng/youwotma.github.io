@@ -1,5 +1,3 @@
----
----
 
 @mixin prefix($property, $parameters...) {
   @each $prefix in -webkit-, -moz-, -ms-, -o-, "" {
@@ -22,7 +20,6 @@ h1{
     font-size: 1.6em;
     margin: 0.4em 0 1.2em 10px;
 }
-
 
 #wrapper h2, #header h2 {
     font-size: 40px;
@@ -222,40 +219,11 @@ $headers_pull: 10px;
         font-weight: normal;
         top: 150px;
     }
-}
-
-.tweet{
-    padding: 10px 10px 10px 20px;
-    font-size: 12px;
-    margin-bottom: 10px;
-    background: #DAF0FF;
-    background: -moz-linear-gradient(#DFF2FF,#CAEAFF);
-    color: #666;
-    a{
-        color: #333;
+    .et {
+        font-weight: bold;
+        font-size: 1.4em;
+        font-family: serif;
     }
-}
-.tweetbird{
-    margin-left: -40px;
-    float: left;
-}
-
-.blogtitle{
-    text-align:center;
-    font-style: normal;
-    //font-variant: small-caps;
-    text-transform: uppercase;
-    font-size: 25px;
-    //font-family: 'Ubuntu', arial, sans;
-    font-weight: normal;
-    margin: 20px 0 10px 0;
-    a{
-        color: #eb9272;
-    }
-}
-.blogtxt{
-    color: #666;
-    line-height: 1.2em;
 }
 
 #otherprofiles{
