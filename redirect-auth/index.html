@@ -1,0 +1,9 @@
+---
+layout: bare
+---
+<script>
+    var data = atob(decodeURIComponent(location.href.match(/data=([^&=]*)/)[1]).split(':')[0]);
+    data = JSON.parse(data);
+    alert('Your apikey is: ' + data.apikey + '\n' +
+          "Of course an evil person could have posted the key to it's server...");
+</script>
