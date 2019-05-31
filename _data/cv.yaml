@@ -89,23 +89,18 @@ periods:
 
 skills:
   - [title, 'Javascript', 99]
-  - [skill, 'Node.js / io.js', 99]
-  - [title, 'Frontend', 99]
-  - [skill, 'jQuery', 99]
-  - [skill, 'CSS', 99]
-  - [skill, 'Angular.js', 85]
+  - [skill, 'Node.js', 99]
+  - [skill, 'React', 70]
   - [title, 'Python', 97]
   - [skill, 'Django', 85]
-  - [title, 'PHP', 90]
-  - [skill, 'Wordpress', 90]
+  - [title, 'Ruby', 97]
+  - [skill, 'Ruby on Rails', 95]
   - [title, 'Other languages', 0]
   - [skill, 'C', 60]
   - [column]
-  - [skill, 'C++', 30]
-  - [skill, 'Actionscript', 85]
-  - [skill, 'Bash', 85]
-  - [skill, 'Scheme', 25]
   - [title, 'Databases', 0]
+  - [skill, 'PostgreSQL', 95]
+  - [skill, 'Redis', 95]
   - [skill, 'MongoDB', 85]
   - [skill, 'MySQL', 85]
   - [skill, 'SQLite', 80]
@@ -113,17 +108,62 @@ skills:
   - [title, 'Operating Systems', 85]
   - [skill, 'GNU/Linux', 95]
   - [skill, 'Other UNIX', 50]
-  - [skill, 'Windows', 25]
   - [column]
-  - [title, 'Version control systems', 0]
-  - [skill, 'Git', 95]
-  - [skill, 'Mercurial', 50]
-  - [skill, 'SVN', 50]
   - [title, 'Other', 0]
+  - [skill, 'Git', 95]
   - [skill, 'Vim', 95]
   - [skill, 'Regular expressions', 98]
-  - [skill, 'TCP/IP protocol', 80]
+  - [skill, 'Bash', 85]
   - [data, 'Driving license', 'Type B']
   - [title, 'Languages', 0]
-  - [skill, 'Spanish', 96]
-  - [skill, 'Español', 87]
+  - [skill, 'English', 87]
+  - [skill, 'Español', 96]
+  - [skill, '中文', 30]
+
+extra_skills:
+  - CSS
+  - ReactJS
+  - Memcached
+  - jQuery
+  - Standard SQL
+  - Java
+  - PHP
+  - Android Development
+  - React Native (iOS and Android)
+  - Cordoba
+  - ES6
+  - Browser internals
+  - Jekyll
+  - Frontend
+  - Angular.js
+  - Ember.js
+  - Vue.js
+  - Cryptography
+  - Cryptocurrency
+  - Blockchain
+  - Bitcoin
+  - Ethereum
+  - Grin
+  - Nano
+  - Lua
+  - Headless browsers
+  - Concurrency
+  - Go (Golang)
+  - Security
+  - TCP/IP Internals
+  - HTTP Internals
+  - CSS
+  - SCSS
+  - Less
+  - Command line
+  - CircleCI
+  - TravisCI
+  - AWS (S3, EC2, Lambda, DynamoDB, Athena, Elastic Beanstalk, Route 53, IAM, Cloudfront)
+  - Heroku
+  - Express.js
+  - Data Analysis
+  - Test driven development (TDD)
+  - OpenCV
+  - NumPy
+
+

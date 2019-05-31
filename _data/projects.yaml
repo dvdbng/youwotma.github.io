@@ -31,8 +31,8 @@
   description: Splitbits is React Native (iOS and Android) Bitcoin and Litecoin Wallet
 
 - name: Memwallet
-  start: 2017-29-09
-  end: 2018-23-05
+  start: 2017-09-29
+  end: 2018-05-23
   role: Creator
   url: https://github.com/dvdbng/memwallet
   url_label: Memwallet repository
