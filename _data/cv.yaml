@@ -45,7 +45,7 @@ periods:
     - start: 2008
       end: 2013
       margin: 60
-      company: Autonomo
+      company: Freelance
       position: Freelance developer
       logo: bengoa_logo.png
       description: >
@@ -73,12 +73,20 @@ periods:
         the first website outside of Europe and the first database to be served over the web.
         Working in CERN I learned to work comfortably in a large, cross functional and multicultural team.
     - start: 2015
-      end: …
+      end: 2017
       margin: 60
       company: Scrapinghub
       position: Software Engineer
       logo: scrapinghub_logo.png
       description: Scrapinghub provides a cloud-based web crawling platform, off-the-shelf datasets, and turn-key web scraping services.
+    - start: 2017
+      end: …
+      margin: 60
+      company: Saber Es Poder
+      position: Software Engineer
+      logo: sep-logo.png
+      description: Saber Es Poder delivers educational content for Hispanic immigrants and connects them with services. I have helped scale Saber Es Poder form 400k users to 1.3M, decrease infrastructure costs and improving platform speed, stability and security, while being one of two engineers in the team.
+
 skills:
   - [title, 'Javascript', 99]
   - [skill, 'Node.js / io.js', 99]
