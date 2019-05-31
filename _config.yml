@@ -6,7 +6,7 @@ description: >
 baseurl: ""
 url: "https://david.bengoarocandio.com" # the base hostname & protocol for your site
 twitter_username: dvdbng
-github_username:  youwotma
+github_username:  dvdbng
 
 # Build settings
 markdown: kramdown

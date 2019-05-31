@@ -66,7 +66,7 @@
   start: 2015-08-15
   end: 2015-08-15
   role: Creator
-  url: https://github.com/youwotma/gitco
+  url: https://github.com/dvdbng/gitco
   description: A curses command line application to see the state of the git working directory and add files to a commit. Useful if you normally commit if a git status -> diff -> add loop.
   url_label: Gitco repository
 
@@ -74,7 +74,7 @@
   start: 2015-07-21
   end: 2015-07-21
   role: Creator
-  url: https://github.com/youwotma/async-wait
+  url: https://github.com/dvdbng/async-wait
   description: Wait for asynchronous behaviour of code you don't control by monkey-patching setTimeout, XMLHttpRequest and friends.
   url_label: Asyncwait repository
 
@@ -82,7 +82,7 @@
   start: 2012-01-04
   end: 2012-01-04
   role: Creator
-  url: https://github.com/youwotma/redditfeed
+  url: https://github.com/dvdbng/redditfeed
   description: A RSS Feed for Reddit with inline images, main content extraction, inlined comments and configurable subreddit weights.
   url_label: Github repository
 
@@ -90,7 +90,7 @@
   start: 2015-05-21
   end: 2015-05-21
   role: Creator
-  url: https://github.com/youwotma/hnfeed
+  url: https://github.com/dvdbng/hnfeed
   description: A RSS Feed for Hacker News with inline images, main content extraction and inlined comments.
   url_label: Github repository
 
@@ -98,7 +98,7 @@
   start: 2015-05-20
   end: 2015-05-20
   role: Creator
-  url: https://github.com/youwotma/phfeed
+  url: https://github.com/dvdbng/phfeed
   description: A RSS Feed for Product Hunt with inline images, main content extraction and inlined comments.
   url_label: Github repository
 
@@ -106,7 +106,7 @@
   start: 2014-07-06
   end: 2014-07-09
   role: Creator
-  url: https://github.com/youwotma/spritzreader
+  url: https://github.com/dvdbng/spritzreader
   description: A minimalist Feedly client that uses hotkeys and rapid serial visual presentation (RSVP) to skim over unread articles.
   url_label: Github repository
 
@@ -114,7 +114,7 @@
   start: 2013-07-19
   end: 2013-07-19
   role: Creator
-  url: https://github.com/youwotma/cernpoi
+  url: https://github.com/dvdbng/cernpoi
   description: A collaborative map of CERN for interns and students.
   url_label: Github repository
 
@@ -122,7 +122,7 @@
   start: 2013-03-28
   end: 2013-03-28
   role: Creator
-  url: https://github.com/youwotma/html5irc
+  url: https://github.com/dvdbng/html5irc
   description: An IRC client with node.js backend and HTML5 frontend I did in one hour because no web IRC client satisfied me.
   url_label: Github repository
 
@@ -154,7 +154,7 @@
   start: 2012-02-17
   end: 2012-02-17
   role: Creator
-  url: https://github.com/youwotma/incrementalftp
+  url: https://github.com/dvdbng/incrementalftp
   description: A FTP client that keeps track of what the files and only uploads the ones that have changed.
   url_label: Github repository
 
