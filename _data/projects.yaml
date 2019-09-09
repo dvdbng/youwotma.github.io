@@ -14,14 +14,6 @@
   url_label: Pinyinbot Homepage
   description: Pinyin Bot is a Skype bot helps you to teach or learn Chinese. It translates either Traditional or Simplified Chinese into Pinyin.
 
-- name: NXT Ring
-  start: 2018-08-10
-  end: 2099-01-01 # Ongoing
-  role: Only Engineer
-  url: https://www.kickstarter.com/projects/thingyfyio/nxt-ring-your-digital-self-at-hand
-  url_label: NXT Ring Kickstarter page
-  description: "A ring with an embedded NFC chip that contains a link to your digital world. Crypto payments, social networks, medical ID and many more: fast, battery-free, dust & waterproof, No App Required"
-
 - name: Splitbits
   start: 2017-11-15
   end: 2017-12-12
