@@ -5,6 +5,7 @@
   url: https://github.com/dvdbng/tinfoil
   url_label: Tinfoil repository
   description: Convert your old smartphone in a hardware wallet
+  tags: [blockchain]
 
 - name: Pinyinbot
   start: 2018-03-30
@@ -21,6 +22,7 @@
   url: https://github.com/sohobase/splitbits/commits?author=dvdbng
   url_label: My commits in Splitbits
   description: Splitbits is React Native (iOS and Android) Bitcoin and Litecoin Wallet
+  tags: [blockchain]
 
 - name: Memwallet
   start: 2017-09-29
@@ -29,6 +31,7 @@
   url: https://github.com/dvdbng/memwallet
   url_label: Memwallet repository
   description: Memwallet is a deterministic cryptocurrency address generator, like WarpWallet but for Ethereum, Litecoin, Monero and Bitcoin
+  tags: [blockchain]
 
 - name: Portia
   start: 2015-05-28
@@ -37,6 +40,7 @@
   url: https://github.com/scrapinghub/portia/commits?author=dvdbng
   url_label: My commits in Portia
   description: Portia is a free software tool that lets you scrape web sites without any programming knowledge required.
+  tags: [python, scraping]
 
 - name: Splash
   start: 2015-05-28
@@ -45,6 +49,7 @@
   url: https://github.com/scrapinghub/splash/commits?author=dvdbng
   description: Splash is a free software scriptable headless browser with an HTTP API.
   url_label: My commits in Splash
+  tags: [python, scraping]
 
 - name: Invenio
   start: 2013-06-15
