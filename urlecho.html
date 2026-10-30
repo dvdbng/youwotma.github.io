@@ -3,13 +3,20 @@ layout: null
 ---
 <!doctype html>
 <meta charset="utf-8">
+shshhs
 <script>
-  const url = new URLSearchParams(location.search).get("url");
-  if (url) {
-    const link = document.createElement("a");
-    link.href = url;
-    link.textContent = url;
-    document.body.append(link);
+  try {
+    const url = new URLSearchParams(location.search).get("url");
+
+    if (!url) {
+      document.body.textContent = "No URL provided.";
+    } else {
+      const link = document.createElement("a");
+      link.href = url;
+      link.textContent = url;
+      document.body.append(link);
+    }
+  } catch (e) {
+    alert("Error: " + e.message);
   }
 </script>
-smsms
